@@ -17,7 +17,6 @@ public class Number141 {
         ListNode fastIndex = head;
 
         while (fastIndex != null && fastIndex.next != null) {
-
             slowIndex = slowIndex.next;
             fastIndex = fastIndex.next.next;
             if (slowIndex == fastIndex)

@@ -58,7 +58,6 @@ public class Number39 {
         }
 
         for (int i = index; i < candidates.length; i++) {
-
             // 重点理解这里剪枝，前提是候选数组已经有序
             if (sum + candidates[i] > target)
                 break;

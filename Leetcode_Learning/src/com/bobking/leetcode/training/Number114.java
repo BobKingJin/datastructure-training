@@ -19,14 +19,11 @@ public class Number114 {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
         while (!stack.isEmpty()) {
-
             root = stack.pop();
-
             if (pre != null) {
                 pre.left = null;
                 pre.right = root;
             }
-
             pre = root;
             if (root.right != null)
                 stack.push(root.right);
@@ -51,7 +48,6 @@ public class Number114 {
                 TreeNode pre = root.left;
                 while (pre.right != null)
                     pre = pre.right;
-
                 // 将原来的右子树接到左子树的最右边节点
                 pre.right = root.right;
                 // 将左子树插入到右子树的地方
@@ -119,7 +115,6 @@ public class Number114 {
 
         TreeNode cur = root;
         while (cur != null) {
-
             // 找到当前节点的左子树的最右节点
             if (cur.left != null) {
                 TreeNode next = cur.left;

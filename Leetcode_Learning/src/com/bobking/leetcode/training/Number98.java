@@ -16,12 +16,10 @@ public class Number98 {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         // 中序遍历
         while (!stack.isEmpty() || root != null) {
-
             if (root != null) {
                 stack.push(root);
                 root = root.left;
             } else {
-
                 root = stack.pop();
                 if (!list.isEmpty() && root.val <= list.get(list.size() - 1))
                     return false;
@@ -46,17 +44,14 @@ public class Number98 {
         Stack<TreeNode> stack = new Stack<TreeNode>();
 
         while (!stack.isEmpty() || root != null) {
-
             if (root != null) {
                 stack.push(root);
                 root = root.left;
             } else {
-
                 root = stack.pop();
                 // 不用判空
                 if (root.val <= pre)
                     return false;
-
                 pre = root.val;
                 root = root.right;
             }

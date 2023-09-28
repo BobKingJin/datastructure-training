@@ -22,14 +22,11 @@ public class Number76 {
         String res = "";
 
         while (right != ch1.length) {
-
             map[ch1[right]]--;
             // 减完之后大于零，说明减之前大于零，那么此时 match 应该减一
             if (map[ch1[right]] >= 0)
                 match--;
-
             if (match == 0) {
-
                 while (map[ch1[left]] < 0)
                     map[ch1[left++]]++;
 

@@ -17,7 +17,6 @@ public class Number128 {
         // map 中只更新连续序列中的最大值和最小值
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; i++) {
-
             if (!map.containsKey(nums[i])) {
                 map.put(nums[i], 1);
                 if (map.containsKey(nums[i] - 1))
@@ -53,20 +52,17 @@ public class Number128 {
             set.add(num);
 
         for (int num : set) {
-
             int currentNum = num;
             int currentStreak = 1;
             // 相当于找到某个连续序列中的最小值
             // 已知有一个 x, x + 1, x + 2, ⋯, x + y 的连续序列
             // 是没有必要重新去统计 x + 1, x + 2, ⋯, x + y的连续序列的，直接跳过即可
             if (!set.contains(currentNum - 1)) {
-
                 while (set.contains(currentNum + 1)) {
                     currentStreak++;
-                    currentNum = currentNum + 1;
+                    currentNum++;
                 }
             }
-
             longestStreak = Math.max(longestStreak, currentStreak);
         }
 

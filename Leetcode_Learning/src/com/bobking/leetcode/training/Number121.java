@@ -36,7 +36,6 @@ public class Number121 {
         int profit1 = -prices[0];
 
         for (int i = 1; i < prices.length; i++) {
-
             int newProfit0 = Math.max(profit0, profit1 + prices[i]);
             int newProfit1 = Math.max(profit1, -prices[i]);
             profit0 = newProfit0;

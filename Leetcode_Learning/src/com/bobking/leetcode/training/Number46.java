@@ -21,9 +21,7 @@ public class Number46 {
         List<Integer> list = new ArrayList<Integer>();
         // 已经访问过的，不允许重复访问
         boolean[] visited = new boolean[nums.length];
-
         backTrack(0, nums, visited, list, result);
-
         return result;
     }
 

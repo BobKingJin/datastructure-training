@@ -39,7 +39,6 @@ public class Number72 {
                 } else {
                     dp[i][j] = dp[i - 1][j - 1] + 1;
                 }
-
                 // 插入操作
                 dp[i][j] = Math.min(dp[i][j], dp[i][j - 1] + 1);
                 // 删除操作

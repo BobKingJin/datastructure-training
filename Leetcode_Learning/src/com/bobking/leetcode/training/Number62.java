@@ -79,7 +79,7 @@ public class Number62 {
         if (m < 1 || n < 1)
             return 0;
 
-        // 空间优化：由于dp[i][j] = dp[i + 1][j] + dp[i][j + 1]，因此只需要保留当前行与上一行的数据
+        // 空间优化：由于 dp[i][j] = dp[i + 1][j] + dp[i][j + 1]，因此只需要保留当前行与上一行的数据
         // cur[j] = cur[j] + cur[j - 1] 等价于 cur[j] = pre[j] + cur[j - 1]
         // 当前行
         int[] cur = new int[n];

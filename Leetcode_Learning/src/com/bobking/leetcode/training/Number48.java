@@ -24,7 +24,6 @@ public class Number48 {
         int times = rColumn - lColumn;
         int tmp = 0;
         for (int i = 0; i < times; i++) {
-
             tmp = matrix[lRow][lColumn + i];
             matrix[lRow][lColumn + i] = matrix[rRow - i][lColumn];
             matrix[rRow - i][lColumn] = matrix[rRow][rColumn - i];

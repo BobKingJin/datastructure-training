@@ -23,11 +23,9 @@ public class Number56 {
         while (index < intervals.length) {
             // 必须先排序，未排序则无法通过
             if (nums[1] >= intervals[index][0]) {
-
                 nums[0] = Math.min(nums[0], intervals[index][0]);
                 nums[1] = Math.max(nums[1], intervals[index][1]);
             } else {
-
                 list.add(new int[]{nums[0], nums[1]});
                 nums[0] = intervals[index][0];
                 nums[1] = intervals[index][1];
@@ -67,8 +65,8 @@ public class Number56 {
         nums[0] = intervals[0][0];
         nums[1] = intervals[0][1];
         int index = 1;
-        while (index < intervals.length) {
 
+        while (index < intervals.length) {
             if (nums[1] >= intervals[index][0]) {
                 nums[1] = Math.max(nums[1], intervals[index][1]);
             } else {

@@ -23,7 +23,6 @@ public class Number105 {
 
         for (int i = inStart; i <= inEnd; i++) {
             if (inorder[i] == preorder[preStart]) {
-
                 root.left = buildTree(preorder, preStart + 1, preStart + i - inStart, inorder, inStart, i - 1);
                 root.right = buildTree(preorder, preStart + i - inStart + 1, preEnd, inorder, i + 1, inEnd);
                 break;

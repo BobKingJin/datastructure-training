@@ -21,7 +21,6 @@ public class Number75 {
 
         int currentIndex = 0;
         while (currentIndex < largeIndex) {
-
             if (nums[currentIndex] == target) {
                 currentIndex++;
             } else if (nums[currentIndex] < target) {

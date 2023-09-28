@@ -11,7 +11,6 @@ public class Number53 {
         int max = Integer.MIN_VALUE;
         int cur = 0;
         for (int i = 0; i < nums.length; i++) {
-
             cur += nums[i];
             // 每一步都有可能成为最大值
             max = Math.max(max, cur);
@@ -30,7 +29,6 @@ public class Number53 {
         int maxSubSumEndOfArrayI = nums[0];
         int max = nums[0];
         for (int i = 1; i < nums.length; i++) {
-
             maxSubSumEndOfArrayI = Math.max(maxSubSumEndOfArrayI + nums[i], nums[i]);
             max = Math.max(max, maxSubSumEndOfArrayI);
         }

@@ -18,7 +18,6 @@ public class Number42 {
             int tempSum = 0;
             // 找到每根柱子左边和右边离其最近的大于该柱子高度的柱子
             for (int j = 0; j < height.length; j++) {
-
                 if (isStart && height[j] < i)
                     tempSum++;
                 if (height[j] >= i) {
@@ -147,7 +146,7 @@ public class Number42 {
                 // 两堵墙之前的距离
                 int distance = current - stack.peek() - 1;
                 int min = Math.min(height[stack.peek()], height[current]);
-                sum = sum + distance * (min - h);
+                sum += distance * (min - h);
             }
             // 当前指向的墙入栈
             stack.push(current);

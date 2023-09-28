@@ -38,7 +38,6 @@ public class Number94 {
             return list;
 
         inorder(root, list);
-
         return list;
     }
 

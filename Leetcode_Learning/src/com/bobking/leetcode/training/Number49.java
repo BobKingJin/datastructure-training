@@ -17,7 +17,6 @@ public class Number49 {
         HashMap<String, List<String>> map = new HashMap<String, List<String>>();
 
         for (String str : strs) {
-
             char[] ch = str.toCharArray();
             // 每个字母异位词进行排序之后都相同
             Arrays.sort(ch);
@@ -47,10 +46,8 @@ public class Number49 {
         HashMap<String, List<String>> map = new HashMap<String, List<String>>();
 
         for (String str : strs) {
-
             char[] ch = str.toCharArray();
             int[] count = new int[26];
-
             // 因为所有源单词中的字母都恰好只用一次，因此不会出现重复字符
             for (char c : ch)
                 count[c - 'a']++;

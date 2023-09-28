@@ -27,7 +27,6 @@ public class Number148 {
         ListNode node = new ListNode(0);
         ListNode res = node;
         while (left != null && right != null) {
-
             if (left.val > right.val) {
                 node.next = right;
                 right = right.next;
@@ -56,7 +55,6 @@ public class Number148 {
         ListNode smallPre = null;
 
         while (cur != null) {
-
             small = cur;
             smallPre = getSmallPreNode(cur);
             if (smallPre != null) {
@@ -64,7 +62,7 @@ public class Number148 {
                 smallPre.next = small.next;
             }
             // 如果 smallPre 为空，说明 cur(当前节点) 即为最小值节点
-            cur = cur == small ? cur.next : cur;
+            cur = (cur == small) ? cur.next : cur;
 
             if (tail == null) {
                 head = small;

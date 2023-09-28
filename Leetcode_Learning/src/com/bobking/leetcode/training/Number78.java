@@ -16,10 +16,8 @@ public class Number78 {
             return null;
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
-
         // dfs
         backTrack(0, nums, res, new ArrayList<Integer>());
-
         return res;
     }
 
