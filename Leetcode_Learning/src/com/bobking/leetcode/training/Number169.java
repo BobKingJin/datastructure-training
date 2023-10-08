@@ -15,7 +15,6 @@ public class Number169 {
         int candidate = 0;
 
         for(int i = 0; i < nums.length; i++){
-
             if(times == 0){
                 candidate = nums[i];
                 times = 1;

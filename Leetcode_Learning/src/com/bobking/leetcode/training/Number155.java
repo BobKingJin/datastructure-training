@@ -19,7 +19,6 @@ public class Number155 {
         }
 
         public void push(int val) {
-
             dataStack.push(val);
             if (minStack.isEmpty() || val < minStack.peek()) {
                 minStack.push(val);
@@ -36,7 +35,6 @@ public class Number155 {
         }
 
         public int top() {
-
             if (!dataStack.isEmpty())
                 return dataStack.peek();
 
@@ -44,7 +42,6 @@ public class Number155 {
         }
 
         public int getMin() {
-
             if (!minStack.isEmpty())
                 return minStack.peek();
 

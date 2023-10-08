@@ -12,7 +12,6 @@ public class Number206 {
         ListNode pre = null;
 
         while (head != null) {
-
             next = head.next;
             head.next = pre;
             pre = head;
