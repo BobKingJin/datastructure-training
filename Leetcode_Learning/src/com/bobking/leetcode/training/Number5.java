@@ -37,12 +37,12 @@ public class Number5 {
             return s;
 
         int maxLen = 0;
-        // 数组第一位记录起始位置，第二位记录长度
+        // 数组第一位记录起始位置, 第二位记录长度
         int[] res = new int[2];
         for (int i = 0; i < s.length() - 1; i++) {
-            // 如果传入重合的下标，进行中心扩散，此时得到的回文子串的长度是奇数
+            // 如果传入重合的下标，进行中心扩散, 此时得到的回文子串的长度是奇数
             int[] odd = centerSpread(s, i, i);
-            // 如果传入相邻的下标，进行中心扩散，此时得到的回文子串的长度是偶数
+            // 如果传入相邻的下标，进行中心扩散, 此时得到的回文子串的长度是偶数
             int[] even = centerSpread(s, i, i + 1);
             int[] max = odd[1] > even[1] ? odd : even;
             if (max[1] > maxLen) {

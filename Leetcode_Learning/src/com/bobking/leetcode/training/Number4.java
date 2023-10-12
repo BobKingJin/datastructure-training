@@ -82,9 +82,9 @@ public class Number4 {
             }
         }
 
-        if ((len & 1) == 0){
+        if ((len & 1) == 0) {
             return (left + right) / 2.0;
-        } else{
+        } else {
             return right;
         }
     }

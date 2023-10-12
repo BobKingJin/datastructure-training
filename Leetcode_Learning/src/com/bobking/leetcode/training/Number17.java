@@ -62,6 +62,8 @@ public class Number17 {
 
         result.add("");
 
+        // 这个位置注意 for 循环的顺序
+        // 先是取 digits 中的每个字符集, 再是 res 中的结果集, 最后才是 字符集 中的每个字母
         for (int i = 0; i < digits.length(); i++) {
             String letters = map[digits.charAt(i) - '0'];
             for (int j = 0; j < result.size(); j++) {

@@ -19,6 +19,7 @@ public class Number10 {
         // pChar.length - 1 和 sChar.length - 1 都可以取到，所以递归结束条件为  pIndex == pChar.length 和 sIndex == sChar.length
         if (pIndex == pChar.length)
             return sIndex == sChar.length;
+
         // 如果 pChar[pIndex + 1] != '*'，那么当前字符必须匹配
         if (pIndex == pChar.length - 1 || (pChar[pIndex + 1] != '*')) {
             //                      注意 pChar[pIndex] == '.'情况
