@@ -21,7 +21,7 @@ public class Number42 {
                 if (isStart && height[j] < i)
                     tempSum++;
                 if (height[j] >= i) {
-                    sum = sum + tempSum;
+                    sum += tempSum;
                     tempSum = 0;
                     isStart = true;
                 }
@@ -142,7 +142,6 @@ public class Number42 {
                 // 栈空就出去
                 if (stack.empty())
                     break;
-
                 // 两堵墙之前的距离
                 int distance = current - stack.peek() - 1;
                 int min = Math.min(height[stack.peek()], height[current]);

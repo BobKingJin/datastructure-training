@@ -47,7 +47,6 @@ public class Number78 {
 
         // bfs
         for (int i = 0; i < nums.length; i++) {
-
             int size = res.size();
             // 将 nums[i] 添加进 res 中的所有子集
             // 例如：1 2 3 4 5 当 i = 3 即 nums[3] = 4 时，此时 res 中应包含了 1 - 3 的所有子集

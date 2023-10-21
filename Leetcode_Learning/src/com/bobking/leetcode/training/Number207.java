@@ -82,15 +82,12 @@ public class Number207 {
         }
 
         while (!queue.isEmpty()) {
-
             int pre = queue.poll();
-
             for (int i : list.get(pre)) {
                 indegrees[i]--;
                 if (indegrees[i] == 0)
                     queue.offer(i);
             }
-
             numCourses--;
         }
 

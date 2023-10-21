@@ -1,3 +1,3 @@
 # datastructure-training
-leetcode learning
+datastructure learning
 By BobKing

@@ -1,6 +1,6 @@
 package com.bobking.leetcode.training;
 
-public class Number34 {
+public class  Number34 {
 
     public int[] searchRange1(int[] nums, int target) {
 
@@ -12,11 +12,10 @@ public class Number34 {
         int l = 0;
         int h = nums.length - 1;
         int mid = 0;
-        while (l <= h) {
 
+        while (l <= h) {
             mid = l + (h - l) / 2;
             if (nums[mid] == target) {
-
                 res[0] = mid;
                 res[1] = mid;
                 int lIndex = mid - 1;

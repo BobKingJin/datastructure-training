@@ -9,7 +9,6 @@ public class Number146 {
     private class LRUCache {
 
         private class Node {
-
             public int key;
             public int val;
             public Node next;
@@ -22,7 +21,6 @@ public class Number146 {
         }
 
         class DoubleList {
-
             private Node head;
             private Node tail;
             private int size;

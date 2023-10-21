@@ -45,27 +45,27 @@ public class Number128 {
         if (nums == null || nums.length == 0)
             return 0;
 
-        int longestStreak = 0;
+        int res = 0;
 
         Set<Integer> set = new HashSet<Integer>();
         for (int num : nums)
             set.add(num);
 
         for (int num : set) {
-            int currentNum = num;
-            int currentStreak = 1;
+            int curNum = num;
+            int curStreak = 1;
             // 相当于找到某个连续序列中的最小值
             // 已知有一个 x, x + 1, x + 2, ⋯, x + y 的连续序列
             // 是没有必要重新去统计 x + 1, x + 2, ⋯, x + y的连续序列的，直接跳过即可
-            if (!set.contains(currentNum - 1)) {
-                while (set.contains(currentNum + 1)) {
-                    currentStreak++;
-                    currentNum++;
+            if (!set.contains(curNum - 1)) {
+                while (set.contains(curNum + 1)) {
+                    curStreak++;
+                    curNum++;
                 }
             }
-            longestStreak = Math.max(longestStreak, currentStreak);
+            res = Math.max(res, curStreak);
         }
 
-        return longestStreak;
+        return res;
     }
 }

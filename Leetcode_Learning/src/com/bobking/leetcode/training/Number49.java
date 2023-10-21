@@ -20,7 +20,6 @@ public class Number49 {
             char[] ch = str.toCharArray();
             // 每个字母异位词进行排序之后都相同
             Arrays.sort(ch);
-
             if (map.containsKey(new String(ch))) {
                 map.get(new String(ch)).add(str);
             } else {

@@ -4,7 +4,6 @@ public class Number684 {
 
     public int[] findRedundantConnection(int[][] edges) {
 
-        // 有题目可知边的个数为 N，元素在 1 - N 之间
         int N = edges.length;
         // 创建一个领导表，表示每个节点的上级领导
         int[] leader = new int[N + 1];
@@ -30,12 +29,10 @@ public class Number684 {
         return res;
     }
 
-    // 找某个节点的掌门
     private int findRoot(int son, int[] leader) {
 
         int root = son;
 
-        // 只有掌门的领导是掌门自己
         while (root != leader[root])
             root = leader[root];
 

@@ -6,7 +6,6 @@ public class Number208 {
     private class Trie {
 
         private class TrieNode {
-
             public int path;
             public int end;
             public TrieNode[] map;
@@ -39,8 +38,8 @@ public class Number208 {
             TrieNode node = root;
             node.path++;
             int index = 0;
-            for (int i = 0; i < ch.length; i++) {
 
+            for (int i = 0; i < ch.length; i++) {
                 index = ch[i] - 'a';
                 if (node.map[index] == null)
                     node.map[index] = new TrieNode();
@@ -62,8 +61,8 @@ public class Number208 {
             char[] ch = word.toCharArray();
             TrieNode node = root;
             int index = 0;
-            for (int i = 0; i < ch.length; i++) {
 
+            for (int i = 0; i < ch.length; i++) {
                 index = ch[i] - 'a';
                 if (node.map[index] == null)
                     return false;
@@ -84,8 +83,8 @@ public class Number208 {
             char[] ch = prefix.toCharArray();
             TrieNode node = root;
             int index = 0;
-            for (int i = 0; i < ch.length; i++) {
 
+            for (int i = 0; i < ch.length; i++) {
                 index = ch[i] - 'a';
                 if (node.map[index] == null)
                     return false;
