@@ -127,8 +127,8 @@ public class Number581 {
 
         int noMinIndex = -1;
         int min = nums[nums.length - 1];
-        for (int i = nums.length - 2; i >= 0; i--) {
 
+        for (int i = nums.length - 2; i >= 0; i--) {
             if (nums[i] > min) {
                 noMinIndex = i;
             } else {
@@ -143,7 +143,6 @@ public class Number581 {
         int noMaxIndex = -1;
         int max = nums[0];
         for (int i = 1; i <= nums.length - 1; i++) {
-
             if (nums[i] < max) {
                 noMaxIndex = i;
             } else {

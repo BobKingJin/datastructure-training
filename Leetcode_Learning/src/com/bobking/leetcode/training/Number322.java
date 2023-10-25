@@ -19,7 +19,6 @@ public class Number322 {
         int res = -1;
         // 注意：每种面值的货币可以用任意张
         for (int k = 0; k * coins[i] <= rest; k++) {
-
             int next = recursion(coins, i + 1, rest - k * coins[i]);
             if (next != -1)
                 res = res == -1 ? next + k : Math.min(res, next + k);
@@ -45,7 +44,6 @@ public class Number322 {
         for (int i = N - 1; i >= 0; i--) {
             // 从左往右
             for (int rest = 0; rest <= amount; rest++) {
-
                 dp[i][rest] = -1;
                 // 不选 coins[i]
                 if (dp[i + 1][rest] != -1)
@@ -80,7 +78,6 @@ public class Number322 {
         for (int i = 1; i <= N; i++) {
             // 从左往右
             for (int rest = 0; rest <= amount; rest++) {
-
                 dp[i][rest] = -1;
                 // 不选 coins[i]
                 if (dp[i - 1][rest] != -1)

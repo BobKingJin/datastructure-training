@@ -57,7 +57,6 @@ public class Number297 {
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-
             root = queue.poll();
             if (root.left != null) {
                 res += root.val + "!";
@@ -86,8 +85,8 @@ public class Number297 {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(head);
         TreeNode node = null;
-        while (!queue.isEmpty()) {
 
+        while (!queue.isEmpty()) {
             node = queue.poll();
             node.left = generateTreeNodeByString(values[index++]);
             node.right = generateTreeNodeByString(values[index++]);

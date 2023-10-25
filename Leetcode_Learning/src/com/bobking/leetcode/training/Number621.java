@@ -12,6 +12,7 @@ public class Number621 {
         int[] temp = new int[26];
         int countMaxTask = 0;
         int maxTask = 0;
+
         for (char c : tasks) {
             temp[c - 'A']++;
             maxTask = Math.max(temp[c - 'A'], maxTask);

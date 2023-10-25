@@ -14,8 +14,8 @@ public class Number287 {
         // 例如：1  2  3  3  4  5  6 这里 7 个数，这里的判断是以 (1 + 6) / 2 = 3 为分界线
         int left = 1;
         int right = nums.length - 1;
-        while (left < right) {
 
+        while (left < right) {
             int mid = left + (right - left) / 2;
 
             int count = 0;

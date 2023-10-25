@@ -27,17 +27,14 @@ public class Number347 {
         // 例如：若 5 和 8 同时出现 4 次，因此这里用 list 数组来作为桶的实现
         ArrayList<Integer>[] buckets = new ArrayList[nums.length + 1];
         for (Integer key : map.keySet()) {
-
             int frequnce = map.get(key);
             if (buckets[frequnce] == null)
                 buckets[frequnce] = new ArrayList<Integer>();
-
             buckets[frequnce].add(key);
         }
         // 例如：list[6] = {8, 2}，那么说明 8 和 2 出现了 6 次
         // 从后往前
         for (int index = buckets.length - 1; res.size() < k; index--) {
-
             // 说明index这个数没有出现过
             if (buckets[index] == null)
                 continue;

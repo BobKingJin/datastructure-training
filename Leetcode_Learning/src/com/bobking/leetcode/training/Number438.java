@@ -33,7 +33,6 @@ public class Number438 {
 
         // 从 i = n 开始遍历
         for (int i = n; i < m; i++) {
-
             m_count[s.charAt(i) - 'a']++;
             // 往右移动一位，则前面的字符要去掉，第 (i - n) 位去掉
             m_count[s.charAt(i - n) - 'a']--;

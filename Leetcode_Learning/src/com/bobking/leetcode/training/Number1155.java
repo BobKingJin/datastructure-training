@@ -18,9 +18,8 @@ public class Number1155 {
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j <= target; j++) {
                 for (int l = 1; l <= k; l++) {
-                    if (j >= l) {
+                    if (j >= l)
                         f[i][j] = (f[i][j] + f[i - 1][j - l]) % mod;
-                    }
                 }
             }
         }
