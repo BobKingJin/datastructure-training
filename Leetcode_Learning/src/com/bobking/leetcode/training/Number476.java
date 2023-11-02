@@ -10,8 +10,7 @@ public class Number476 {
     public int findComplement1(int num) {
 
         // 返回对 num 的二进制表示取反的数，注意 num 的二进制表示是不包含前导零的
-        // 因此主要问题求得 num 最高位 11 的位置
-        //
+        // 因此主要问题求得 num 最高位 1 的位置
         // 一个简单的做法是：先对 num 进行「从高到低」的检查，找到最高位 1 的位置 s，然后再对 num 进行遍历，将低位到 s 位的位置执行逐位取反操作
 
         if (num == 0)
