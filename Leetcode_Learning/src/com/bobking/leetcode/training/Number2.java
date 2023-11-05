@@ -38,14 +38,11 @@ public class Number2 {
         int ca = 0;
 
         while (l1 != null || l2 != null) {
-
             count = ((l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + ca) % 10;
             ca = ((l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + ca) / 10;
-
             node = new ListNode(count);
             pre.next = node;
             pre = node;
-
             if (l1 != null)
                 l1 = l1.next;
             if (l2 != null)
