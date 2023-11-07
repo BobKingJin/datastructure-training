@@ -50,7 +50,6 @@ public class Number49 {
             // 因为所有源单词中的字母都恰好只用一次，因此不会出现重复字符
             for (char c : ch)
                 count[c - 'a']++;
-
             // 将每个出现次数大于 0 的字母和出现次数按顺序拼接成字符串，作为哈希表的键
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < count.length; i++) {
@@ -59,7 +58,6 @@ public class Number49 {
                     sb.append(count[i]);
                 }
             }
-
             if (map.containsKey(sb.toString())) {
                 map.get(sb.toString()).add(str);
             } else {

@@ -55,11 +55,9 @@ public class Number10 {
 
         for (int i = sLen - 1; i >= 0; i--) {
             for (int j = pLen - 2; j >= 0; j--) {
-
                 if (pChar[j + 1] != '*') {
                     dp[i][j] = (sChar[i] == pChar[j] || pChar[j] == '.') && dp[i + 1][j + 1];
                 } else {
-
                     int k = i;
                     while (k != sLen && (sChar[i] == pChar[j] || pChar[j] == '.')) {
                         if (dp[k][j + 2]) {

@@ -7,7 +7,7 @@ package com.bobking.leetcode.training;
 public class Number72 {
 
     // 参考：程序猿代码指南P230
-    // 空间压缩同见：程序猿代码指南P230
+    // 空间压缩同见: 程序猿代码指南P230
     public int minDistance(String word1, String word2) {
 
         if (word1 == null || word2 == null)
