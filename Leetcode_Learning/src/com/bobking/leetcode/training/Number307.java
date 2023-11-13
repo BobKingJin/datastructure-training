@@ -19,7 +19,6 @@ public class Number307 {
 
         // 算出前缀和 例如：preSum(7) = s(7) + s(6) + s(4)
         int query(int x) {
-
             int res = 0;
             for (int i = x; i > 0; i -= lowbit(i)) 
                 res += tree[i];
@@ -28,7 +27,6 @@ public class Number307 {
         }
 
         void add(int x, int u) {
-
             for (int i = x; i <= n; i += lowbit(i))
                 tree[i] += u;
         }
@@ -37,7 +35,6 @@ public class Number307 {
         int n;
 
         public NumArray(int[] nums) {
-            
             this.nums = nums;
             this.n = nums.length;
             this.tree = new int[n + 1];

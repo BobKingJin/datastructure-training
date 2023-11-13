@@ -16,6 +16,7 @@ public class Number287 {
         int right = nums.length - 1;
 
         while (left < right) {
+
             int mid = left + (right - left) / 2;
 
             int count = 0;

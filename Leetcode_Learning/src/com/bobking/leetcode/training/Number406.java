@@ -13,8 +13,8 @@ public class Number406 {
         if (people == null || people.length == 0 || people[0].length == 0)
             return new int[0][0];
 
-        // 1.排序规则：按照先 H 高度降序，K 个数升序排序
-        // 2.遍历排序后的数组，根据 K 插入到 K 的位置上
+        // 1.排序规则: 按照先 H 高度降序, K 个数升序排序
+        // 2.遍历排序后的数组, 根据 K 插入到 K 的位置上
         Arrays.sort(people, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {

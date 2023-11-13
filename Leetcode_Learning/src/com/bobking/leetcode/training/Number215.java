@@ -12,7 +12,6 @@ public class Number215 {
 
         // 维护一个长度为 k 的小根堆，那么小根堆的堆顶元素即为第 k 大的元素
         PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>(k, new Comparator<Integer>() {
-
             @Override
             public int compare(Integer o1, Integer o2) {
                 return o1.compareTo(o2);
@@ -39,7 +38,7 @@ public class Number215 {
         int left = 0;
         int right = nums.length - 1;
 
-        // 转换一下，第 k 大元素的索引是 len - k
+        // 转换一下, 第 k 大元素的索引是 len - k
         int target = nums.length - k;
 
         while (true) {
@@ -58,7 +57,6 @@ public class Number215 {
 
         // 在数组 nums 的子区间 [left, right] 执行 partition 操作，返回 nums[left] 排序以后应该在的位置
         // [left + 1, j] < nums[left]  (j, i] >= nums[left]
-
         int pivot = nums[left];
         // 认为 0 - j 已经排好序
         int j = left;

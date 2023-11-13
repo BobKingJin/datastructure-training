@@ -14,9 +14,9 @@ public class Number337 {
         // 偷root节点
         if (root.left != null)
             money += (rob1(root.left.left) + rob1(root.left.right));
-
         if (root.right != null)
             money += (rob1(root.right.left) + rob1(root.right.right));
+
         // 不偷root节点
         return Math.max(money, rob1(root.left) + rob1(root.right));
     }

@@ -21,7 +21,7 @@ public class Number416 {
 
         int target = sum / 2;
 
-        // dp[i][j] 表示从数组的 [0, i]下标范围内选取若干个正整数（可以是 0 个）
+        // dp[i][j] 表示从数组的 [0, i]下标范围内选取若干个正整数(可以是 0 个)
         // 是否存在一种选取方案使得被选取的正整数的和等于 j
         boolean[][] dp = new boolean[nums.length][target + 1];
 

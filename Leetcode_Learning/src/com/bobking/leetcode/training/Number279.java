@@ -50,7 +50,7 @@ public class Number279 {
         return dp[n];
     }
 
-    // 这里生成一个小于 n 的一个 list：1, 4, 9, 16......
+    // 这里生成一个小于 n 的一个 list: 1, 4, 9, 16......
     private List<Integer> generateSquaresList(int n) {
 
         List<Integer> squaresList = new ArrayList<Integer>();
