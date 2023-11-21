@@ -1,7 +1,6 @@
 package com.bobking.leetcode.training;
 
-import javafx.util.Pair;
-
+import java.util.AbstractMap;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
@@ -28,20 +27,20 @@ public class Number2386 {
         Arrays.sort(nums);
         // 大根堆
         // 维护子序列的和，以及（后续需要减去的）数字的下标 i
-        PriorityQueue<Pair<Long, Integer>> pq = new PriorityQueue<Pair<Long, Integer>>((a, b) -> Long.compare(b.getKey(), a.getKey()));
-        pq.offer(new Pair<Long, Integer>(sum, 0));
+        PriorityQueue<AbstractMap.SimpleEntry<Long, Integer>> pq = new PriorityQueue<AbstractMap.SimpleEntry<Long, Integer>>((a, b) -> Long.compare(b.getKey(), a.getKey()));
+        pq.offer(new AbstractMap.SimpleEntry<Long, Integer>(sum, 0));
 
         while (--k > 0) {
-            Pair<Long, Integer> p = pq.poll();
+            AbstractMap.SimpleEntry<Long, Integer> p = pq.poll();
             Long s = p.getKey();
             Integer i = p.getValue();
             // 每次弹出堆顶时，将子序列的和减去 nums[i]，并考虑是否保留 nums[i − 1]，从而满足子序列每个元素「选或不选」的要求
             if (i < nums.length) {
                 // 保留 nums[i - 1]
-                pq.offer(new Pair<Long, Integer>(s - nums[i], i + 1));
+                pq.offer(new AbstractMap.SimpleEntry<Long, Integer>(s - nums[i], i + 1));
                 if (i > 0)
                     // 不保留 nums[i - 1]，把之前减去的加回来
-                    pq.offer(new Pair<Long, Integer>(s - nums[i] + nums[i - 1], i + 1));
+                    pq.offer(new AbstractMap.SimpleEntry<Long, Integer>(s - nums[i] + nums[i - 1], i + 1));
             }
         }
         return pq.peek().getKey();

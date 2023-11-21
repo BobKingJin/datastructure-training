@@ -1,7 +1,5 @@
 package com.bobking.leetcode.training;
 
-import javafx.util.Pair;
-
 import java.util.*;
 
 public class Number559 {
@@ -45,20 +43,20 @@ public class Number559 {
     // bfs
     public int maxDepth2(Node root) {
 
-        Queue<Pair<Node, Integer>> stack = new LinkedList<Pair<Node, Integer>>();
+        Queue<AbstractMap.SimpleEntry<Node, Integer>> stack = new LinkedList<AbstractMap.SimpleEntry<Node, Integer>>();
 
         if (root != null)
-            stack.add(new Pair(root, 1));
+            stack.add(new AbstractMap.SimpleEntry(root, 1));
 
         int depth = 0;
         while (!stack.isEmpty()) {
-            Pair<Node, Integer> current = stack.poll();
+            AbstractMap.SimpleEntry<Node, Integer> current = stack.poll();
             root = current.getKey();
             int currentDepth = current.getValue();
             if (root != null) {
                 depth = Math.max(depth, currentDepth);
                 for (Node c : root.children)
-                    stack.add(new Pair(c, currentDepth + 1));
+                    stack.add(new AbstractMap.SimpleEntry(c, currentDepth + 1));
             }
         }
 

@@ -1,7 +1,6 @@
 package com.bobking.leetcode.training;
 
-import javafx.util.Pair;
-
+import java.util.AbstractMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,9 +21,9 @@ public class Number874 {
         int comLen = commands.length;
         int ans = 0;
 
-        Set<Pair<Integer, Integer>> obstacleSet = new HashSet<Pair<Integer, Integer>>();
+        Set<AbstractMap.SimpleEntry<Integer, Integer>> obstacleSet = new HashSet<AbstractMap.SimpleEntry<Integer, Integer>>();
         for (int i = 0; i < obstacles.length; i++)
-            obstacleSet.add(new Pair<Integer, Integer>(obstacles[i][0], obstacles[i][1]));
+            obstacleSet.add(new AbstractMap.SimpleEntry<Integer, Integer>(obstacles[i][0], obstacles[i][1]));
 
         for (int i = 0; i < comLen; i++) {
             if (commands[i] == -1) {
@@ -35,7 +34,7 @@ public class Number874 {
                 for (int j = 0; j < commands[i]; j++) {
                     int nx = curx + direx[curdire];
                     int ny = cury + direy[curdire];
-                    if (!obstacleSet.contains(new Pair<Integer, Integer>(nx, ny))) {
+                    if (!obstacleSet.contains(new AbstractMap.SimpleEntry<Integer, Integer>(nx, ny))) {
                         curx = nx;
                         cury = ny;
                         ans = Math.max(ans, curx * curx + cury * cury);
