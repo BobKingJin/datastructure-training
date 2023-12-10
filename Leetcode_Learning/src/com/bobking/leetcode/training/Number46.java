@@ -31,8 +31,8 @@ public class Number46 {
             result.add(new ArrayList<Integer>(list));
             return;
         }
-        // 在递归的时候，每次都是从头开始遍历的，因此需要 bool 数组来进行去重
-        // 因为例如：[1, 2, 3] 可以第一个为 2，但是此时还是可以取到 1，所以每次都是重头开始取值
+        // 在递归的时候, 每次都是从头开始遍历的, 因此需要 bool 数组来进行去重
+        // 因为例如：[1, 2, 3] 可以第一个为 2, 但是此时还是可以取到 1, 所以每次都是重头开始取值
         for (int i = 0; i < nums.length; i++) {
             if (!visited[i]) {
                 list.add(nums[i]);

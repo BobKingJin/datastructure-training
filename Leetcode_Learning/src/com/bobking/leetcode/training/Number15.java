@@ -99,7 +99,7 @@ public class Number15 {
             return res;
 
         List<Integer> list = new ArrayList<Integer>();
-        // 不排序，进行递归
+        // 不排序, 进行递归
         backTrace(nums, 0, 0, list, res);
         return res;
     }

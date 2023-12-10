@@ -45,7 +45,7 @@ public class Number17 {
         String letters = map[digits.charAt(index) - '0'];
         for (int i = 0; i < letters.length(); i++) {
             sb.append(letters.charAt(i));
-            // 注意角标变化，是不能在同一个数字上面选择多个字母的，一个数字上面只能选择一个字母
+            // 注意角标变化, 是不能在同一个数字上面选择多个字母的, 一个数字上面只能选择一个字母
             backTrace(digits, index + 1, sb, result);
             // 回溯
             sb.deleteCharAt(sb.length() - 1);
@@ -67,7 +67,7 @@ public class Number17 {
         for (int i = 0; i < digits.length(); i++) {
             String letters = map[digits.charAt(i) - '0'];
             for (int j = 0; j < result.size(); j++) {
-                // 注意：这里提前进行了remove操作，相当于队列的出队操作
+                // 注意：这里提前进行了remove操作, 相当于队列的出队操作
                 String tmp = result.remove(0);
                 for (int k = 0; k < letters.length(); k++)
                     result.add(tmp + letters.charAt(k));

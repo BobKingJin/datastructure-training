@@ -34,6 +34,7 @@ public class Number104 {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
         int res = 0;
+
         while (!queue.isEmpty()) {
             int size = queue.size();
             // 按层遍历

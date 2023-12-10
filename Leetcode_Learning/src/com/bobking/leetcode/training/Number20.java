@@ -18,7 +18,7 @@ public class Number20 {
             if (ch == '(' || ch == '{' || ch == '[') {
                 stack.push(ch);
             } else {
-                // 如果是右括号，并且此时栈不为空
+                // 如果是右括号, 并且此时栈不为空
                 if (!stack.isEmpty()) {
                     if (ch == ')') {
                         if (stack.pop() != '(')
@@ -30,7 +30,7 @@ public class Number20 {
                         if (stack.pop() != '[')
                             return false;
                     }
-                    // 此时栈为空，但却来了个右括号，也直接返回 false
+                    // 此时栈为空, 但却来了个右括号, 也直接返回 false
                 } else {
                     return false;
                 }

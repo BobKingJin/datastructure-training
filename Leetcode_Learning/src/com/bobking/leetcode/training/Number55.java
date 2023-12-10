@@ -9,6 +9,7 @@ public class Number55 {
             return false;
 
         int mostFarDistance = 0;
+
         for (int i = 0; i < nums.length; i++) {
             // 如果当前位置可以到达
             if (i <= mostFarDistance) {

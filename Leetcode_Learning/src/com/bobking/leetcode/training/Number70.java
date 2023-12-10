@@ -26,6 +26,7 @@ public class Number70 {
         int res = 2;
         int pre = 1;
         int temp = 0;
+
         for (int i = 3; i <= n; i++) {
             temp = res;
             res += pre;

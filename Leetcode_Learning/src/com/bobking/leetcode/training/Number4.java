@@ -74,7 +74,7 @@ public class Number4 {
             // 记录上一次遍历到的数
             left = right;
             //                因为会先判断 或条件 的左边 因此当 bStart >= n 时不会执行后面
-            //                这个位置注意：bStart >= n 也是一种取 right = A[aStart++] 的情况
+            //                这个位置注意: bStart >= n 也是一种取 right = A[aStart++] 的情况
             if (aStart < m && (bStart >= n || A[aStart] < B[bStart])) {
                 right = A[aStart++];
             } else {
