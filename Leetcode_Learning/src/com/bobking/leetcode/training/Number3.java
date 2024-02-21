@@ -31,7 +31,6 @@ public class Number3 {
             res = Math.max(res, len);
             map[ch[i]] = i;
         }
-
         return res;
     }
 
@@ -49,11 +48,9 @@ public class Number3 {
         for (int i = 0; i < s.length(); i++) {
             if (map.containsKey(s.charAt(i)))
                 left = Math.max(left, map.get(s.charAt(i)) + 1);
-
             map.put(s.charAt(i), i);
             res = Math.max(res, i - left + 1);
         }
-
         return res;
     }
 
