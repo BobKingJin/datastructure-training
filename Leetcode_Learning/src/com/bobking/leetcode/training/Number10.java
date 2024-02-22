@@ -10,7 +10,6 @@ public class Number10 {
 
         char[] sChar = s.toCharArray();
         char[] pChar = p.toCharArray();
-
         return recursion(sChar, 0, pChar, 0);
     }
 
