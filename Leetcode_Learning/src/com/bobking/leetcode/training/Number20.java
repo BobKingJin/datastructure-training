@@ -30,8 +30,7 @@ public class Number20 {
                         if (stack.pop() != '[')
                             return false;
                     }
-                    // 此时栈为空, 但却来了个右括号, 也直接返回 false
-                } else {
+                } else { // 此时栈为空, 但却来了个右括号, 也直接返回 false
                     return false;
                 }
             }

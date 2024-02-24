@@ -82,7 +82,6 @@ public class  Number34 {
         int mid = 0;
 
         while (l <= h) {
-
             mid = l + (h - l) / 2;
             if (nums[mid] > target || (lower && nums[mid] >= target)) {
                 h = mid - 1;

@@ -8,6 +8,7 @@ public class Number33 {
 
         if (nums == null || nums.length < 1)
             return -1;
+
         if (nums.length == 1)
             return nums[0] == target ? 0 : -1;
 

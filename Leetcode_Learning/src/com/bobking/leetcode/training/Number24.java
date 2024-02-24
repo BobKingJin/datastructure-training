@@ -22,6 +22,7 @@ public class Number24 {
         ListNode pre = new ListNode(0);
         pre.next = head;
         ListNode temp = pre;
+
         while (temp.next != null && temp.next.next != null) {
             ListNode start = temp.next;
             ListNode end = temp.next.next;
