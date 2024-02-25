@@ -29,12 +29,10 @@ public class Number76 {
             if (match == 0) {
                 while (map[ch1[left]] < 0)
                     map[ch1[left++]]++;
-
                 int len = right - left + 1;
                 minLen = Math.min(minLen, len);
                 if (minLen == len)
                     res = s.substring(left, right + 1);
-
                 match++;
                 map[ch1[left++]]++;
             }

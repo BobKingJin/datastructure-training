@@ -13,22 +13,22 @@ public class Number46 {
     // 对比Number17
     public List<List<Integer>> permute(int[] nums) {
 
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
 
         if (nums == null || nums.length == 0)
-            return result;
+            return res;
 
         List<Integer> list = new ArrayList<Integer>();
         // 已经访问过的，不允许重复访问
         boolean[] visited = new boolean[nums.length];
-        backTrack(0, nums, visited, list, result);
-        return result;
+        backTrack(0, nums, visited, list, res);
+        return res;
     }
 
-    private void backTrack(int index, int[] nums, boolean[] visited, List<Integer> list, List<List<Integer>> result) {
+    private void backTrack(int index, int[] nums, boolean[] visited, List<Integer> list, List<List<Integer>> res) {
 
         if (list.size() == nums.length) {
-            result.add(new ArrayList<Integer>(list));
+            res.add(new ArrayList<Integer>(list));
             return;
         }
         // 在递归的时候, 每次都是从头开始遍历的, 因此需要 bool 数组来进行去重
@@ -37,7 +37,7 @@ public class Number46 {
             if (!visited[i]) {
                 list.add(nums[i]);
                 visited[i] = true;
-                backTrack(index + 1, nums, visited, list, result);
+                backTrack(index + 1, nums, visited, list, res);
                 visited[i] = false;
                 list.remove(list.size() - 1);
             }
