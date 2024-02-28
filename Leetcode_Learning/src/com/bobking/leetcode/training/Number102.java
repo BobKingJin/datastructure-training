@@ -12,7 +12,6 @@ public class Number102 {
     public List<List<Integer>> levelOrder1(TreeNode root) {
 
         // 主要问题: 何时换行?
-
         List<List<Integer>> res = new ArrayList<List<Integer>>();
 
         if (root == null)

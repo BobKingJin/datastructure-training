@@ -13,7 +13,6 @@ public class Number101 {
 
         if (root == null)
             return true;
-
         // 调用递归函数，比较左节点，右节点
         return dfs(root.left, root.right);
     }
@@ -63,7 +62,6 @@ public class Number101 {
             queue.add(left.right);
             queue.add(right.left);
         }
-
         return true;
     }
 
