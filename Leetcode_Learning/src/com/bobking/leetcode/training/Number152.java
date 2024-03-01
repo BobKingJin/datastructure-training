@@ -1,5 +1,7 @@
 package com.bobking.leetcode.training;
 
+import java.util.Arrays;
+
 public class Number152 {
 
     // 参考：程序猿代码指南P402
@@ -21,12 +23,6 @@ public class Number152 {
             min[i] = Math.min(min[i - 1] * nums[i], Math.min(max[i - 1] * nums[i], nums[i]));
         }
 
-        int res = max[0];
-        for (int i = 1; i < max.length; i++) {
-            if (max[i] > res)
-                res = max[i];
-        }
-
-        return res;
+        return Arrays.stream(max).max().getAsInt();
     }
 }

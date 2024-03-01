@@ -43,7 +43,6 @@ public class Number208 {
                 index = ch[i] - 'a';
                 if (node.map[index] == null)
                     node.map[index] = new TrieNode();
-
                 node = node.map[index];
                 node.path++;
             }
