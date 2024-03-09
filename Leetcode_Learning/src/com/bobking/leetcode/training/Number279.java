@@ -22,7 +22,6 @@ public class Number279 {
                 // 后面依赖前面
                 dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
         }
-
         return dp[n];
     }
 
@@ -35,18 +34,14 @@ public class Number279 {
         List<Integer> squaresList = generateSquaresList(n);
 
         for (int i = 1; i <= n; i++) {
-
             int min = Integer.MAX_VALUE;
-
             for (Integer square : squaresList) {
                 if (square > i)
                     break;
                 min = Math.min(min, dp[i - square] + 1);
             }
-
             dp[i] = min;
         }
-
         return dp[n];
     }
 

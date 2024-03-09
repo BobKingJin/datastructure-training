@@ -21,6 +21,7 @@ public class Number301 {
         // 当前层的
         Set<String> level = new HashSet<String>();
         level.add(s);
+
         while (true) {
             // 过滤不合法的
             List<String> valid = level.stream().filter(this::isValid).collect(Collectors.toList());

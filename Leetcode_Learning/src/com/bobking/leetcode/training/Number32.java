@@ -25,7 +25,6 @@ public class Number32 {
                 }
             }
         }
-
         return res;
     }
 
@@ -51,7 +50,6 @@ public class Number32 {
                 }
             }
         }
-
         return res;
     }
 
@@ -81,7 +79,6 @@ public class Number32 {
                 }
             }
         }
-
         return res;
     }
 
@@ -102,7 +99,6 @@ public class Number32 {
             } else {
                 right++;
             }
-
             if (left == right) {
                 res = Math.max(res, 2 * right);
                 // 当 right > left 时，即以当前字符结尾不可能构成有效括号

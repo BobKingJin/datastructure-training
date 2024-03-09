@@ -23,7 +23,6 @@ public class Number322 {
             if (next != -1)
                 res = res == -1 ? next + k : Math.min(res, next + k);
         }
-
         return res;
     }
 
@@ -92,7 +91,6 @@ public class Number322 {
                 }
             }
         }
-
         return dp[N][amount];
     }
 }

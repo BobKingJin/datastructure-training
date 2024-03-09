@@ -36,7 +36,6 @@ public class  Number34 {
                         break;
                     }
                 }
-
                 return res;
             } else if (nums[mid] < target) {
                 l = mid + 1;
@@ -44,7 +43,6 @@ public class  Number34 {
                 h = mid - 1;
             }
         }
-
         return res;
     }
 
@@ -67,7 +65,6 @@ public class  Number34 {
             res[1] = rightIndex;
             return res;
         }
-
         return res;
     }
 
@@ -90,7 +87,6 @@ public class  Number34 {
                 l = mid + 1;
             }
         }
-
         return res;
     }
 

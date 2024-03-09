@@ -16,15 +16,12 @@ public class Number287 {
         int right = nums.length - 1;
 
         while (left < right) {
-
             int mid = left + (right - left) / 2;
-
             int count = 0;
             for (int num : nums) {
                 if (num <= mid)
                     count += 1;
             }
-
             // 根据抽屉原理
             if (count > mid) {
                 // 重复元素位于区间 [left..mid]
@@ -34,7 +31,6 @@ public class Number287 {
                 left = mid + 1;
             }
         }
-
         return left;
     }
 

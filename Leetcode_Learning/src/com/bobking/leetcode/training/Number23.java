@@ -110,7 +110,6 @@ public class Number23 {
             if (f.ptr.next != null)
                 queue.offer(new Status(f.ptr.next.val, f.ptr.next));
         }
-
         return head.next;
     }
 

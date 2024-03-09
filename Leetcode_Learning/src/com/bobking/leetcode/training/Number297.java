@@ -15,7 +15,6 @@ public class Number297 {
         String res = root.val + "!";
         res += serialize1(root.left);
         res += serialize1(root.right);
-
         return res;
     }
 
@@ -40,7 +39,6 @@ public class Number297 {
         TreeNode head = new TreeNode(Integer.valueOf(value));
         head.left = reconByPreOrder1(queue);
         head.right = reconByPreOrder1(queue);
-
         return head;
     }
 

@@ -35,7 +35,6 @@ public class Number312 {
             max = Math.max(max,
                     process(help, L, i - 1) + process(help, i + 1, R) + help[L - 1] * help[i] * help[R + 1]);
         }
-
         return max;
     }
 
