@@ -19,7 +19,6 @@ public class Number79 {
                     return true;
             }
         }
-
         return false;
     }
 
@@ -28,7 +27,6 @@ public class Number79 {
         if (row >= 0 && row <= board.length - 1 && column >= 0 && column <= board[0].length - 1) {
             if (index == word.length() - 1)
                 return board[row][column] == word.charAt(index);
-
             if (!marked[row][column] && board[row][column] == word.charAt(index)) {
                 marked[row][column] = true;
                 // 上下左右

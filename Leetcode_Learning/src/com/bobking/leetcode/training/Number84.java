@@ -39,7 +39,6 @@ public class Number84 {
             int curArea = (heights.length - k - 1) * heights[j];
             maxArea = Math.max(maxArea, curArea);
         }
-
         return maxArea;
     }
 
@@ -75,7 +74,6 @@ public class Number84 {
             }
             stack.addLast(i);
         }
-
         return res;
     }
 

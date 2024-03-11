@@ -45,7 +45,6 @@ public class Number72 {
                 dp[i][j] = Math.min(dp[i][j], dp[i - 1][j] + 1);
             }
         }
-
         return dp[row - 1][column - 1];
     }
 }

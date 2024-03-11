@@ -20,7 +20,6 @@ public class Number55 {
             if (mostFarDistance >= nums.length - 1)
                 return true;
         }
-
         return false;
     }
 }

@@ -18,7 +18,6 @@ public class Number85 {
                 height[j] = matrix[i][j] == '0' ? 0 : height[j] + 1;
             res = Math.max(res, maxRecFromBottom(height));
         }
-
         return res;
     }
 
@@ -48,7 +47,6 @@ public class Number85 {
             int curArea = (height.length - k - 1) * height[j];
             maxArea = Math.max(maxArea, curArea);
         }
-
         return maxArea;
     }
 }

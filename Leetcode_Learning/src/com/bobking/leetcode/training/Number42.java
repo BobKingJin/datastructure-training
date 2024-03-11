@@ -27,7 +27,6 @@ public class Number42 {
                 }
             }
         }
-
         return sum;
     }
 
@@ -152,7 +151,6 @@ public class Number42 {
             // 指针后移
             current++;
         }
-
         return sum;
     }
 

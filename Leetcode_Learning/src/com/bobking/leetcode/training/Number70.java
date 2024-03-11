@@ -32,7 +32,6 @@ public class Number70 {
             res += pre;
             pre = temp;
         }
-
         return res;
     }
 
@@ -64,7 +63,6 @@ public class Number70 {
             }
             tmp = multiMatrix(tmp, tmp);
         }
-
         return res;
     }
 
@@ -78,7 +76,6 @@ public class Number70 {
                 }
             }
         }
-
         return res;
     }
 }
