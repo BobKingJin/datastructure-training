@@ -25,7 +25,6 @@ public class Number128 {
                     max = Math.max(max, merge(map, nums[i], nums[i] + 1));
             }
         }
-
         return max;
     }
 
@@ -65,7 +64,6 @@ public class Number128 {
             }
             res = Math.max(res, curStreak);
         }
-
         return res;
     }
 }

@@ -26,6 +26,7 @@ public class Number148 {
         // 创建一个假头节点
         ListNode node = new ListNode(0);
         ListNode res = node;
+
         while (left != null && right != null) {
             if (left.val > right.val) {
                 node.next = right;
@@ -38,7 +39,6 @@ public class Number148 {
         }
 
         node.next = left == null ? right : left;
-
         return res.next;
     }
 
@@ -71,7 +71,6 @@ public class Number148 {
             }
             tail = small;
         }
-
         return head;
     }
 
@@ -81,6 +80,7 @@ public class Number148 {
         ListNode smallPre = null;
         ListNode cur = head.next;
         ListNode pre = head;
+
         while (cur != null) {
             if (cur.val < small.val) {
                 small = cur;
@@ -89,7 +89,6 @@ public class Number148 {
             pre = pre.next;
             cur = cur.next;
         }
-
         return smallPre;
     }
 }

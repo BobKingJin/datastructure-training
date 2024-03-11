@@ -97,7 +97,6 @@ public class Number146 {
                     map.remove(last.key);
                 }
             }
-
             cache.addFirst(x);
             map.put(key, x);
         }

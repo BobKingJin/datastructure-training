@@ -28,6 +28,7 @@ public class Number102 {
 
         while (!queue.isEmpty()) {
             root = queue.poll();
+            list.add(root.val);
             if (root.left != null) {
                 queue.offer(root.left);
                 nLast = root.left;
@@ -36,14 +37,12 @@ public class Number102 {
                 queue.offer(root.right);
                 nLast = root.right;
             }
-            list.add(root.val);
             if (root == last) {
                 res.add(list);
                 list = new ArrayList<Integer>();
                 last = nLast;
             }
         }
-
         return res;
     }
 
@@ -70,7 +69,6 @@ public class Number102 {
             }
             res.add(list);
         }
-
         return res;
     }
 }

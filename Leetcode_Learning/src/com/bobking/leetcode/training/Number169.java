@@ -8,31 +8,31 @@ public class Number169 {
 
     public int majorityElement(int[] nums) {
 
-        if(nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0)
             return 0;
 
         int times = 0;
         int candidate = 0;
 
-        for(int i = 0; i < nums.length; i++){
-            if(times == 0){
+        for (int i = 0; i < nums.length; i++) {
+            if (times == 0) {
                 candidate = nums[i];
                 times = 1;
-            }else if(nums[i] == candidate){
+            } else if (nums[i] == candidate) {
                 times++;
-            }else{
+            } else {
                 times--;
             }
         }
 
         times = 0;
 
-        for(int i = 0; i < nums.length; i++){
-            if(nums[i] == candidate)
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == candidate)
                 times++;
         }
 
-        if(times > nums.length / 2)
+        if (times > nums.length / 2)
             return candidate;
 
         return 0;

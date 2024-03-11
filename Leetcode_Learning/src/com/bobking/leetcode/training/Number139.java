@@ -32,7 +32,6 @@ public class Number139 {
                 }
             }
         }
-
         return dp[s.length()];
     }
 
@@ -67,7 +66,6 @@ public class Number139 {
                 }
             }
         }
-
         return false;
     }
 

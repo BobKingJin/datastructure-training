@@ -21,7 +21,6 @@ public class Number200 {
                 }
             }
         }
-
         return res;
     }
 

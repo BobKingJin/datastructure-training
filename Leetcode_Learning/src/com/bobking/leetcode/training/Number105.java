@@ -28,7 +28,6 @@ public class Number105 {
                 break;
             }
         }
-
         return root;
     }
 
