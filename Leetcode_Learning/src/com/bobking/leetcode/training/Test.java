@@ -276,8 +276,8 @@ public class Test {
             System.out.println(gcBean.getName());
 
 
-
-
+        int bit = Integer.highestOneBit(8) >> 1;
+        System.out.println(bit);
 
 
 

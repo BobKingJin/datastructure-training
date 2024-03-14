@@ -58,7 +58,7 @@ public class Number215 {
         // 在数组 nums 的子区间 [left, right] 执行 partition 操作，返回 nums[left] 排序以后应该在的位置
         // [left + 1, j] < nums[left]  (j, i] >= nums[left]
         int pivot = nums[left];
-        // 认为 0 - j 已经排好序
+        // 认为 left - j 已经排好序
         int j = left;
         for (int i = left + 1; i <= right; i++) {
             if (nums[i] < pivot) {

@@ -23,7 +23,7 @@ public class Number208 {
          * Initialize your data structure here.
          */
         public Trie() {
-            root = new TrieNode();
+            this.root = new TrieNode();
         }
 
         /**
