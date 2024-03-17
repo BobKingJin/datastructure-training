@@ -27,6 +27,6 @@ public class Number406 {
             // 核心思想：高个子先站好位，矮个子插入到 K 位置上，前面肯定有 K 个高个子，矮个子再插到前面也满足 K 的要求
             queue.add(p[1], p);
 
-        return queue.toArray(new int[queue.size()][]);
+        return queue.toArray(new int[queue.size()][1]);
     }
 }

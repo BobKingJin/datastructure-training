@@ -279,6 +279,8 @@ public class Test {
         int bit = Integer.highestOneBit(8) >> 1;
         System.out.println(bit);
 
+        System.out.println("" + 6);
+
 
 
 
