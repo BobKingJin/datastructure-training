@@ -15,7 +15,6 @@ public class Number461 {
             int n = y >>> i;
             result += (((m ^ n) % 2) == 0 ? 0 : 1);
         }
-
         return result;
     }
 
@@ -30,7 +29,6 @@ public class Number461 {
                 result++;
             xor = xor >>> 1;
         }
-
         return result;
     }
 
@@ -43,7 +41,6 @@ public class Number461 {
             result++;
             xor = xor & (xor - 1);
         }
-
         return result;
     }
 }

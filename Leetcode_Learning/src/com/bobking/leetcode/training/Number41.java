@@ -15,7 +15,6 @@ public class Number41 {
         int r = nums.length;
 
         while (l < r) {
-
             if (nums[l] == l + 1) {
                 l++;
                 //                                   nums[nums[l] - 1] == nums[l] 表示重复了
@@ -31,7 +30,6 @@ public class Number41 {
     }
 
     private void swap(int[] nums, int i, int j) {
-
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;

@@ -26,20 +26,16 @@ public class Number50 {
         }
         // 例如：3 的 10 次方  10 的二进制为：1010 即 3 的 10 次方 = 3 的 8 次方 * 3 的 2 次方
         while (exp != 0) {
-
             if ((exp & 1) == 1)
                 res *= x;
-
             x *= x;
             exp = exp >>> 1;
         }
-
         return n > 0 ? res : 1.0 / res;
     }
 
     // 参考：https://leetcode-cn.com/problems/powx-n/solution/powx-n-by-leetcode-solution/
     public double myPow2(double x, int n) {
-
         return n > 0 ? quickMul(x, n) : 1.0 / quickMul(x, -n);
     }
 

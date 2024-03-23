@@ -11,7 +11,6 @@ public class Number494 {
             return 0;
 
         recursion(nums, 0, 0, S);
-
         return res;
     }
 
@@ -65,7 +64,6 @@ public class Number494 {
                 dp[i][j] = dp[i - 1][l] + dp[i - 1][r];
             }
         }
-
         return dp[nums.length - 1][sum + s];
     }
 }

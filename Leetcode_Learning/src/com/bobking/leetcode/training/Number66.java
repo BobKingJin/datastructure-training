@@ -12,7 +12,6 @@ public class Number66 {
             return digits;
 
         for (int i = digits.length - 1; i >= 0; i--) {
-
             digits[i]++;
             digits[i] = digits[i] % 10;
             // 没产生进位，直接 digits[digits.length - 1] + 1 返回即可

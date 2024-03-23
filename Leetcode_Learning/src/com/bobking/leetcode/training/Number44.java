@@ -22,18 +22,15 @@ public class Number44 {
 
         for(int i = 1; i <= m; i++){
             for(int j = 1; j <= n; j++){
-
                 // 当前字符需要匹配
                 if(s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '?')
                     f[i][j] = f[i - 1][j - 1];
-
                 if(p.charAt(j - 1) == '*')
                     // 这个位置不是 f[i][j] = f[i][j - 1] || f[i - 1][j - 1] 的原因是因为 * 可以匹配任意多个前面的字符
                     // 例如： s = adceb p = a*b 那么考虑的是 f[i - 1][j] 即 * 可以匹配字符串 dce
                     f[i][j] = f[i][j - 1] || f[i - 1][j];
             }
         }
-
         return f[m][n];
     }
 }

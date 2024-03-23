@@ -39,7 +39,6 @@ public class Number438 {
             if (Arrays.equals(m_count, n_count))
                 res.add(i - n + 1);
         }
-
         return res;
     }
 
@@ -62,7 +61,6 @@ public class Number438 {
 
         int left = 0;
         for (int right = 0; right < m; right++) {
-
             int curRight = s.charAt(right) - 'a';
             m_count[curRight]++;
 
@@ -72,11 +70,9 @@ public class Number438 {
                 m_count[curLeft]--;
                 left++;
             }
-
             if (right - left + 1 == n)
                 res.add(left);
         }
-
         return res;
     }
 }

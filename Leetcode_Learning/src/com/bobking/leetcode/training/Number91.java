@@ -24,7 +24,6 @@ public class Number91 {
 
         // 从前往后
         for (int i = 1; i < s.length(); i++) {
-
             int temp = cur;
             if (s.charAt(i) == '0') {
                 if (s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2') {
@@ -76,7 +75,6 @@ public class Number91 {
             if ((ten * 10 + one) <= 26)
                 part2 = recursion1(s, index + 2);
         }
-
         return part1 + part2;
     }
 

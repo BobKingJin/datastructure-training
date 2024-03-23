@@ -36,7 +36,6 @@ public class Number29 {
             divisor = -divisor;
 
         int res = div(dividend, divisor);
-
         return positive ? res : -res;
     }
 
@@ -59,7 +58,6 @@ public class Number29 {
             // 除数也翻倍
             b = b + b;
         }
-
         return count + div(dividend - b, divisor);
     }
 

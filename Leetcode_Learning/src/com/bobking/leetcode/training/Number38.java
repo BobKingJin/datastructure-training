@@ -13,8 +13,8 @@ public class Number38 {
         // 定义变量 cur 记录当前项，初始化为 '1'
         StringBuffer pre = new StringBuffer("1");
         StringBuffer cur = new StringBuffer("1");
-        for (int i = 1; i < n; i++) {
 
+        for (int i = 1; i < n; i++) {
             pre = cur;
             cur = new StringBuffer();
             // 定义双指针 start， end 均指向序列项的头部，这里用于统计元素出现的次数
@@ -22,18 +22,15 @@ public class Number38 {
             int end = 0;
             // 开始遍历前一项，开始描述
             while (end < pre.length()) {
-
                 // 从左往右遍历 pre，当元素相同时，移动 end 指针，直至元素不相同时，那么此时 end - start 就是相同元素的个数
                 // 而 start 指针指向的元素就是重复的元素，进行拼接，cur += str(end - start) + pre[start]
                 while (end < pre.length() && pre.charAt(start) == pre.charAt(end))
                     end++;
-
                 // 元素出现次数与元素进行拼接
                 cur = cur.append(Integer.toString(end - start)).append(pre.charAt(start));
                 start = end;
             }
         }
-
         return cur.toString();
     }
 
@@ -55,7 +52,6 @@ public class Number38 {
             }
             res = cur;
         }
-
         return res;
     }
 
