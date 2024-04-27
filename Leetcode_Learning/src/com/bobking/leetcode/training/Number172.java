@@ -18,7 +18,6 @@ public class Number172 {
                 }
             }
         }
-
         return count;
     }
 }

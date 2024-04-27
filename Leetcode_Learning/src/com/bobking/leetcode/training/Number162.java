@@ -18,6 +18,7 @@ public class Number162 {
         // 去头去尾
         int left = 1;
         int right = nums.length - 2;
+
         while (left < right) {
             int mid = (left + right) / 2;
             if (nums[mid - 1] > nums[mid]) {
@@ -28,7 +29,6 @@ public class Number162 {
                 return mid;
             }
         }
-
         return left;
     }
 }

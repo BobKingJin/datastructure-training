@@ -41,7 +41,6 @@ public class Number210 {
             Integer head = queue.poll();
             res[count] = head;
             count++;
-
             Set<Integer> successors = adj[head];
             for (Integer nextCourse : successors) {
                 inDegree[nextCourse]--;
@@ -110,7 +109,7 @@ public class Number210 {
 
     /**
      * 注意这个 dfs 方法的语义
-     *
+     * <p>
      * i：前访问的课程结点
      * marked：如果 == 1 表示正在访问中，如果 == 2 表示已经访问完了
      * true：表示图中存在环，false 表示访问过了，不用再访问了

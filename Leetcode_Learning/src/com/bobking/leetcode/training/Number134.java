@@ -16,7 +16,7 @@ public class Number134 {
 
         for (int i = 0; i < len; i++) {
             spare += gas[i] - cost[i];
-            if (spare < minSpare) {
+            if (spare <= minSpare) {
                 minSpare = spare;
                 minIndex = i;
             }

@@ -54,15 +54,12 @@ public class Number212 {
 
         // 上下左右
         for (int[] d : dirs) {
-
             int dx = i + d[0];
             int dy = j + d[1];
             if (dx < 0 || dx >= m || dy < 0 || dy >= n)
                 continue;
-
             if (vis[dx][dy])
                 continue;
-
             vis[dx][dy] = true;
             sb.append(board[dx][dy]);
             dfs(board, dx, dy, sb);

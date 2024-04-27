@@ -11,7 +11,6 @@ public class Number191 {
             res += n & 1;
             n >>>= 1;
         }
-
         return res;
     }
 
@@ -24,7 +23,6 @@ public class Number191 {
             n &= (n - 1);
             res++;
         }
-
         return res;
     }
 }

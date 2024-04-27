@@ -28,7 +28,6 @@ public class Number215 {
                 }
             }
         }
-
         return minHeap.peek();
     }
 

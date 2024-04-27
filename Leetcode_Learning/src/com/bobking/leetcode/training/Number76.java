@@ -38,7 +38,6 @@ public class Number76 {
             }
             right++;
         }
-
         return res;
     }
 }

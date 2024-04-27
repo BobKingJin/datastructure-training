@@ -40,20 +40,17 @@ public class Number116 {
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 Node node = queue.poll();
                 if (i < size - 1)
                     node.next = queue.peek();
-
                 if (node.left != null)
                     queue.offer(root.left);
                 if (node.right != null)
                     queue.offer(root.right);
             }
         }
-
         return root;
     }
 
@@ -66,19 +63,15 @@ public class Number116 {
         // 当第 N 层节点的 next 指针全部建立完成后 N 层，建立第 N + 1 层节点的 next 指针
         Node leftMost = root;
         while (leftMost.left != null) {
-
             Node head = leftMost;
-
             while (head != null) {
                 head.left.next = head.right;
                 if (head.next != null)
                     head.right.next = head.next.left;
                 head = head.next;
             }
-
             leftMost = leftMost.left;
         }
-
         return root;
     }
 
@@ -90,13 +83,11 @@ public class Number116 {
 
         // 先序遍历
         if (root.left != null) {
-
             root.left.next = root.right;
             root.right.next = root.next == null ? null : root.next.left;
             connect3(root.left);
             connect3(root.right);
         }
-
         return root;
     }
 }

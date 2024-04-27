@@ -25,10 +25,8 @@ public class Number140 {
         for (int right = 1; right <= len; right++) {
             // 如果单词集合中的单词长度都不长，从后向前遍历是更快的
             for (int left = right - 1; left >= 0; left--) {
-                // substring 不截取 s[right]，dp[left] 的结果不包含 s[left]
                 if (wordSet.contains(s.substring(left, right)) && dp[left]) {
                     dp[right] = true;
-                    // 一旦得到 dp[right] = true，不必再计算下去
                     break;
                 }
             }
@@ -38,12 +36,10 @@ public class Number140 {
         List<String> res = new ArrayList<String>();
 
         if (dp[len]) {
-
             Deque<String> path = new ArrayDeque<String>();
             dfs(s, len, wordSet, dp, path, res);
             return res;
         }
-
         return res;
     }
 
@@ -59,7 +55,6 @@ public class Number140 {
         for (int i = len - 1; i >= 0; i--) {
             String suffix = s.substring(i, len);
             if (wordSet.contains(suffix) && dp[i]) {
-
                 path.addFirst(suffix);
                 dfs(s, i, wordSet, dp, path, res);
                 // 回溯

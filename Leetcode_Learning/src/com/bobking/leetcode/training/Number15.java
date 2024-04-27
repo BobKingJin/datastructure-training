@@ -99,7 +99,7 @@ public class Number15 {
             return res;
 
         List<Integer> list = new ArrayList<Integer>();
-        // 不排序, 进行递归
+        Arrays.sort(nums);
         backTrace(nums, 0, 0, list, res);
         return res;
     }
@@ -117,13 +117,15 @@ public class Number15 {
 
         // 以每个角标为起点
         for (int i = index; i < nums.length; i++) {
-            count += nums[i];
-            list.add(nums[i]);
-            // (index + 1) 即表示不会重复取同一个角标上面的数
-            backTrace(nums, i + 1, count, list, res);
-            // 回溯
-            list.remove(list.size() - 1);
-            count -= nums[i];
+            if (i == index || nums[i] != nums[i - 1]) {
+                count += nums[i];
+                list.add(nums[i]);
+                // (index + 1) 即表示不会重复取同一个角标上面的数
+                backTrace(nums, i + 1, count, list, res);
+                // 回溯
+                list.remove(list.size() - 1);
+                count -= nums[i];
+            }
         }
     }
 

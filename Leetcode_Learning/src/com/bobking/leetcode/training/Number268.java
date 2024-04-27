@@ -16,7 +16,6 @@ public class Number268 {
             if (nums[i] != i)
                 return i;
         }
-
         return nums.length;
     }
 

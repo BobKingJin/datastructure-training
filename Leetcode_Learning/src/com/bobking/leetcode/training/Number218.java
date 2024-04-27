@@ -38,6 +38,7 @@ public class Number218 {
         PriorityQueue<Integer> q = new PriorityQueue<Integer>((a, b) -> b - a);
         int prev = 0;
         q.add(prev);
+
         for (int[] p : ps) {
             int point = p[0];
             int height = p[1];
@@ -59,7 +60,6 @@ public class Number218 {
                 prev = cur;
             }
         }
-
         return res;
     }
 }

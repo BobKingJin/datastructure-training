@@ -37,7 +37,6 @@ public class Number127 {
             }
             step++;
         }
-
         return 0;
     }
 
@@ -48,11 +47,9 @@ public class Number127 {
         char[] charArray = currentWord.toCharArray();
 
         for (int i = 0; i < endWord.length(); i++) {
-
             // 先保存，然后恢复
             char originChar = charArray[i];
             for (char k = 'a'; k <= 'z'; k++) {
-
                 if (k == originChar)
                     continue;
 
@@ -60,7 +57,6 @@ public class Number127 {
                 String nextWord = String.valueOf(charArray);
 
                 if (wordSet.contains(nextWord)) {
-
                     if (nextWord.equals(endWord))
                         return true;
                     if (!visited.contains(nextWord)) {
@@ -70,11 +66,9 @@ public class Number127 {
                     }
                 }
             }
-
             // 恢复
             charArray[i] = originChar;
         }
-
         return false;
     }
 
@@ -97,26 +91,22 @@ public class Number127 {
         // 第 3 步：执行双向 BFS，左右交替扩散的步数之和为所求
         int step = 1;
         while (!beginVisited.isEmpty() && !endVisited.isEmpty()) {
-
             // 优先选择小的哈希表进行扩散，考虑到的情况更少
             if (beginVisited.size() > endVisited.size()) {
                 Set<String> temp = beginVisited;
                 beginVisited = endVisited;
                 endVisited = temp;
             }
-
             // 逻辑到这里，保证 beginVisited 是相对较小的集合，nextLevelVisited 在扩散完成以后，会成为新的 beginVisited
             Set<String> nextLevelVisited = new HashSet<String>();
             for (String word : beginVisited) {
                 if (changeWordEveryOneLetter2(word, endVisited, visited, wordSet, nextLevelVisited))
                     return step + 1;
             }
-
             // 原来的 beginVisited 废弃，从 nextLevelVisited 开始新的双向 BFS
             beginVisited = nextLevelVisited;
             step++;
         }
-
         return 0;
     }
 
@@ -125,34 +115,26 @@ public class Number127 {
                                              Set<String> visited,
                                              Set<String> wordSet,
                                              Set<String> nextLevelVisited) {
-
         char[] charArray = word.toCharArray();
         for (int i = 0; i < word.length(); i++) {
-
             char originChar = charArray[i];
             for (char c = 'a'; c <= 'z'; c++) {
                 if (originChar == c)
                     continue;
-
                 charArray[i] = c;
                 String nextWord = String.valueOf(charArray);
-
                 if (wordSet.contains(nextWord)) {
-
                     if (endVisited.contains(nextWord))
                         return true;
-
                     if (!visited.contains(nextWord)) {
                         nextLevelVisited.add(nextWord);
                         visited.add(nextWord);
                     }
                 }
             }
-
             // 恢复，下次再用
             charArray[i] = originChar;
         }
-
         return false;
     }
 

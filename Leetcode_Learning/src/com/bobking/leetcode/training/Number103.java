@@ -24,7 +24,6 @@ public class Number103 {
         queue.offerFirst(root);
 
         while (!queue.isEmpty()) {
-
             if (leftToRight) {
                 // 从头弹出
                 root = queue.pollFirst();
@@ -48,7 +47,6 @@ public class Number103 {
                     queue.offerFirst(root.left);
                 }
             }
-
             list.add(root.val);
             // 当遍历到最后一层时，root == last，此时队列为空，而最后一个list还没有加入res中
             if (root == last && !queue.isEmpty()) {
@@ -61,7 +59,6 @@ public class Number103 {
         }
         // 最后一个list
         res.add(list);
-
         return res;
     }
 }

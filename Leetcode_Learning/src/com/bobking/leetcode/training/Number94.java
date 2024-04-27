@@ -14,6 +14,7 @@ public class Number94 {
             return result;
 
         Stack<TreeNode> stack = new Stack<TreeNode>();
+
         while (root != null || !stack.isEmpty()) {
             // 将整个左边界压入栈中
             if (root != null) {
@@ -25,7 +26,6 @@ public class Number94 {
                 root = root.right;
             }
         }
-
         return result;
     }
 

@@ -78,7 +78,6 @@ public class Number56 {
         }
 
         list.add(new int[]{nums[0], nums[1]});
-
         return list.toArray(new int[list.size()][2]);
     }
 }

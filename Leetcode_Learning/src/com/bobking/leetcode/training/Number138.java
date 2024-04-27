@@ -53,7 +53,6 @@ public class Number138 {
             curCopy.next = next == null ? null : next.next;
             cur = next;
         }
-
         return NodeHead;
     }
 }

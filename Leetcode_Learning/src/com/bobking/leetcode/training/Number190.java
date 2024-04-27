@@ -11,7 +11,6 @@ public class Number190 {
             res |= (n & 1) << (31 - i);
             n >>>= 1;
         }
-        
         return res;
     }
 

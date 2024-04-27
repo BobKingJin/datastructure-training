@@ -17,12 +17,11 @@ public class Number227 {
     // 返回当前计算结果和当前遍历到的位置
     private int[] value(char[] ch, int i) {
 
-        Deque<String> deque = new LinkedList<>();
+        Deque<String> deque = new LinkedList<String>();
         int pre = 0;
         int[] bra = null;
 
         while (i < ch.length && ch[i] != ')') {
-
             if (ch[i] == ' ') {
                 i++;
             } else if (ch[i] >= '0' && ch[i] <= '9') {
@@ -37,7 +36,6 @@ public class Number227 {
                 i = bra[1] + 1;
             }
         }
-
         addNum(deque, pre);
         return new int[]{getNum(deque), i};
     }
@@ -45,7 +43,6 @@ public class Number227 {
     private void addNum(Deque<String> deque, int num) {
 
         if (!deque.isEmpty()) {
-
             int cur = 0;
             String top = deque.pollLast();
             if ("+".equals(top) || "-".equals(top)) {
@@ -66,19 +63,16 @@ public class Number227 {
         boolean add = true;
 
         while (!deque.isEmpty()) {
-
             cur = deque.pollFirst();
             if ("+".equals(cur)) {
                 add = true;
             } else if ("-".equals(cur)) {
                 add = false;
             } else {
-
                 num = Integer.valueOf(cur);
                 res += add ? num : (-num);
             }
         }
-
         return res;
     }
 }

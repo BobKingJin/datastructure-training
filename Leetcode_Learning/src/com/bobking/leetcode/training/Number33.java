@@ -41,7 +41,6 @@ public class Number33 {
                 }
             }
         }
-
         return -1;
     }
 }

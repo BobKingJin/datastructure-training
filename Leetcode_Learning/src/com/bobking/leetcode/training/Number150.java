@@ -10,6 +10,7 @@ public class Number150 {
         Stack<Integer> numStack = new Stack<Integer>();
         Integer op1;
         Integer op2;
+
         for (String s : tokens) {
             switch (s) {
                 case "+":
@@ -37,7 +38,6 @@ public class Number150 {
                     break;
             }
         }
-
         return numStack.pop();
     }
 

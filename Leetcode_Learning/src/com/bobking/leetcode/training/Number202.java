@@ -13,7 +13,6 @@ public class Number202 {
             n = n / 10;
             totalSum += d * d;
         }
-
         return totalSum;
     }
 
@@ -25,7 +24,6 @@ public class Number202 {
             seen.add(n);
             n = getNext(n);
         }
-
         return n == 1;
     }
 
@@ -39,7 +37,6 @@ public class Number202 {
             slowRunner = getNext(slowRunner);
             fastRunner = getNext(getNext(fastRunner));
         }
-
         return fastRunner == 1;
     }
 

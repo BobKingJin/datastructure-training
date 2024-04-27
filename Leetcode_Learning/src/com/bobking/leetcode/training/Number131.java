@@ -29,11 +29,9 @@ public class Number131 {
         }
 
         for (int i = index; i < len; i++) {
-
             // 因为截取字符串是消耗性能的，因此，采用传子串下标的方式判断一个子串是否是回文子串
             if (!checkPalindrome(charArray, index, i))
                 continue;
-
             path.addLast(new String(charArray, index, i + 1 - index));
             dfs(charArray, i + 1, len, path, res);
             // 回溯
@@ -45,14 +43,11 @@ public class Number131 {
     private boolean checkPalindrome(char[] charArray, int left, int right) {
 
         while (left < right) {
-
             if (charArray[left] != charArray[right])
                 return false;
-
             left++;
             right--;
         }
-
         return true;
     }
 
