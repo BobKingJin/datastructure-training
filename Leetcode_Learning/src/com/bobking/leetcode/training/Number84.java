@@ -19,8 +19,8 @@ public class Number84 {
             return 0;
 
         int maxArea = 0;
-
         Stack<Integer> stack = new Stack<Integer>();
+
         for (int i = 0; i < heights.length; i++) {
             while (!stack.isEmpty() && heights[i] <= heights[stack.peek()]) {
                 int j = stack.pop();

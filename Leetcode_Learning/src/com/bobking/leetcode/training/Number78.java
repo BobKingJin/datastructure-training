@@ -57,7 +57,6 @@ public class Number78 {
                 res.add(list);
             }
         }
-
         return res;
     }
 }
