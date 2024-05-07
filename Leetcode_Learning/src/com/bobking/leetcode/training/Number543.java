@@ -3,7 +3,6 @@ package com.bobking.leetcode.training;
 public class Number543 {
 
     private class ReturnType {
-
         int maxDistance;
         int height;
 

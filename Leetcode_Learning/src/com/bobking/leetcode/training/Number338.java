@@ -12,6 +12,7 @@ public class Number338 {
             return null;
 
         int[] res = new int[num + 1];
+
         for (int i = 0; i <= num; i++) {
             int count = 0;
             int maxBit = 31;
@@ -32,6 +33,7 @@ public class Number338 {
             return null;
 
         int[] res = new int[num + 1];
+
         for (int i = 0; i <= num; i++) {
             int count = 0;
             while (i > 0) {
@@ -53,6 +55,7 @@ public class Number338 {
 
         int[] res = new int[num + 1];
         int maxBit = 0;
+
         for (int i = 1; i <= num; i++) {
             if ((i & (i - 1)) == 0)
                 maxBit = i;

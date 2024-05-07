@@ -30,14 +30,12 @@ public class Number437 {
             return 0;
 
         int res = 0;
-
         // 先序遍历
         currSum = currSum + node.val;
         // 例如：10 -> 5 -> 3 的前缀和是 18，所以应该判断 map 中是否有前缀和为 18 - 8 = 10
         // 如果有的话，那么从 5 -> 3的和就为 target
         res += prefixSum.getOrDefault(currSum - sum, 0);
         prefixSum.put(currSum, prefixSum.getOrDefault(currSum, 0) + 1);
-
         res += recursionPathSum(node.left, currSum, sum, prefixSum);
         res += recursionPathSum(node.right, currSum, sum, prefixSum);
         // 回溯

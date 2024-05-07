@@ -10,7 +10,6 @@ public class Number538 {
         // 反序中序遍历：先右孩子后左孩子
         // dfs
         if (root != null) {
-
             convertBST(root.right);
             sum += root.val;
             root.val = sum;

@@ -40,7 +40,6 @@ public class Number238 {
 
         int temp = 1;
         for (int i = nums.length - 1; i > 0; i--) {
-
             res[i] = res[i - 1] * temp;
             temp = temp * nums[i];
         }
