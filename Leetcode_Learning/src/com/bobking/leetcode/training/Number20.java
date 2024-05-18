@@ -14,11 +14,9 @@ public class Number20 {
         char[] charArray = s.toCharArray();
 
         for (char ch : charArray) {
-            // 如果是左括号则直接入栈
             if (ch == '(' || ch == '{' || ch == '[') {
                 stack.push(ch);
             } else {
-                // 如果是右括号, 并且此时栈不为空
                 if (!stack.isEmpty()) {
                     if (ch == ')') {
                         if (stack.pop() != '(')
@@ -30,7 +28,7 @@ public class Number20 {
                         if (stack.pop() != '[')
                             return false;
                     }
-                } else { // 此时栈为空, 但却来了个右括号, 也直接返回 false
+                } else {
                     return false;
                 }
             }

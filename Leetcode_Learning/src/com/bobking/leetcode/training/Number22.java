@@ -86,7 +86,7 @@ public class Number22 {
     // 参考：https://leetcode-cn.com/problems/generate-parentheses/solution/hui-su-suan-fa-by-liweiwei1419/
     public List<String> generateParenthesis3(int n) {
 
-        List<String> res = new ArrayList<>();
+        List<String> res = new ArrayList<String>();
 
         if (n == 0)
             return res;
@@ -139,12 +139,12 @@ public class Number22 {
     // 参考：https://leetcode-cn.com/problems/generate-parentheses/solution/hui-su-suan-fa-by-liweiwei1419/
     public List<String> generateParenthesis4(int n) {
 
-        List<String> res = new ArrayList<>();
+        List<String> res = new ArrayList<String>();
         if (n == 0)
             return res;
         // 因为左括号和右括号有数量限制，且必须符合左括号数量要小于右括号数量，所以必须重新定义一个数据结构Node
         // 来记录当前左括号和右括号的数量
-        Queue<Node> queue = new LinkedList<>();
+        Queue<Node> queue = new LinkedList<Node>();
         queue.offer(new Node("", n, n));
 
         while (!queue.isEmpty()) {
