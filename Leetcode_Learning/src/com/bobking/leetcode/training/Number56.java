@@ -8,7 +8,7 @@ import java.util.List;
 public class Number56 {
 
     // 未通过
-    // [1,4],[0,0] 未通过
+    // [1,4], [0,0] 未通过
     public static int[][] merge1(int[][] intervals) {
 
         if (intervals == null || intervals.length < 1)

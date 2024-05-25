@@ -7,6 +7,7 @@ public class Number141 {
 
         if (head == null)
             return false;
+
         // 此时只有头节点一个节点
         if (head.next == null)
             return false;

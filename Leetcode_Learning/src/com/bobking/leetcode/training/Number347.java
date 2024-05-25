@@ -1,4 +1,4 @@
-package com.BobKing.leetcode.training;
+package com.bobking.leetcode.training;
 
 import java.util.*;
 
