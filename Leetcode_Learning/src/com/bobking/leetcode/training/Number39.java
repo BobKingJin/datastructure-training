@@ -63,7 +63,7 @@ public class Number39 {
                 break;
 
             list.add(candidates[i]);
-            // candidates中的元素可以重复使用，因为这里的 index = i 不变
+            // candidates中的元素可以重复使用，所以这里的 index = i 不变
             backTrace2(candidates, i, sum + candidates[i], target, list, res);
             list.remove(list.size() - 1);
         }
