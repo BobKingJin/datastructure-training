@@ -2,6 +2,23 @@ package com.bobking.leetcode.training;
 
 public class Number19 {
 
+    private class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
     public ListNode removeNthFromEnd1(ListNode head, int n) {
 
         if (head == null || n < 1)
@@ -14,17 +31,15 @@ public class Number19 {
             node = node.next;
         }
 
-        node = head;
+        ListNode dummy = new ListNode(0, head);
+        ListNode cur = dummy;
         // 倒数第 n 个节点即是顺数第 length - n + 1 个节点
-        // 从头节点走 step 步
-        int step = length - n - 1;
-        while (step > 0) {
-            node = node.next;
-            step--;
-        }
+        for (int i = 1; i < length - n + 1; ++i)
+            cur = cur.next;
 
-        node.next = node.next.next;
-        return head;
+        cur.next = cur.next.next;
+        ListNode ans = dummy.next;
+        return ans;
     }
 
     // 参考：程序猿代码指南P42
