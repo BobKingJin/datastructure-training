@@ -67,6 +67,7 @@ public class Number114 {
         if (root == null)
             return;
         // 先右  后左  最后根节点
+        // 从 底 向 上
         flatten3(root.right);
         flatten3(root.left);
 
