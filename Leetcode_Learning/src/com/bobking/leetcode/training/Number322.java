@@ -69,7 +69,7 @@ public class Number322 {
         int N = coins.length;
         // dp[i][j] 表示 coins[0 ... i] 范围内组成 j 所需的最小硬币数
         int[][] dp = new int[N + 1][amount + 1];
-        // 注意 col 是从 1 开始的 dp[N][0] = 0
+        // 注意 col 是从 1 开始的 dp[0][0] = 0
         for (int col = 1; col <= amount; col++)
             dp[0][col] = -1;
 
