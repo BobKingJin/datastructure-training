@@ -63,7 +63,6 @@ public class Number438 {
         for (int right = 0; right < m; right++) {
             int curRight = s.charAt(right) - 'a';
             m_count[curRight]++;
-
             // 滑动窗口
             while (m_count[curRight] > n_count[curRight]) {
                 int curLeft = s.charAt(left) - 'a';

@@ -26,7 +26,7 @@ public class Number84 {
                 int j = stack.pop();
                 // 注意当 stack 为空的时候，默认左边的角标为 -1
                 int k = stack.isEmpty() ? -1 : stack.peek();
-                int curArea = (i - k - 1) * heights[j];
+                int curArea = (i - 1 - k) * heights[j];
                 maxArea = Math.max(maxArea, curArea);
             }
             stack.push(i);
@@ -36,7 +36,7 @@ public class Number84 {
             int j = stack.pop();
             int k = stack.isEmpty() ? -1 : stack.peek();
             // 默认左边的角标为 heights.length
-            int curArea = (heights.length - k - 1) * heights[j];
+            int curArea = (heights.length - 1 - k) * heights[j];
             maxArea = Math.max(maxArea, curArea);
         }
         return maxArea;

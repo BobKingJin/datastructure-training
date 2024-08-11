@@ -115,7 +115,6 @@ public class Number22 {
     }
 
     private class Node {
-
         /**
          * 当前得到的字符串
          */
