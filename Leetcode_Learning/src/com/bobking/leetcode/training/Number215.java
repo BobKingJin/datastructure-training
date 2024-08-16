@@ -53,7 +53,6 @@ public class Number215 {
     }
 
     private int partition(int[] nums, int left, int right) {
-
         // 在数组 nums 的子区间 [left, right] 执行 partition 操作，返回 nums[left] 排序以后应该在的位置
         // [left + 1, j] < nums[left]  (j, i] >= nums[left]
         int pivot = nums[left];

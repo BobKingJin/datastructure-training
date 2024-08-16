@@ -26,7 +26,6 @@ public class Number226 {
         invertTree1(root.left);
         // 递归交换当前节点的 右子树
         invertTree1(root.right);
-
         return root;
     }
 
