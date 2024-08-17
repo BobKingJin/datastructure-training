@@ -14,16 +14,14 @@ public class Number13 {
 
         int sum = 0;
         int preNum = getValue(s.charAt(0));
+
         for(int i = 1; i < s.length(); i ++) {
-
             int num = getValue(s.charAt(i));
-
             if(preNum < num) {
                 sum -= preNum;
             } else {
                 sum += preNum;
             }
-
             preNum = num;
         }
         // 注意最后一个数还得加上

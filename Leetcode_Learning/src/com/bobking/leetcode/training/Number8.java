@@ -35,7 +35,6 @@ public class Number8 {
             // 溢出
             if ((res < minq) || (res == minq && cur < minr))
                 return positive ? Integer.MAX_VALUE : Integer.MIN_VALUE;
-
             res = res * 10 + cur;
             index++;
         }
