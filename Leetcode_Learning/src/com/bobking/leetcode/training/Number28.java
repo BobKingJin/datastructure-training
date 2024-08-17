@@ -18,19 +18,15 @@ public class Number28 {
         char[] p = needle.toCharArray();
 
         for (int i = 0; i <= n - m; i++) {
-
             int a = i;
             int b = 0;
-
             while (b < m && s[a] == p[b]) {
                 a++;
                 b++;
             }
-
             if (b == m)
                 return i;
         }
-
         return -1;
     }
 }

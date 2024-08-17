@@ -37,17 +37,13 @@ public class Number54 {
                 int curColumn = leftColumn;
                 while (curColumn < rightColumn)
                     res.add(matrix[leftRow][curColumn++]);
-
                 while (curRow < rightRow)
                     res.add(matrix[curRow++][rightColumn]);
-
                 while (curColumn > leftColumn)
                     res.add(matrix[rightRow][curColumn--]);
-
                 while (curRow > leftRow)
                     res.add(matrix[curRow--][leftColumn]);
             }
-
             leftRow++;
             leftColumn++;
             rightRow--;

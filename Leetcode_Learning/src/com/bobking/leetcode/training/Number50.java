@@ -10,7 +10,6 @@ public class Number50 {
     public double myPow1(double x, int n) {
 
         double res = 1.0;
-
         int exp;
 
         if (n > 0) {
