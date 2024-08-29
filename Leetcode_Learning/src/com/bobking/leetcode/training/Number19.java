@@ -38,8 +38,7 @@ public class Number19 {
             cur = cur.next;
 
         cur.next = cur.next.next;
-        ListNode ans = dummy.next;
-        return ans;
+        return dummy.next;
     }
 
     // 参考：程序猿代码指南P42

@@ -55,7 +55,6 @@ public class Number127 {
 
                 charArray[i] = k;
                 String nextWord = String.valueOf(charArray);
-
                 if (wordSet.contains(nextWord)) {
                     if (nextWord.equals(endWord))
                         return true;

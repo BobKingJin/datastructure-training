@@ -36,7 +36,6 @@ public class Number91 {
             } else if (s.charAt(i - 1) == '2' && (s.charAt(i) >= '0' && s.charAt(i) <= '6')) {
                 cur = cur + pre;
             }
-
             pre = temp;
         }
 
