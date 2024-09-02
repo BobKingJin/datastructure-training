@@ -61,7 +61,7 @@ public class Number347 {
             }
         }
         // 遍历 map，用小根堆保存频率最大的 k 个元素
-        PriorityQueue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
+        PriorityQueue<Integer> queue = new PriorityQueue<Integer>(new Comparator<Integer>() {
             @Override
             public int compare(Integer a, Integer b) {
                 return map.get(a) - map.get(b);
