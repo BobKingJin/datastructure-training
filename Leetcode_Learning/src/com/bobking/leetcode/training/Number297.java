@@ -88,7 +88,6 @@ public class Number297 {
             node = queue.poll();
             node.left = generateTreeNodeByString(values[index++]);
             node.right = generateTreeNodeByString(values[index++]);
-
             if (node.left != null)
                 queue.offer(node.left);
             if (node.right != null)
