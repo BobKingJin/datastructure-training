@@ -59,7 +59,8 @@ public class Number102 {
 
         while (!queue.isEmpty()) {
             List<Integer> list = new ArrayList<Integer>();
-            for (int i = 1; i <= queue.size(); i++) {
+            int n = queue.size();
+            for (int i = 1; i <= n; i++) {
                 TreeNode node = queue.poll();
                 list.add(node.val);
                 if (node.left != null)

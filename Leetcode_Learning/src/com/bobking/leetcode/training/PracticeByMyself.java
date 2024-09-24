@@ -7,7 +7,10 @@ package com.bobking.leetcode.training;
  */
 public class PracticeByMyself {
 
+    public static void main(String[] args) {
 
+        System.out.println("======================");
+    }
 
 
 
