@@ -25,7 +25,7 @@ public class Number79 {
     private boolean backTrace1(char[][] board, String word, int row, int column, int index, boolean[][] marked) {
 
         if (row >= 0 && row <= board.length - 1 && column >= 0 && column <= board[0].length - 1) {
-            if (index == word.length() - 1)
+            if (index == word.length() - 1 && !marked[row][column])
                 return board[row][column] == word.charAt(index);
             if (!marked[row][column] && board[row][column] == word.charAt(index)) {
                 marked[row][column] = true;
@@ -49,7 +49,7 @@ public class Number79 {
     // 参考：https://leetcode-cn.com/problems/word-search/solution/zai-er-wei-ping-mian-shang-shi-yong-hui-su-fa-pyth/
     private boolean backTrace2(char[][] board, String word, int row, int column, int index, boolean[][] marked) {
 
-        if (index == word.length() - 1)
+        if (index == word.length() - 1 && !marked[row][column])
             return board[row][column] == word.charAt(index);
 
         if (board[row][column] == word.charAt(index)) {
