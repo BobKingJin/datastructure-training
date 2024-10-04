@@ -15,15 +15,15 @@ public class Number437 {
         // 记忆   前缀和    二叉树中每个节点值都不相同???
         // 前缀和是从根节点到当前节点的和
         // 因为路径必须是从上往下，所以用前缀和
-        Map<Integer, Integer> prefixSum = new HashMap<Integer, Integer>();
+        Map<Long, Integer> prefixSum = new HashMap<Long, Integer>();
         // 前缀和为 0 的有一条路径
-        prefixSum.put(0, 1);
+        prefixSum.put(0L, 1);
 
         return recursionPathSum(root, 0, sum, prefixSum);
     }
 
     // 递归
-    private int recursionPathSum(TreeNode node, int currSum, int sum, Map<Integer, Integer> prefixSum) {
+    private int recursionPathSum(TreeNode node, long currSum, int sum, Map<Long, Integer> prefixSum) {
 
         // 递归结束条件
         if (node == null)
