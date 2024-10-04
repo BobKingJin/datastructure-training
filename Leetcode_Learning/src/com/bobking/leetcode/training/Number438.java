@@ -45,7 +45,7 @@ public class Number438 {
     // 参考：https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/solution/438-zhao-dao-zi-fu-chuan-zhong-suo-you-z-nx6b/
     public List<Integer> findAnagrams2(String s, String p) {
 
-        List<Integer> res = new ArrayList<>();
+        List<Integer> res = new ArrayList<Integer>();
 
         if (s == null || p == null || "".equals(s) || "".equals(p) || s.length() < p.length())
             return res;
@@ -64,6 +64,7 @@ public class Number438 {
             int curRight = s.charAt(right) - 'a';
             m_count[curRight]++;
             // 滑动窗口
+            // curRight 不符合, 循环 直到 left = curRight + 1
             while (m_count[curRight] > n_count[curRight]) {
                 int curLeft = s.charAt(left) - 'a';
                 m_count[curLeft]--;
