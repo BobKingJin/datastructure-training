@@ -1,7 +1,9 @@
 package com.bobking.leetcode.training;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Number315 {
 
@@ -26,10 +28,7 @@ public class Number315 {
             indexes[i] = i;
 
         mergeAndCountSmaller(nums, 0, nums.length - 1, indexes, temp, res);
-
-        for (int i = 0; i < nums.length; i++)
-            result.add(res[i]);
-
+        result = Arrays.stream(res).boxed().collect(Collectors.toList());
         return result;
     }
 

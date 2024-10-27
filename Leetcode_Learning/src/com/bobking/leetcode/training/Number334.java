@@ -76,9 +76,7 @@ public class Number334 {
         int second = Integer.MAX_VALUE;
 
         for (int i = 1; i < n; i++) {
-
             int num = nums[i];
-
             if (num > second) {
                 return true;
             } else if (num > first) {

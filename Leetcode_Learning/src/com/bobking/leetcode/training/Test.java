@@ -35,8 +35,6 @@ public class Test {
         };
 
         public abstract Season getNextSeason();
-
-
     }
 
     public static void main(String[] args) throws ParseException {
@@ -280,21 +278,6 @@ public class Test {
         System.out.println(bit);
 
         System.out.println("" + 6);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     List<Long> window = new LinkedList<Long>();
@@ -346,15 +329,6 @@ public class Test {
             return true;
         }
     }
-
-
-
-
-
-
-
-
-
 
     private static int lowbit(int x) {
         return x & -x;
@@ -431,6 +405,46 @@ public class Test {
         }
 
         return len;
+    }
+
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+
+        if (nums1.length > nums2.length) {
+            int[] tmp = nums1;
+            nums1 = nums2;
+            nums2 = tmp;
+        }
+
+        int m = nums1.length;
+        int n = nums2.length;
+        int[] a = new int[m + 2];
+        int[] b = new int[n + 2];
+        a[0] = b[0] = Integer.MIN_VALUE;
+        a[m + 1] = b[n + 1] = Integer.MAX_VALUE;
+        System.arraycopy(nums1, 0, a, 1, m);
+        System.arraycopy(nums2, 0, b, 1, n);
+
+        // 循环不变量：a[left] <= b[j+1]
+        // 循环不变量：a[right] > b[j+1]
+        int left = 0;
+        int right = m + 1;
+        while (left + 1 < right) { // 开区间 (left, right) 不为空
+            int i = (left + right) / 2;
+            int j = (m + n + 1) / 2 - i;
+            if (a[i] <= b[j + 1]) {
+                left = i; // 缩小二分区间为 (i, right)
+            } else {
+                right = i; // 缩小二分区间为 (left, i)
+            }
+        }
+
+        // 此时 left 等于 right-1
+        // a[left] <= b[j+1] 且 a[right] > b[j'+1] = b[j]，所以答案是 i=left
+        int i = left;
+        int j = (m + n + 1) / 2 - i;
+        int max1 = Math.max(a[i], b[j]);
+        int min2 = Math.min(a[i + 1], b[j + 1]);
+        return (m + n) % 2 > 0 ? max1 : (max1 + min2) / 2.0;
     }
 
 
