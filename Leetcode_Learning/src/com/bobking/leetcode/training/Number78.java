@@ -50,7 +50,8 @@ public class Number78 {
             // 将 nums[i] 添加进 res 中的所有子集
             // 例如：1 2 3 4 5 当 i = 3 即 nums[3] = 4 时，此时 res 中应包含了 1 - 3 的所有子集
             // 此时将 4 添加进所有子集
-            for (int j = 0; j < res.size(); j++) {
+            int size = res.size();
+            for (int j = 0; j < size; j++) {
                 List<Integer> list = new ArrayList<Integer>(res.get(j));
                 list.add(nums[i]);
                 // 每次都将 list 添加进 res 中

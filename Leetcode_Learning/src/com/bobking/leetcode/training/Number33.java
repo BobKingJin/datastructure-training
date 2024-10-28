@@ -4,7 +4,7 @@ public class Number33 {
 
     // 参考：https://leetcode-cn.com/problems/search-in-rotated-sorted-array/solution/sou-suo-xuan-zhuan-pai-xu-shu-zu-by-leetcode-solut/
     // 对比Number153
-    public int search(int[] nums, int target) {
+    public int search1(int[] nums, int target) {
 
         if (nums == null || nums.length < 1)
             return -1;
@@ -41,6 +41,36 @@ public class Number33 {
                 }
             }
         }
+        return -1;
+    }
+
+    public int search2(int[] nums, int target) {
+
+        int min = 0;
+        int n = nums.length;
+
+        for (int l = 1, r = n - 1; l <= r; ) {
+            int m = (l + r) / 2;
+            if (nums[0] < nums[m]) {
+                l = m + 1;
+            } else {
+                r = m - 1;
+                min = m;
+            }
+        }
+
+        for (int l = min, r = l + n - 1; l <= r; ) {
+            int m = (l + r) / 2;
+            int i = m % n;
+            if (target < nums[i]) {
+                r = m - 1;
+            } else if (target > nums[i]) {
+                l = m + 1;
+            } else {
+                return i;
+            }
+        }
+
         return -1;
     }
 }
