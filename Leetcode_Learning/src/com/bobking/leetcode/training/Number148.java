@@ -91,4 +91,44 @@ public class Number148 {
         }
         return smallPre;
     }
+
+    public ListNode sortList3(ListNode head) {
+
+        if (head == null || head.next == null)
+            return head;
+
+        ListNode pre = new ListNode(0, head);
+        quickSort(pre, null);
+        return pre.next;
+    }
+
+    private void quickSort(ListNode pre, ListNode end) {
+
+        if (pre == end || pre.next == end || pre.next.next == end)
+            return;
+        // 选第一个节点为基准
+        ListNode b = pre.next;
+        // 建立临时链表
+        ListNode cur = new ListNode(0);
+        // 临时左右两指针
+        ListNode r = b, l = cur;
+        // 遍历，右指针下一节点为end，说明当前是最后一个元素，结束
+        while (r.next != end) {
+            // 如果当前元素小于基准，就加入临时链表，并在原链表中删除
+            if (r.next.val < b.val) {
+                l.next = r.next;
+                l = l.next;
+                r.next = r.next.next;
+            } else {
+                // 不小于基准，右指针后移
+                r = r.next;
+            }
+        }
+        // 临时链表接在原链表前面，并把伪头结点指向临时节点头结点
+        l.next = pre.next;
+        pre.next = cur.next;
+        // 对基准的左右两边递归，注意输入都是伪头结点和两链表的尾节点的下一节点
+        quickSort(pre, b);
+        quickSort(b, end);
+    }
 }
