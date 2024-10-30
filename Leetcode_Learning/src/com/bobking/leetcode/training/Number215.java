@@ -18,14 +18,10 @@ public class Number215 {
             }
         });
 
-        for (int i = 0; i < nums.length; i++) {
-            if (minHeap.size() != k) {
-                minHeap.add(nums[i]);
-            } else {
-                if (nums[i] > minHeap.peek()) {
-                    minHeap.poll();
-                    minHeap.add(nums[i]);
-                }
+        for (int num : nums) {
+            minHeap.add(num);
+            if (minHeap.size() > k) {
+                minHeap.poll();
             }
         }
         return minHeap.peek();
