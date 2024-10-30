@@ -1,5 +1,7 @@
 package com.bobking.leetcode.training;
 
+import java.util.Arrays;
+
 public class Number300 {
 
     // 参考：https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/dong-tai-gui-hua-er-fen-cha-zhao-tan-xin-suan-fa-p/
@@ -21,11 +23,7 @@ public class Number300 {
             }
         }
 
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < dp.length; i++)
-            max = Math.max(max, dp[i]);
-
-        return max;
+        return Arrays.stream(dp).max().getAsInt();
     }
 
     // 参考：https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/dong-tai-gui-hua-er-fen-cha-zhao-tan-xin-suan-fa-p/
