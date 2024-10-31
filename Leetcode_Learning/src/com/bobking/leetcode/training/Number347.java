@@ -52,7 +52,7 @@ public class Number347 {
         if (nums == null || nums.length == 0 || k > nums.length)
             return res;
 
-        HashMap<Integer, Integer> map = new HashMap();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
             if (map.containsKey(num)) {
                 map.put(num, map.get(num) + 1);

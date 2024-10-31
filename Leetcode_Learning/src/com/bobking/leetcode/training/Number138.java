@@ -44,7 +44,7 @@ public class Number138 {
         }
         // 拆分
         cur = head;
-        Node NodeHead = head.next;
+        Node newHead = head.next;
 
         while (cur != null) {
             next = cur.next.next;
@@ -53,6 +53,6 @@ public class Number138 {
             curCopy.next = next == null ? null : next.next;
             cur = next;
         }
-        return NodeHead;
+        return newHead;
     }
 }
