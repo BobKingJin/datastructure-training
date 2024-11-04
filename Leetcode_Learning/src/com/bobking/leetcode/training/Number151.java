@@ -19,7 +19,6 @@ public class Number151 {
         for (int i = 0; i < ch.length; i++) {
 
             if (ch[i] != ' ') {
-
                 l = (i == 0 || ch[i - 1] == ' ') ? i : l;
                 r = (i == ch.length - 1 || ch[i + 1] == ' ') ? i : r;
             }

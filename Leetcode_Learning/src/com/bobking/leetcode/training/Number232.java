@@ -29,7 +29,6 @@ public class Number232 {
          * Push element x to the back of queue.
          */
         public void push(int x) {
-
             pushStack.push(x);
             pushToPop();
         }
