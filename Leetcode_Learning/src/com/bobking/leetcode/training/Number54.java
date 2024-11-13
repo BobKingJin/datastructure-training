@@ -12,7 +12,7 @@ public class Number54 {
     // 参考：程序猿代码指南P361
     public List<Integer> spiralOrder(int[][] matrix) {
 
-        List<Integer> res = new ArrayList<>();
+        List<Integer> res = new ArrayList<Integer>();
         if (matrix == null || matrix.length == 0)
             return res;
 
