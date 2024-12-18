@@ -2,23 +2,6 @@ package com.bobking.leetcode.training;
 
 public class Number19 {
 
-    private class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     public ListNode removeNthFromEnd1(ListNode head, int n) {
 
         if (head == null || n < 1)
