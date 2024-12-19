@@ -48,19 +48,21 @@ public class Number33 {
 
         int min = 0;
         int n = nums.length;
-
+        // min 初始化为 0, l 从 1 开始
         for (int l = 1, r = n - 1; l <= r; ) {
             int m = (l + r) / 2;
             if (nums[0] < nums[m]) {
                 l = m + 1;
             } else {
                 r = m - 1;
+                // min 为旋转数组中最小值角标
                 min = m;
             }
         }
 
         for (int l = min, r = l + n - 1; l <= r; ) {
             int m = (l + r) / 2;
+            // 注意取模
             int i = m % n;
             if (target < nums[i]) {
                 r = m - 1;
