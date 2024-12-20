@@ -24,8 +24,10 @@ public class Number75 {
             if (nums[currentIndex] == target) {
                 currentIndex++;
             } else if (nums[currentIndex] < target) {
+                // 注意: currentIndex++
                 swap(nums, ++smallIndex, currentIndex++);
             } else {
+                // 注意: 这个位置的 currentIndex 角标不能变化
                 swap(nums, --largeIndex, currentIndex);
             }
         }

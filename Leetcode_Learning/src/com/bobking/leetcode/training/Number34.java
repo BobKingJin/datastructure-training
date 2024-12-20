@@ -74,7 +74,7 @@ public class  Number34 {
 
         int l = 0;
         int h = nums.length - 1;
-        // res 初始化为 nums.length
+        // 有可能 nums 中没有 target, 所以 res 初始化为 nums.length
         int res = nums.length;
         int mid = 0;
 
