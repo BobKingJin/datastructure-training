@@ -21,6 +21,7 @@ public class Number84 {
         int maxArea = 0;
         Stack<Integer> stack = new Stack<Integer>();
 
+        // 以当前柱子向左右扩展的最大矩形面积
         for (int i = 0; i < heights.length; i++) {
             while (!stack.isEmpty() && heights[i] <= heights[stack.peek()]) {
                 int j = stack.pop();
