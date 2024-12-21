@@ -52,6 +52,7 @@ public class Number78 {
             // 此时将 4 添加进所有子集
             int size = res.size();
             for (int j = 0; j < size; j++) {
+                // 每次都是重新 new ArrayList
                 List<Integer> list = new ArrayList<Integer>(res.get(j));
                 list.add(nums[i]);
                 // 每次都将 list 添加进 res 中
