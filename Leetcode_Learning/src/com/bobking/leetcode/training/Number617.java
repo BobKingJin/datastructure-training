@@ -12,9 +12,9 @@ public class Number617 {
         TreeNode result = null;
 
         if (t1 == null || t2 == null) {
-            result = t1 == null ? t2 : t1;
-            return result;
+            return t1 == null ? t2 : t1;
         }
+
         // 先序遍历
         result = new TreeNode(t1.val + t2.val);
         result.left = mergeTrees(t1.left, t2.left);

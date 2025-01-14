@@ -22,7 +22,7 @@ public class Number297 {
     public TreeNode deserialize1(String data) {
 
         String[] values = data.split("!");
-
+        // 用队列的好处就是不用记角标
         Queue<String> queue = new LinkedList<String>();
         for (int i = 0; i < values.length; i++)
             queue.offer(values[i]);
