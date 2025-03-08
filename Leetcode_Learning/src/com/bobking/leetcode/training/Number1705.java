@@ -28,21 +28,18 @@ public class Number1705 {
         int ans = 0;
 
         while (time < n || !q.isEmpty()) {
-
-            if (time < n && apples[time] > 0)
+            if (time < n && apples[time] > 0) {
                 q.add(new int[]{time + days[time] - 1, apples[time]});
-
-            while (!q.isEmpty() && q.peek()[0] < time)
+            }
+            while (!q.isEmpty() && q.peek()[0] < time) {
                 q.poll();
-
+            }
             if (!q.isEmpty()) {
-
                 int[] cur = q.poll();
-
                 // 重新入堆
-                if (--cur[1] > 0 && cur[0] > time)
+                if (--cur[1] > 0 && cur[0] > time) {
                     q.add(cur);
-
+                }
                 ans++;
             }
             time++;
