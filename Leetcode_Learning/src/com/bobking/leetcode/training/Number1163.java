@@ -18,12 +18,10 @@ public class Number1163 {
         int n = s.length();
 
         while (j < n) {
-
             int k = 0;
-
-            while (j + k < n && s.charAt(i + k) == s.charAt(j + k))
+            while (j + k < n && s.charAt(i + k) == s.charAt(j + k)) {
                 k++;
-
+            }
             if (j + k < n && s.charAt(i + k) < s.charAt(j + k)) {
                 int t = i;
                 i = j;
