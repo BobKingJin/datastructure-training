@@ -13,8 +13,9 @@ public class Number2094 {
 
         // 统计 0 ~ 9 各个数字的出现次数
         int[] count = new int[10];
-        for (int digit : digits)
+        for (int digit : digits) {
             count[digit]++;
+        }
 
         // 各个位置选取之后统计结果减一，完成当前遍历后恢复（统计结果再加一）
         List<Integer> list = new ArrayList<Integer>();
@@ -29,8 +30,9 @@ public class Number2094 {
                         count[j]--;
                         // 个位取剩余存在的偶数（保证了顺序且不重复）
                         for (int k = 0; k < 10; k += 2) {
-                            if (count[k] > 0)
+                            if (count[k] > 0) {
                                 list.add(i * 100 + j * 10 + k);
+                            }
                         }
                         count[j]++;
                     }
@@ -38,13 +40,6 @@ public class Number2094 {
                 count[i]++;
             }
         }
-
-        // 将有序的 list 按顺序转为 int[] 后返回
-        int size = list.size();
-        int[] ans = new int[size];
-        for (int i = 0; i < size; i++)
-            ans[i] = list.get(i);
-
-        return ans;
+        return list.stream().mapToInt(i -> i).toArray();
     }
 }

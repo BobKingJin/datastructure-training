@@ -11,9 +11,9 @@ public class Number1287 {
         int threshold = arr.length / 4;
 
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i + threshold] == arr[i])
+            if (arr[i + threshold] == arr[i]) {
                 return arr[i];
-
+            }
         }
         return 0;
     }
