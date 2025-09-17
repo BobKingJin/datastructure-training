@@ -5,8 +5,9 @@ public class Number206 {
     // 参考：程序猿代码指南P47
     public ListNode reverseList1(ListNode head) {
 
-        if (head == null || head.next == null)
+        if (head == null || head.next == null) {
             return head;
+        }
 
         ListNode next = null;
         ListNode pre = null;
@@ -23,8 +24,9 @@ public class Number206 {
 
     public ListNode reverseList2(ListNode head) {
 
-        if (head == null || head.next == null)
+        if (head == null || head.next == null) {
             return head;
+        }
 
         ListNode cur = reverseList2(head.next);
         // 如果链表是 1 -> 2 -> 3 -> 4 -> 5，那么此时的 cur 就是 5

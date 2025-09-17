@@ -15,8 +15,9 @@ public class Number226 {
     public TreeNode invertTree1(TreeNode root) {
 
         // 递归函数的终止条件，节点为空时返回
-        if (root == null)
+        if (root == null) {
             return null;
+        }
 
         // 将当前节点的左右子树交换
         TreeNode tmp = root.right;
@@ -33,8 +34,9 @@ public class Number226 {
     // 从下到上递归
     public TreeNode invertTree2(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return null;
+        }
 
         TreeNode left = invertTree2(root.left);
         TreeNode right = invertTree2(root.right);
@@ -46,8 +48,9 @@ public class Number226 {
     // 参考：https://leetcode-cn.com/problems/invert-binary-tree/solution/dong-hua-yan-shi-liang-chong-shi-xian-226-fan-zhua/
     public TreeNode invertTree3(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return null;
+        }
 
         // 将二叉树中的节点逐层放入队列中，再迭代处理队列中的元素
         LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
@@ -59,11 +62,13 @@ public class Number226 {
             tmp.left = tmp.right;
             tmp.right = left;
             // 如果当前节点的左子树不为空，则放入队列等待后续处理
-            if (tmp.left != null)
+            if (tmp.left != null) {
                 queue.add(tmp.left);
+            }
             // 如果当前节点的右子树不为空，则放入队列等待后续处理
-            if (tmp.right != null)
+            if (tmp.right != null) {
                 queue.add(tmp.right);
+            }
         }
         // 返回处理完的根节点
         return root;

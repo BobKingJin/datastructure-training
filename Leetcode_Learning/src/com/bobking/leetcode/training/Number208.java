@@ -6,6 +6,7 @@ public class Number208 {
     private class Trie {
 
         private class TrieNode {
+
             public int path;
             public int end;
             public TrieNode[] map;
@@ -31,8 +32,9 @@ public class Number208 {
          */
         public void insert(String word) {
 
-            if (word == null)
+            if (word == null) {
                 return;
+            }
 
             char[] ch = word.toCharArray();
             TrieNode node = root;
@@ -41,8 +43,9 @@ public class Number208 {
 
             for (int i = 0; i < ch.length; i++) {
                 index = ch[i] - 'a';
-                if (node.map[index] == null)
+                if (node.map[index] == null) {
                     node.map[index] = new TrieNode();
+                }
                 node = node.map[index];
                 node.path++;
             }
@@ -54,8 +57,9 @@ public class Number208 {
          */
         public boolean search(String word) {
 
-            if (word == null)
+            if (word == null) {
                 return false;
+            }
 
             char[] ch = word.toCharArray();
             TrieNode node = root;
@@ -63,11 +67,11 @@ public class Number208 {
 
             for (int i = 0; i < ch.length; i++) {
                 index = ch[i] - 'a';
-                if (node.map[index] == null)
+                if (node.map[index] == null) {
                     return false;
+                }
                 node = node.map[index];
             }
-
             return node.end != 0;
         }
 
@@ -76,8 +80,9 @@ public class Number208 {
          */
         public boolean startsWith(String prefix) {
 
-            if (prefix == null)
+            if (prefix == null) {
                 return false;
+            }
 
             char[] ch = prefix.toCharArray();
             TrieNode node = root;
@@ -85,11 +90,11 @@ public class Number208 {
 
             for (int i = 0; i < ch.length; i++) {
                 index = ch[i] - 'a';
-                if (node.map[index] == null)
+                if (node.map[index] == null) {
                     return false;
+                }
                 node = node.map[index];
             }
-
             return node.path != 0;
         }
     }

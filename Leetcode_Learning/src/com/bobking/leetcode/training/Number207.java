@@ -14,38 +14,42 @@ public class Number207 {
     // 参考：https://leetcode-cn.com/problems/course-schedule/solution/ke-cheng-biao-by-leetcode-solution/
     public boolean canFinish1(int numCourses, int[][] prerequisites) {
 
-        if (numCourses < 1)
+        if (numCourses < 1) {
             return false;
+        }
 
         list = new ArrayList<List<Integer>>();
-        // 每个节点三种状态：0：未搜索  1：搜索中  2：已完成
+        // 每个节点三种状态：0: 未搜索  1: 搜索中  2: 已完成
         visited = new int[numCourses];
         res = true;
 
-        for (int i = 0; i < numCourses; i++)
-            list.add(new ArrayList<>());
+        for (int i = 0; i < numCourses; i++) {
+            list.add(new ArrayList<Integer>());
+        }
 
-        for (int[] i : prerequisites)
+        for (int[] i : prerequisites) {
             list.get(i[0]).add(i[1]);
+        }
 
         for (int i = 0; i < numCourses && res; i++) {
-            if (visited[i] == 0)
+            if (visited[i] == 0) {
                 dfs(i);
+            }
         }
 
         return res;
     }
 
     private void dfs(int i) {
-
         // 搜索中
         visited[i] = 1;
         // 遍历每一个相邻的节点
         for (int index : list.get(i)) {
             if (visited[index] == 0) {
                 dfs(index);
-                if (!res)
+                if (!res) {
                     return;
+                }
                 // 成环
             } else if (visited[index] == 1) {
                 res = false;
@@ -60,16 +64,18 @@ public class Number207 {
     // 思路参考：https://leetcode-cn.com/problems/course-schedule/solution/ke-cheng-biao-by-leetcode-solution/
     public boolean canFinish2(int numCourses, int[][] prerequisites) {
 
-        if (numCourses < 1)
+        if (numCourses < 1) {
             return false;
+        }
 
         // 入度表 indegrees：每个节点的入度
         int[] indegrees = new int[numCourses];
         List<List<Integer>> list = new ArrayList<List<Integer>>();
         Queue<Integer> queue = new LinkedList<Integer>();
 
-        for (int i = 0; i < numCourses; i++)
+        for (int i = 0; i < numCourses; i++) {
             list.add(new ArrayList<Integer>());
+        }
 
         for (int[] i : prerequisites) {
             list.get(i[1]).add(i[0]);
@@ -77,16 +83,18 @@ public class Number207 {
         }
 
         for (int i = 0; i < numCourses; i++) {
-            if (indegrees[i] == 0)
-                queue.offer(i);
+            if (indegrees[i] == 0) {
+                queue.add(i);
+            }
         }
 
         while (!queue.isEmpty()) {
             int pre = queue.poll();
             for (int i : list.get(pre)) {
                 indegrees[i]--;
-                if (indegrees[i] == 0)
-                    queue.offer(i);
+                if (indegrees[i] == 0) {
+                    queue.add(i);
+                }
             }
             numCourses--;
         }

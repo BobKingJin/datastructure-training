@@ -9,8 +9,9 @@ public class Number200 {
     // 参考：程序猿代码指南P342
     public int numIslands(char[][] grid) {
 
-        if (grid == null || grid.length < 1)
+        if (grid == null || grid.length < 1) {
             return 0;
+        }
 
         int res = 0;
         for (int i = 0; i < grid.length; i++) {
@@ -26,8 +27,9 @@ public class Number200 {
 
     private void inject(char[][] grid, int i, int j) {
 
-        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] != '1')
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] != '1') {
             return;
+        }
 
         grid[i][j] = '2';
         inject(grid, i + 1, j);

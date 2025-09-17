@@ -6,10 +6,11 @@ public class Number739 {
 
     public int[] dailyTemperatures(int[] temperatures) {
 
-        int[] res = new int[temperatures.length];
+        if (temperatures == null || temperatures.length == 0) {
+            return temperatures;
+        }
 
-        if (temperatures == null || temperatures.length == 0)
-            return res;
+        int[] res = new int[temperatures.length];
 
         // 单调栈，从小到大，存放的是数组的角标
         Stack<Integer> stack = new Stack<Integer>();
@@ -20,11 +21,6 @@ public class Number739 {
             }
             stack.push(i);
         }
-
-       // 整型数组的默认值即为 0
-       // while (!stack.isEmpty())
-       //     res[stack.pop()] = 0;
-
         return res;
     }
 }

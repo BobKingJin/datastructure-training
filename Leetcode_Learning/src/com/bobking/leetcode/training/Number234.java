@@ -7,8 +7,9 @@ public class Number234 {
     // 参考：程序猿代码指南P55
     public boolean isPalindrome1(ListNode head) {
 
-        if (head == null || head.next == null)
+        if (head == null || head.next == null) {
             return true;
+        }
 
         Stack<ListNode> stack = new Stack<ListNode>();
         ListNode cur = head;
@@ -18,8 +19,9 @@ public class Number234 {
         }
 
         while (head != null) {
-            if (stack.pop().val != head.val)
+            if (stack.pop().val != head.val) {
                 return false;
+            }
             head = head.next;
         }
 
@@ -29,8 +31,9 @@ public class Number234 {
     // 参考：程序猿代码指南P55
     public boolean isPalindrome2(ListNode head) {
 
-        if (head == null || head.next == null)
+        if (head == null || head.next == null) {
             return true;
+        }
 
         ListNode cur = head;
         ListNode right = head.next;
@@ -46,8 +49,9 @@ public class Number234 {
         }
 
         while (!stack.isEmpty()) {
-            if (stack.pop().val != head.val)
+            if (stack.pop().val != head.val) {
                 return false;
+            }
             head = head.next;
         }
 

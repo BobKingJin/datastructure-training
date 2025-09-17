@@ -7,8 +7,9 @@ public class Number215 {
 
     public int findKthLargest1(int[] nums, int k) {
 
-        if (nums == null || nums.length == 0 || k <= 0 || k > nums.length)
+        if (nums == null || nums.length == 0 || k <= 0 || k > nums.length) {
             return 0;
+        }
 
         // 维护一个长度为 k 的小根堆，那么小根堆的堆顶元素即为第 k 大的元素
         PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>(k, new Comparator<Integer>() {
