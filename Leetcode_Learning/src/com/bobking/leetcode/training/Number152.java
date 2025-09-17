@@ -7,8 +7,9 @@ public class Number152 {
     // 参考：程序猿代码指南P402
     public int maxProduct(int[] nums) {
 
-        if (nums == null || nums.length < 1)
+        if (nums == null || nums.length < 1) {
             return 0;
+        }
 
         int[] max = new int[nums.length];
         int[] min = new int[nums.length];

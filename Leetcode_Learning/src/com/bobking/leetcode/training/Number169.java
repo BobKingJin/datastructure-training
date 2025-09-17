@@ -8,8 +8,9 @@ public class Number169 {
 
     public int majorityElement(int[] nums) {
 
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return 0;
+        }
 
         int times = 0;
         int candidate = 0;
@@ -28,13 +29,11 @@ public class Number169 {
         times = 0;
 
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == candidate)
+            if (nums[i] == candidate) {
                 times++;
+            }
         }
 
-        if (times > nums.length / 2)
-            return candidate;
-
-        return 0;
+        return times > nums.length / 2 ? candidate : 0;
     }
 }

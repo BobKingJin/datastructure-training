@@ -9,8 +9,9 @@ public class Number142 {
     // 参考：程序猿代码指南P69
     public ListNode detectCycle(ListNode head) {
 
-        if (head == null || head.next == null)
+        if (head == null || head.next == null) {
             return null;
+        }
 
         // 慢指针
         ListNode s = head;

@@ -1,6 +1,10 @@
 package com.bobking.leetcode.training;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Queue;
+import java.util.Set;
 
 /**
  * @author BobKing
@@ -11,8 +15,10 @@ public class Number139 {
     // 参考：https://leetcode-cn.com/problems/word-break/solution/dan-ci-chai-fen-by-leetcode-solution/
     public boolean wordBreak1(String s, List<String> wordDict) {
 
-        if (s == null || s.length() < 1 || wordDict == null || wordDict.size() < 1)
+        if (s == null || s.length() < 1 || wordDict == null || wordDict.size() < 1) {
             return false;
+        }
+
         // 去重
         Set<String> set = new HashSet<String>(wordDict);
         // dp[i] 表示字符串 s 前 i 个字符组成的字符串 s[0...(i - 1)] 是否能被空格拆分成若干个字典中出现的单词
@@ -39,8 +45,9 @@ public class Number139 {
     // BFS
     public boolean wordBreak2(String s, List<String> wordDict) {
 
-        if (s == null || s.length() < 1 || wordDict == null || wordDict.size() < 1)
+        if (s == null || s.length() < 1 || wordDict == null || wordDict.size() < 1) {
             return false;
+        }
 
         Queue<Integer> queue = new ArrayDeque<Integer>();
         boolean[] visit = new boolean[s.length()];
@@ -49,8 +56,9 @@ public class Number139 {
         while (!queue.isEmpty()) {
             int start = queue.poll();
             // 访问过的，跳过
-            if (visit[start] == true)
+            if (visit[start] == true) {
                 continue;
+            }
             // 未访问过的，记录一下
             visit[start] = true;
             for (int i = start + 1; i <= s.length(); i++) {
@@ -73,8 +81,9 @@ public class Number139 {
     // DFS
     public boolean wordBreak3(String s, List<String> wordDict) {
 
-        if (s == null || s.length() < 1 || wordDict == null || wordDict.size() < 1)
+        if (s == null || s.length() < 1 || wordDict == null || wordDict.size() < 1) {
             return false;
+        }
 
         // 用一个数组，存储计算的结果，数组索引为指针位置，值为计算的结果
         // 下次遇到相同的子问题，直接返回数组中的缓存值，就不用进入重复的递归
@@ -85,21 +94,26 @@ public class Number139 {
     private boolean dfs(String s, int start, List<String> wordDict, int[] visited) {
 
         // start 来到字符串末尾的「下一位」 说明匹配成功
-        if (start == s.length())
+        if (start == s.length()) {
             return true;
+        }
 
         // 剪枝 防止重复计算
-        if (visited[start] == 1)
+        if (visited[start] == 1) {
             return true;
-        if (visited[start] == -1)
+        }
+
+        if (visited[start] == -1) {
             return false;
+        }
+
         // 从 end 开始一步步尝试
         for (int end = start + 1; end <= s.length(); end++) {
             // 包含 start，不包含 end，所以 end 可以取到 s.length()
             String pre = s.substring(start, end);
             if (wordDict.contains(pre) &&
-                    // 判断后面部分能不能匹配
-                    dfs(s, end, wordDict, visited)) {
+                // 判断后面部分能不能匹配
+                dfs(s, end, wordDict, visited)) {
                 // 标记匹配成功
                 visited[start] = 1;
                 return true;

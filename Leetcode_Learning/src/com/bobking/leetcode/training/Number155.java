@@ -35,15 +35,17 @@ public class Number155 {
         }
 
         public int top() {
-            if (!dataStack.isEmpty())
+            if (!dataStack.isEmpty()) {
                 return dataStack.peek();
+            }
 
             throw new RuntimeException("The Stack is empty!");
         }
 
         public int getMin() {
-            if (!minStack.isEmpty())
+            if (!minStack.isEmpty()) {
                 return minStack.peek();
+            }
 
             throw new RuntimeException("The Stack is empty!");
         }
