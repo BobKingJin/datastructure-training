@@ -9,8 +9,9 @@ public class Number128 {
     // 参考：程序猿代码指南P248
     public int longestConsecutive1(int[] nums) {
 
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return 0;
+        }
 
         int max = 1;
         // key：数组中的已经遍历过的数  value：该数所在的最长连续序列的长度
@@ -19,17 +20,18 @@ public class Number128 {
         for (int i = 0; i < nums.length; i++) {
             if (!map.containsKey(nums[i])) {
                 map.put(nums[i], 1);
-                if (map.containsKey(nums[i] - 1))
+                if (map.containsKey(nums[i] - 1)) {
                     max = Math.max(max, merge(map, nums[i] - 1, nums[i]));
-                if (map.containsKey(nums[i] + 1))
+                }
+                if (map.containsKey(nums[i] + 1)) {
                     max = Math.max(max, merge(map, nums[i], nums[i] + 1));
+                }
             }
         }
         return max;
     }
 
     private int merge(HashMap<Integer, Integer> map, int less, int more) {
-
         int left = less - map.get(less) + 1;
         int right = more + map.get(more) - 1;
         int length = right - left + 1;
@@ -41,14 +43,16 @@ public class Number128 {
     // 参考：https://leetcode-cn.com/problems/longest-consecutive-sequence/solution/zui-chang-lian-xu-xu-lie-by-leetcode-solution/
     public int longestConsecutive2(int[] nums) {
 
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return 0;
+        }
 
         int res = 0;
 
         Set<Integer> set = new HashSet<Integer>();
-        for (int num : nums)
+        for (int num : nums) {
             set.add(num);
+        }
 
         for (int num : set) {
             int curNum = num;

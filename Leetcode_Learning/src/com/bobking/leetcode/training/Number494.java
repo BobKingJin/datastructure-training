@@ -7,9 +7,9 @@ public class Number494 {
     // 参考：https://leetcode-cn.com/problems/target-sum/solution/mu-biao-he-by-leetcode-solution-o0cp/
     public int findTargetSumWays1(int[] nums, int target) {
 
-        if (nums == null || nums.length < 1)
+        if (nums == null || nums.length < 1) {
             return 0;
-
+        }
         recursion(nums, 0, 0, target);
         return res;
     }
@@ -17,8 +17,9 @@ public class Number494 {
     private void recursion(int[] nums, int index, int sum, int target) {
 
         if (index == nums.length) {
-            if (sum == target)
+            if (sum == target) {
                 res++;
+            }
         } else {
             // 每一个 nums[index] 可正可负
             // 注意每个位置都必须要选
@@ -32,12 +33,14 @@ public class Number494 {
     public static int findTargetSumWays2(int[] nums, int target) {
 
         int sum = 0;
-        for (int i = 0; i < nums.length; i++)
+        for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
+        }
 
         // 绝对值范围超过了 sum 的绝对值范围则无法得到
-        if (Math.abs(target) > Math.abs(sum))
+        if (Math.abs(target) > Math.abs(sum)) {
             return 0;
+        }
 
         // - 0 +
         // 即 (-sum) - (+sum)

@@ -7,21 +7,23 @@ public class Number124 {
     // 参考：https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/solution/shou-hui-tu-jie-hen-you-ya-de-yi-dao-dfsti-by-hyj8/
     public int maxPathSum(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return 0;
+        }
 
         // dfs 能够保证当进入某条路径之后不回头
         dfs(root);
         return res;
     }
 
-    // 函数功能：返回当前子树能向父节点提供的最大路径和
+    // 函数功能: 返回当前子树能向父节点提供的最大路径和
     // 顺序为 从底 -> 上
     // 后序遍历
     private int dfs(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return 0;
+        }
 
         // 如果不是叶子节点，计算当前节点的左右孩子对自身的贡献 left 和 right
         int left = dfs(root.left);
