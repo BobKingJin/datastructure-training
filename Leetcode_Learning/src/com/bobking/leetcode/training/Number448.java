@@ -14,8 +14,9 @@ public class Number448 {
 
         List<Integer> res = new ArrayList<Integer>();
 
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return res;
+        }
 
         int n = nums.length;
         // 注意这个位置是在 nums 数组，即原数组中进行值的改变的，但是这并不会影响结果的正确性
@@ -29,8 +30,9 @@ public class Number448 {
         }
 
         for (int i = 0; i < n; i++) {
-            if (nums[i] <= n)
+            if (nums[i] <= n) {
                 res.add(i + 1);
+            }
         }
 
         return res;

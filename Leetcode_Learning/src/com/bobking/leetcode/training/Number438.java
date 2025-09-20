@@ -13,8 +13,9 @@ public class Number438 {
 
         List<Integer> res = new ArrayList<Integer>();
 
-        if (s == null || p == null || "".equals(s) || "".equals(p) || s.length() < p.length())
+        if (s == null || p == null || "".equals(s) || "".equals(p) || s.length() < p.length()) {
             return res;
+        }
 
         int m = s.length();
         int n = p.length();
@@ -28,16 +29,18 @@ public class Number438 {
             n_count[p.charAt(i) - 'a']++;
         }
 
-        if (Arrays.equals(m_count, n_count))
+        if (Arrays.equals(m_count, n_count)) {
             res.add(0);
+        }
 
         // 从 i = n 开始遍历
         for (int i = n; i < m; i++) {
             m_count[s.charAt(i) - 'a']++;
             // 往右移动一位，则前面的字符要去掉，第 (i - n) 位去掉
             m_count[s.charAt(i - n) - 'a']--;
-            if (Arrays.equals(m_count, n_count))
+            if (Arrays.equals(m_count, n_count)) {
                 res.add(i - n + 1);
+            }
         }
         return res;
     }
@@ -47,8 +50,9 @@ public class Number438 {
 
         List<Integer> res = new ArrayList<Integer>();
 
-        if (s == null || p == null || "".equals(s) || "".equals(p) || s.length() < p.length())
+        if (s == null || p == null || "".equals(s) || "".equals(p) || s.length() < p.length()) {
             return res;
+        }
 
         int m = s.length();
         int n = p.length();
@@ -56,8 +60,9 @@ public class Number438 {
         int[] m_count = new int[26];
         int[] n_count = new int[26];
 
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             n_count[p.charAt(i) - 'a']++;
+        }
 
         int left = 0;
         for (int right = 0; right < m; right++) {
@@ -70,8 +75,9 @@ public class Number438 {
                 m_count[curLeft]--;
                 left++;
             }
-            if (right - left + 1 == n)
+            if (right - left + 1 == n) {
                 res.add(left);
+            }
         }
         return res;
     }

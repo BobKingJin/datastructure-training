@@ -11,7 +11,8 @@ import java.util.Map;
 public class Number399 {
 
     // 参考：https://leetcode.cn/problems/evaluate-division/solution/399-chu-fa-qiu-zhi-nan-du-zhong-deng-286-w45d/
-    public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
+    public double[] calcEquation(List<List<String>> equations, double[] values,
+        List<List<String>> queries) {
 
         int equationsSize = equations.size();
 
@@ -76,8 +77,9 @@ public class Number399 {
             int rootX = find(x);
             int rootY = find(y);
 
-            if (rootX == rootY)
+            if (rootX == rootY) {
                 return;
+            }
 
             parent[rootX] = rootY;
             weight[rootX] = weight[y] * value / weight[x];

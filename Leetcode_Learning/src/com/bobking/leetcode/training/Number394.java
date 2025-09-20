@@ -8,8 +8,9 @@ public class Number394 {
     public String decodeString1(String s) {
 
         // 因为顺序是由内到外进行拼接的，所以应该使用栈
-        if (s == null || "".equals(s))
+        if (s == null || "".equals(s)) {
             return s;
+        }
 
         // 用于存放 s 中的数字
         // 用于存放上一个 [ 和当前 [ 之间的数字
@@ -30,8 +31,9 @@ public class Number394 {
                 StringBuilder temp = new StringBuilder();
                 // 把上一个 [ 和当前 [ 之间的数字弹出
                 int loop = numStack.pop();
-                for (int i = 0; i < loop; i++)
+                for (int i = 0; i < loop; i++) {
                     temp.append(res);
+                }
                 // 注意：这个位置是需要 strStack.pop()
                 res = new StringBuilder(strStack.pop() + temp.toString());
             } else if (c >= '0' && c <= '9') {
@@ -47,8 +49,9 @@ public class Number394 {
     // 参考：https://leetcode-cn.com/problems/decode-string/solution/decode-string-fu-zhu-zhan-fa-di-gui-fa-by-jyd/
     public String decodeString2(String s) {
 
-        if (s == null || "".equals(s))
+        if (s == null || "".equals(s)) {
             return s;
+        }
 
         return dfs(s, 0)[0];
     }
@@ -58,10 +61,9 @@ public class Number394 {
         StringBuilder res = new StringBuilder();
         int multi = 0;
         while (i < s.length()) {
-            if (s.charAt(i) >= '0' && s.charAt(i) <= '9')
+            if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
                 multi = multi * 10 + Integer.parseInt(String.valueOf(s.charAt(i)));
-                // 遇到 [ 即进行递归
-            else if (s.charAt(i) == '[') {
+            } else if (s.charAt(i) == '[') { // 遇到 [ 即进行递归
                 String[] tmp = dfs(s, i + 1);
                 i = Integer.parseInt(tmp[0]);
                 while (multi > 0) {

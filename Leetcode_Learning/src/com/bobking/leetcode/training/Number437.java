@@ -10,8 +10,10 @@ public class Number437 {
     // 即判断从根节点到每一个叶节点的路径中时候有 sum 出现
     public int pathSum(TreeNode root, int sum) {
 
-        if (root == null)
+        if (root == null) {
             return 0;
+        }
+
         // 记忆   前缀和    二叉树中每个节点值都不相同???
         // 前缀和是从根节点到当前节点的和
         // 因为路径必须是从上往下，所以用前缀和
@@ -23,11 +25,13 @@ public class Number437 {
     }
 
     // 递归
-    private int recursionPathSum(TreeNode node, long currSum, int sum, Map<Long, Integer> prefixSum) {
+    private int recursionPathSum(TreeNode node, long currSum, int sum,
+        Map<Long, Integer> prefixSum) {
 
         // 递归结束条件
-        if (node == null)
+        if (node == null) {
             return 0;
+        }
 
         int res = 0;
         // 先序遍历
