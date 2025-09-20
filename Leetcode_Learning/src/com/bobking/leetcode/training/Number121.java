@@ -11,8 +11,9 @@ public class Number121 {
     // 参考：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/bao-li-mei-ju-dong-tai-gui-hua-chai-fen-si-xiang-b/
     public int maxProfit1(int[] prices) {
 
-        if (prices == null || prices.length < 2)
+        if (prices == null || prices.length < 2) {
             return 0;
+        }
 
         int[][] dp = new int[prices.length][2];
         dp[0][0] = 0;
@@ -29,8 +30,9 @@ public class Number121 {
     // 参考：https://leetcode-cn.com/circle/article/qiAgHn/
     public int maxProfit2(int[] prices) {
 
-        if (prices == null || prices.length < 2)
+        if (prices == null || prices.length < 2) {
             return 0;
+        }
 
         int profit0 = 0;
         int profit1 = -prices[0];

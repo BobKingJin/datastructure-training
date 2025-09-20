@@ -1,6 +1,11 @@
 package com.bobking.leetcode.training;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 public class Number347 {
 
@@ -9,8 +14,9 @@ public class Number347 {
 
         List<Integer> res = new ArrayList<Integer>();
 
-        if (nums == null || nums.length == 0 || k > nums.length)
+        if (nums == null || nums.length == 0 || k > nums.length) {
             return res;
+        }
 
         // 用 map 记录数组中的数出现的次数
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -28,16 +34,18 @@ public class Number347 {
         ArrayList<Integer>[] buckets = new ArrayList[nums.length + 1];
         for (Integer key : map.keySet()) {
             int frequnce = map.get(key);
-            if (buckets[frequnce] == null)
+            if (buckets[frequnce] == null) {
                 buckets[frequnce] = new ArrayList<Integer>();
+            }
             buckets[frequnce].add(key);
         }
         // 例如：list[6] = {8, 2}，那么说明 8 和 2 出现了 6 次
         // 从后往前
         for (int index = buckets.length - 1; res.size() < k; index--) {
             // 说明index这个数没有出现过
-            if (buckets[index] == null)
+            if (buckets[index] == null) {
                 continue;
+            }
             res.addAll(buckets[index]);
         }
 
@@ -49,8 +57,9 @@ public class Number347 {
 
         List<Integer> res = new ArrayList<Integer>();
 
-        if (nums == null || nums.length == 0 || k > nums.length)
+        if (nums == null || nums.length == 0 || k > nums.length) {
             return res;
+        }
 
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
@@ -78,8 +87,9 @@ public class Number347 {
         }
 
         // 取出最小堆中的元素
-        while (!queue.isEmpty())
+        while (!queue.isEmpty()) {
             res.add(queue.remove());
+        }
 
         return res;
     }
