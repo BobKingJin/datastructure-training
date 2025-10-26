@@ -18,8 +18,9 @@ public class Number42 {
             int tempSum = 0;
             // 找到每根柱子左边和右边离其最近的大于该柱子高度的柱子
             for (int j = 0; j < height.length; j++) {
-                if (isStart && height[j] < i)
+                if (isStart && height[j] < i) {
                     tempSum++;
+                }
                 if (height[j] >= i) {
                     sum += tempSum;
                     tempSum = 0;
@@ -31,11 +32,11 @@ public class Number42 {
     }
 
     private int getMax(int[] height) {
-
         int max = 0;
         for (int i = 0; i < height.length; i++) {
-            if (height[i] > max)
+            if (height[i] > max) {
                 max = height[i];
+            }
         }
         return max;
     }
@@ -49,14 +50,16 @@ public class Number42 {
             int maxLeft = 0;
             // 找出左边最高
             for (int j = i - 1; j >= 0; j--) {
-                if (height[j] > maxLeft)
+                if (height[j] > maxLeft) {
                     maxLeft = height[j];
+                }
             }
             int maxRight = 0;
             // 找出右边最高
             for (int j = i + 1; j < height.length; j++) {
-                if (height[j] > maxRight)
+                if (height[j] > maxRight) {
                     maxRight = height[j];
+                }
             }
             // 找出两端较小的
             int min = Math.min(maxLeft, maxRight);
@@ -76,16 +79,17 @@ public class Number42 {
         int[] maxRight = new int[height.length];
 
         // 第 i 列左或右边最高的墙，是不包括自身的
-        for (int i = 1; i < height.length - 1; i++)
+        for (int i = 1; i < height.length - 1; i++) {
             maxLeft[i] = Math.max(maxLeft[i - 1], height[i - 1]);
-
-        for (int i = height.length - 2; i >= 0; i--)
+        }
+        for (int i = height.length - 2; i >= 0; i--) {
             maxRight[i] = Math.max(maxRight[i + 1], height[i + 1]);
-
+        }
         for (int i = 1; i < height.length - 1; i++) {
             int min = Math.min(maxLeft[i], maxRight[i]);
-            if (min > height[i])
+            if (min > height[i]) {
                 sum = sum + (min - height[i]);
+            }
         }
         return sum;
     }
@@ -124,7 +128,6 @@ public class Number42 {
     // 参考：https://leetcode-cn.com/problems/trapping-rain-water/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-8/
     // 单调栈
     public int trap5(int[] height) {
-
         int sum = 0;
         Stack<Integer> stack = new Stack<Integer>();
         int current = 0;
@@ -139,8 +142,9 @@ public class Number42 {
                 // 出栈
                 stack.pop();
                 // 栈空就出去
-                if (stack.empty())
+                if (stack.empty()) {
                     break;
+                }
                 // 两堵墙之前的距离
                 int distance = current - stack.peek() - 1;
                 int min = Math.min(height[stack.peek()], height[current]);

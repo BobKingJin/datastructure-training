@@ -5,8 +5,9 @@ public class Number240 {
     // 参考：程序猿代码指南P376
     public boolean searchMatrix(int[][] matrix, int target) {
 
-        if (matrix == null || matrix.length < 1)
+        if (matrix == null || matrix.length < 1) {
             return false;
+        }
 
         int row = 0;
         int column = matrix[0].length - 1;

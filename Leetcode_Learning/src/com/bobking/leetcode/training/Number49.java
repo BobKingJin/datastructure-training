@@ -10,8 +10,9 @@ public class Number49 {
     // 参考：https://leetcode-cn.com/problems/group-anagrams/solution/zi-mu-yi-wei-ci-fen-zu-by-leetcode-solut-gyoc/
     public List<List<String>> groupAnagrams1(String[] strs) {
 
-        if (strs == null || strs.length < 1)
+        if (strs == null || strs.length < 1) {
             return null;
+        }
 
         List<List<String>> res = new ArrayList<List<String>>();
         HashMap<String, List<String>> map = new HashMap<String, List<String>>();
@@ -29,8 +30,9 @@ public class Number49 {
             }
         }
 
-        for (String str : map.keySet())
+        for (String str : map.keySet()) {
             res.add(map.get(str));
+        }
 
         return res;
     }
@@ -38,8 +40,9 @@ public class Number49 {
     // 参考：https://leetcode-cn.com/problems/group-anagrams/solution/zi-mu-yi-wei-ci-fen-zu-by-leetcode-solut-gyoc/
     public List<List<String>> groupAnagrams2(String[] strs) {
 
-        if (strs == null || strs.length < 1)
+        if (strs == null || strs.length < 1) {
             return null;
+        }
 
         List<List<String>> res = new ArrayList<List<String>>();
         HashMap<String, List<String>> map = new HashMap<String, List<String>>();
@@ -48,8 +51,9 @@ public class Number49 {
             char[] ch = str.toCharArray();
             int[] count = new int[26];
             // 因为所有源单词中的字母都恰好只用一次，因此不会出现重复字符
-            for (char c : ch)
+            for (char c : ch) {
                 count[c - 'a']++;
+            }
             // 将每个出现次数大于 0 的字母和出现次数按顺序拼接成字符串，作为哈希表的键
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < count.length; i++) {
@@ -67,8 +71,9 @@ public class Number49 {
             }
         }
 
-        for (String str : map.keySet())
+        for (String str : map.keySet()) {
             res.add(map.get(str));
+        }
 
         return res;
     }

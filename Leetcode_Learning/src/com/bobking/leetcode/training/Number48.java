@@ -5,8 +5,9 @@ public class Number48 {
     // 参考：程序猿代码指南P363
     public void rotate(int[][] matrix) {
 
-        if (matrix == null || matrix.length < 1)
+        if (matrix == null || matrix.length < 1) {
             return;
+        }
 
         // 左上角行标和列标
         int lRow = 0;
@@ -15,8 +16,9 @@ public class Number48 {
         int rRow = matrix.length - 1;
         int rColumn = matrix[0].length - 1;
 
-        while (lRow < rRow)
+        while (lRow < rRow) {
             rotateEdge(matrix, lRow++, lColumn++, rRow--, rColumn--);
+        }
     }
 
     private void rotateEdge(int[][] matrix, int lRow, int lColumn, int rRow, int rColumn) {

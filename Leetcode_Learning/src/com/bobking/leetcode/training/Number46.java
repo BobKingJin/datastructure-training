@@ -15,8 +15,9 @@ public class Number46 {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
 
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return res;
+        }
 
         List<Integer> list = new ArrayList<Integer>();
         // 已经访问过的，不允许重复访问
@@ -25,7 +26,8 @@ public class Number46 {
         return res;
     }
 
-    private void backTrack(int index, int[] nums, boolean[] visited, List<Integer> list, List<List<Integer>> res) {
+    private void backTrack(int index, int[] nums, boolean[] visited, List<Integer> list,
+        List<List<Integer>> res) {
 
         if (list.size() == nums.length) {
             res.add(new ArrayList<Integer>(list));
