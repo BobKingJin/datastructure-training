@@ -9,8 +9,9 @@ public class Number309 {
     // 参考：https://leetcode-cn.com/circle/article/qiAgHn/
     public int maxProfit1(int[] prices) {
 
-        if (prices == null || prices.length < 1)
+        if (prices == null || prices.length < 1) {
             return 0;
+        }
 
         int[][] dp = new int[prices.length][2];
         dp[0][0] = 0;
@@ -27,8 +28,9 @@ public class Number309 {
     // 参考：https://leetcode-cn.com/circle/article/qiAgHn/
     public int maxProfit2(int[] prices) {
 
-        if (prices == null || prices.length == 0)
+        if (prices == null || prices.length == 0) {
             return 0;
+        }
 
         int prevProfit0 = 0;
         int profit0 = 0;

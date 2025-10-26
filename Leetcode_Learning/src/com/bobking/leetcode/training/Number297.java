@@ -9,8 +9,9 @@ public class Number297 {
     // Encodes a tree to a single string.
     public String serialize1(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return "#!";
+        }
         // 按先序序列化
         String res = root.val + "!";
         res += serialize1(root.left);
@@ -24,17 +25,18 @@ public class Number297 {
         String[] values = data.split("!");
         // 用队列的好处就是不用记角标
         Queue<String> queue = new LinkedList<String>();
-        for (int i = 0; i < values.length; i++)
-            queue.offer(values[i]);
-
+        for (int i = 0; i < values.length; i++) {
+            queue.add(values[i]);
+        }
         return reconByPreOrder1(queue);
     }
 
     private TreeNode reconByPreOrder1(Queue<String> queue) {
 
         String value = queue.poll();
-        if ("#".equals(value))
+        if ("#".equals(value)) {
             return null;
+        }
 
         TreeNode head = new TreeNode(Integer.valueOf(value));
         head.left = reconByPreOrder1(queue);
@@ -46,8 +48,9 @@ public class Number297 {
     // Encodes a tree to a single string.
     public String serialize2(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return "#!";
+        }
         // 按层序列化
         String res = root.val + "!";
 
@@ -88,20 +91,21 @@ public class Number297 {
             node = queue.poll();
             node.left = generateTreeNodeByString(values[index++]);
             node.right = generateTreeNodeByString(values[index++]);
-            if (node.left != null)
+            if (node.left != null) {
                 queue.offer(node.left);
-            if (node.right != null)
+            }
+            if (node.right != null) {
                 queue.offer(node.right);
+            }
         }
 
         return head;
     }
 
     private TreeNode generateTreeNodeByString(String value) {
-
-        if ("#".equals(value))
+        if ("#".equals(value)) {
             return null;
-
+        }
         return new TreeNode(Integer.valueOf(value));
     }
 }

@@ -7,10 +7,12 @@ public class Number300 {
     // 参考：https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/dong-tai-gui-hua-er-fen-cha-zhao-tan-xin-suan-fa-p/
     public int lengthOfLIS1(int[] nums) {
 
-        if (nums == null || nums.length < 1)
+        if (nums == null || nums.length < 1) {
             return 0;
-        if (nums.length == 1)
+        }
+        if (nums.length == 1) {
             return 1;
+        }
         // dp[i] 表示 从 0 - i 最长递增子序列
         int[] dp = new int[nums.length];
 
@@ -18,8 +20,9 @@ public class Number300 {
             // 初始化
             dp[i] = 1;
             for (int j = 0; j < i; j++) {
-                if (nums[i] > nums[j])
+                if (nums[i] > nums[j]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
             }
         }
 
@@ -30,10 +33,12 @@ public class Number300 {
     // 参考：程序猿代码指南P212
     public int lengthOfLIS2(int[] nums) {
 
-        if (nums == null || nums.length < 1)
+        if (nums == null || nums.length < 1) {
             return 0;
-        if (nums.length == 1)
+        }
+        if (nums.length == 1) {
             return 1;
+        }
 
         // tail 数组的定义：长度为 i + 1 的上升子序列的末尾最小是几
         // tail[i]表示：长度为 i + 1 的所有上升子序列的结尾的最小值
