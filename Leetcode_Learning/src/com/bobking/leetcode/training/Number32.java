@@ -7,8 +7,9 @@ public class Number32 {
     // 参考：程序猿代码指南P291
     public int longestValidParentheses1(String s) {
 
-        if (s == null || s.length() == 0)
+        if (s == null || s.length() == 0) {
             return 0;
+        }
 
         char[] ch = s.toCharArray();
         // dp[i] 的含义为 str[0...i] 中必须以 str[i] 结尾的最长的有效括号子串长度
@@ -32,8 +33,9 @@ public class Number32 {
     // 通过栈底元素为最后一个没有被匹配的右括号的下标，可以避免上述情况
     public int longestValidParentheses2(String s) {
 
-        if (s == null || s.length() == 0)
+        if (s == null || s.length() == 0) {
             return 0;
+        }
 
         Stack<Integer> stack = new Stack<>();
         int res = 0;
@@ -42,9 +44,7 @@ public class Number32 {
             if (s.charAt(i) == '(') {
                 stack.push(i);
             } else {
-                if (stack.isEmpty()) {
-                    continue;
-                } else {
+                if (!stack.isEmpty()) {
                     res = Math.max(res, i - stack.peek() + 1);
                     stack.pop();
                 }
@@ -56,8 +56,9 @@ public class Number32 {
     // 参考：https://leetcode-cn.com/problems/longest-valid-parentheses/solution/zui-chang-you-xiao-gua-hao-by-leetcode-solution/
     public int longestValidParentheses3(String s) {
 
-        if (s == null || s.length() == 0)
+        if (s == null || s.length() == 0) {
             return 0;
+        }
 
         Stack<Integer> stack = new Stack<Integer>();
         // 栈底元素为最后一个没有被匹配的右括号的下标
@@ -85,8 +86,9 @@ public class Number32 {
     // 参考：https://leetcode-cn.com/problems/longest-valid-parentheses/solution/zui-chang-you-xiao-gua-hao-by-leetcode-solution/
     public int longestValidParentheses4(String s) {
 
-        if (s == null || s.length() == 0)
+        if (s == null || s.length() == 0) {
             return 0;
+        }
 
         int res = 0;
         int left = 0;

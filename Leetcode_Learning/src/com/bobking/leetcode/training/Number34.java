@@ -1,11 +1,12 @@
 package com.bobking.leetcode.training;
 
-public class  Number34 {
+public class Number34 {
 
     public int[] searchRange1(int[] nums, int target) {
 
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return new int[]{-1, -1};
+        }
 
         int[] res = new int[]{-1, -1};
 
@@ -49,8 +50,9 @@ public class  Number34 {
     // 参考：https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/solution/zai-pai-xu-shu-zu-zhong-cha-zhao-yuan-su-de-di-3-4/
     public int[] searchRange2(int[] nums, int target) {
 
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return new int[]{-1, -1};
+        }
 
         int[] res = new int[]{-1, -1};
 
@@ -59,8 +61,8 @@ public class  Number34 {
         // 查找第一个大于 target 的下标
         int rightIndex = binarySearch(nums, target, false) - 1;
 
-        if ((leftIndex >= 0 && leftIndex <= nums.length - 1 && nums[leftIndex] == target) &&
-                (rightIndex >= 0 && rightIndex <= nums.length - 1 && nums[rightIndex] == target)) {
+        if ((leftIndex >= 0 && leftIndex <= nums.length - 1 && nums[leftIndex] == target)
+            && (rightIndex >= 0 && rightIndex <= nums.length - 1 && nums[rightIndex] == target)) {
             res[0] = leftIndex;
             res[1] = rightIndex;
             return res;
@@ -93,12 +95,14 @@ public class  Number34 {
     // 参考：https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/solution/si-lu-hen-jian-dan-xi-jie-fei-mo-gui-de-er-fen-cha/
     public int[] searchRange3(int[] nums, int target) {
 
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return new int[]{-1, -1};
+        }
 
         int firstPosition = findFirstPosition(nums, target);
-        if (firstPosition == -1)
+        if (firstPosition == -1) {
             return new int[]{-1, -1};
+        }
 
         int lastPosition = findLastPosition(nums, target);
         return new int[]{firstPosition, lastPosition};
@@ -120,8 +124,9 @@ public class  Number34 {
             }
         }
 
-        if (nums[left] == target)
+        if (nums[left] == target) {
             return left;
+        }
 
         return -1;
     }
@@ -136,9 +141,9 @@ public class  Number34 {
             if (nums[mid] > target) {
                 // 下一轮搜索区间是 [left..mid - 1]
                 right = mid - 1;
-            } else
-                // 下一轮搜索区间是 [mid..right]
+            } else { // 下一轮搜索区间是 [mid..right]
                 left = mid;
+            }
         }
 
         return left;

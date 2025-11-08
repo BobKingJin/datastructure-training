@@ -5,8 +5,9 @@ public class Number31 {
     // 参考：https://leetcode-cn.com/problems/next-permutation/solution/xia-yi-ge-pai-lie-by-leetcode-solution/
     public void nextPermutation(int[] nums) {
 
-        if (nums == null || nums.length <= 1)
+        if (nums == null || nums.length <= 1) {
             return;
+        }
 
         //  需要将一个左边的「较小数」与一个右边的「较大数」交换，以能够让当前排列变大，从而得到下一个排列
         //  同时要让这个「较小数」尽量靠右，而「较大数」尽可能小。当交换完成后
@@ -16,14 +17,16 @@ public class Number31 {
         // 从后向前查找第一个顺序对 (i, i + 1)，满足 a[i] < a[i + 1]
         // 此时 [i + 1, n) 必然是下降序列，因为 (i, i + 1) 是第一对，若 [i + 1, n) 不是下降序列，那么必然早于(i, i + 1)发现
         // 当 nums 严格降序，例如：3，2，1，那么此时 i = -1
-        while (i >= 0 && nums[i] >= nums[i + 1])
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
             i--;
+        }
 
         if (i >= 0) {
             int j = nums.length - 1;
             // 找到 i + 1 至 nums.length - 1 范围内第一个大于 nums[i] 的数
-            while (j >= 0 && nums[j] <= nums[i])
+            while (j >= 0 && nums[j] <= nums[i]) {
                 j--;
+            }
             swap(nums, i, j);
         }
 
