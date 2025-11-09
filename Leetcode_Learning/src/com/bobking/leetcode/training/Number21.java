@@ -5,8 +5,9 @@ public class Number21 {
     // 参考：程序猿代码指南P88
     public ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
 
-        if (l1 == null || l2 == null)
+        if (l1 == null || l2 == null) {
             return l1 == null ? l2 : l1;
+        }
 
         ListNode head = l1.val < l2.val ? l1 : l2;
         ListNode cur1 = l1 == head ? l1 : l2;

@@ -9,8 +9,9 @@ public class Number560 {
     // 前缀和
     public int subarraySum(int[] nums, int k) {
 
-        if (nums == null || nums.length < 1)
+        if (nums == null || nums.length < 1) {
             return 0;
+        }
 
         // key为前缀和
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -21,8 +22,9 @@ public class Number560 {
 
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
-            if (map.containsKey(sum - k))
+            if (map.containsKey(sum - k)) {
                 res += map.get(sum - k);
+            }
             map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
 

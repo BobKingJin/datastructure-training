@@ -7,8 +7,9 @@ public class Number20 {
     // 参考：https://leetcode-cn.com/problems/valid-parentheses/solution/valid-parentheses-fu-zhu-zhan-fa-by-jin407891080/
     public boolean isValid(String s) {
 
-        if (s == null || s.length() == 0 || "".equals(s))
+        if (s == null || s.length() == 0 || "".equals(s)) {
             return true;
+        }
 
         Stack<Character> stack = new Stack<Character>();
         char[] charArray = s.toCharArray();
@@ -19,14 +20,17 @@ public class Number20 {
             } else {
                 if (!stack.isEmpty()) {
                     if (ch == ')') {
-                        if (stack.pop() != '(')
+                        if (stack.pop() != '(') {
                             return false;
+                        }
                     } else if (ch == '}') {
-                        if (stack.pop() != '{')
+                        if (stack.pop() != '{') {
                             return false;
+                        }
                     } else {
-                        if (stack.pop() != '[')
+                        if (stack.pop() != '[') {
                             return false;
+                        }
                     }
                 } else {
                     return false;

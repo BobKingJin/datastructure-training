@@ -8,21 +8,24 @@ public class Number23 {
     // 参考：https://leetcode-cn.com/problems/merge-k-sorted-lists/solution/he-bing-kge-pai-xu-lian-biao-by-leetcode-solutio-2/
     public ListNode mergeKLists1(ListNode[] lists) {
 
-        if (lists == null || lists.length == 0)
+        if (lists == null || lists.length == 0) {
             return null;
+        }
 
         ListNode res = null;
-        for (int i = 0; i < lists.length; i++)
+        for (int i = 0; i < lists.length; i++) {
             // 两两进行合并
             res = mergeTwoLists(res, lists[i]);
+        }
 
         return res;
     }
 
     private ListNode mergeTwoLists(ListNode a, ListNode b) {
 
-        if (a == null || b == null)
+        if (a == null || b == null) {
             return a != null ? a : b;
+        }
 
         // 创建一个伪头节点
         ListNode head = new ListNode(0);
@@ -47,19 +50,22 @@ public class Number23 {
     // 参考：https://leetcode-cn.com/problems/merge-k-sorted-lists/solution/he-bing-kge-pai-xu-lian-biao-by-leetcode-solutio-2/
     public ListNode mergeKLists2(ListNode[] lists) {
 
-        if (lists == null || lists.length == 0)
+        if (lists == null || lists.length == 0) {
             return null;
+        }
 
         return merge(lists, 0, lists.length - 1);
     }
 
     private ListNode merge(ListNode[] lists, int l, int r) {
 
-        if (l == r)
+        if (l == r) {
             return lists[l];
+        }
 
-        if (l > r)
+        if (l > r) {
             return null;
+        }
 
         int mid = (l + r) >> 1;
         return mergeTwoLists(merge(lists, l, mid), merge(lists, mid + 1, r));
@@ -88,12 +94,14 @@ public class Number23 {
     // bfs
     public ListNode mergeKLists3(ListNode[] lists) {
 
-        if (lists == null || lists.length == 0)
+        if (lists == null || lists.length == 0) {
             return null;
+        }
 
         for (ListNode node : lists) {
-            if (node != null)
+            if (node != null) {
                 queue.offer(new Status(node.val, node));
+            }
         }
 
         // 维护当前每个链表没有被合并的元素的最前面一个，k个链表就最多有 k个满足这样条件的元素
@@ -107,8 +115,9 @@ public class Number23 {
             Status f = queue.poll();
             tail.next = f.ptr;
             tail = tail.next;
-            if (f.ptr.next != null)
+            if (f.ptr.next != null) {
                 queue.offer(new Status(f.ptr.next.val, f.ptr.next));
+            }
         }
         return head.next;
     }
