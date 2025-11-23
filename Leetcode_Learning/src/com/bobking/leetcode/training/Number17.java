@@ -6,16 +6,16 @@ import java.util.List;
 public class Number17 {
 
     private String[] map = {
-            "",
-            "",
-            "abc",
-            "def",
-            "ghi",
-            "jkl",
-            "mno",
-            "pqrs",
-            "tuv",
-            "wxyz"
+        "",
+        "",
+        "abc",
+        "def",
+        "ghi",
+        "jkl",
+        "mno",
+        "pqrs",
+        "tuv",
+        "wxyz"
     };
 
     // 参考：https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/solution/dian-hua-hao-ma-de-zi-mu-zu-he-by-leetcode-solutio/
@@ -27,8 +27,9 @@ public class Number17 {
 
         List<String> result = new ArrayList<String>();
 
-        if (digits == null || digits.equals(""))
+        if (digits == null || digits.equals("")) {
             return result;
+        }
 
         StringBuilder sb = new StringBuilder("");
         backTrace(digits, 0, sb, result);
@@ -57,8 +58,9 @@ public class Number17 {
 
         List<String> result = new ArrayList<String>();
 
-        if (digits == null || digits.equals(""))
+        if (digits == null || digits.equals("")) {
             return result;
+        }
 
         result.add("");
 
@@ -70,8 +72,9 @@ public class Number17 {
             for (int j = 0; j < size; j++) {
                 // 注意：这里提前进行了remove操作, 相当于队列的出队操作
                 String tmp = result.remove(0);
-                for (int k = 0; k < letters.length(); k++)
+                for (int k = 0; k < letters.length(); k++) {
                     result.add(tmp + letters.charAt(k));
+                }
             }
         }
 

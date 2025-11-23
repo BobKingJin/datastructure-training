@@ -4,8 +4,9 @@ public class Number5 {
 
     public String longestPalindrome1(String s) {
 
-        if (s == null || s.equals(""))
+        if (s == null || s.equals("")) {
             return s;
+        }
 
         String result = "";
         char[] ch = s.toCharArray();
@@ -33,8 +34,9 @@ public class Number5 {
     public String longestPalindrome2(String s) {
 
         int len = s.length();
-        if (len < 2)
+        if (len < 2) {
             return s;
+        }
 
         int maxLen = 0;
         // 数组第一位记录起始位置, 第二位记录长度
@@ -55,9 +57,7 @@ public class Number5 {
     }
 
     private int[] centerSpread(String s, int left, int right) {
-
         int len = s.length();
-
         while (left >= 0 && right < len) {
             if (s.charAt(left) == s.charAt(right)) {
                 left--;

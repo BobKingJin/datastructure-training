@@ -12,15 +12,17 @@ public class Number15 {
     // 对比Number15
     public List<List<Integer>> threeSum1(int[] nums) {
 
-        if (nums == null || nums.length < 1)
+        if (nums == null || nums.length < 1) {
             return res;
+        }
 
         // 先进行排序
         Arrays.sort(nums);
         for (int i = 0; i < nums.length - 2; i++) {
             // 去重
-            if (i == 0 || nums[i] != nums[i - 1])
+            if (i == 0 || nums[i] != nums[i - 1]) {
                 getUnique(nums, i, i + 1, nums.length - 1, -nums[i]);
+            }
         }
         return res;
     }
@@ -53,19 +55,20 @@ public class Number15 {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
 
-        if (nums == null || nums.length < 3)
+        if (nums == null || nums.length < 3) {
             return res;
+        }
 
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; i++) {
             // 如果当前数字大于 0，则三数之和一定大于 0，所以结束循环
             // 因为先对 nums 进行了排序，所以当 nums[i] > 0 时直接跳出循环
-            if (nums[i] > 0)
+            if (nums[i] > 0) {
                 break;
-
-            if (i > 0 && nums[i] == nums[i - 1])
+            }
+            if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
-
+            }
             int L = i + 1;
             int R = nums.length - 1;
             while (L < R) {
@@ -73,16 +76,18 @@ public class Number15 {
                 if (sum == 0) {
                     res.add(Arrays.asList(nums[i], nums[L], nums[R]));
                     // 去重
-                    while (L < R && nums[L] == nums[L + 1])
+                    while (L < R && nums[L] == nums[L + 1]) {
                         L++;
+                    }
                     // 去重
-                    while (L < R && nums[R] == nums[R - 1])
+                    while (L < R && nums[R] == nums[R - 1]) {
                         R--;
+                    }
                     L++;
                     R--;
-                } else if (sum < 0){
+                } else if (sum < 0) {
                     L++;
-                } else if (sum > 0){
+                } else if (sum > 0) {
                     R--;
                 }
             }
@@ -95,8 +100,9 @@ public class Number15 {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
 
-        if (nums == null || nums.length < 1)
+        if (nums == null || nums.length < 1) {
             return res;
+        }
 
         List<Integer> list = new ArrayList<Integer>();
         Arrays.sort(nums);
@@ -104,7 +110,8 @@ public class Number15 {
         return res;
     }
 
-    private void backTrace(int[] nums, int index, int count, List<Integer> list, List<List<Integer>> res) {
+    private void backTrace(int[] nums, int index, int count, List<Integer> list,
+        List<List<Integer>> res) {
 
         if (count == 0 && list.size() == 3) {
             res.add(new ArrayList<Integer>(list));
@@ -112,8 +119,9 @@ public class Number15 {
         }
 
         // list.size() == 3 时提前进行剪枝
-        if (index == nums.length || list.size() == 3)
+        if (index == nums.length || list.size() == 3) {
             return;
+        }
 
         // 以每个角标为起点
         for (int i = index; i < nums.length; i++) {
