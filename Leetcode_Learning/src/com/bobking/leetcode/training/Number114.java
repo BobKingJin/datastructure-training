@@ -11,11 +11,11 @@ public class Number114 {
     // 参考：程序猿代码指南P94 二叉树先序遍历
     public void flatten1(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return;
+        }
 
         TreeNode pre = null;
-
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
         while (!stack.isEmpty()) {
@@ -25,10 +25,12 @@ public class Number114 {
                 pre.right = root;
             }
             pre = root;
-            if (root.right != null)
+            if (root.right != null) {
                 stack.push(root.right);
-            if (root.left != null)
+            }
+            if (root.left != null) {
                 stack.push(root.left);
+            }
         }
     }
 
@@ -36,8 +38,9 @@ public class Number114 {
     // 同解法五
     public void flatten2(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return;
+        }
 
         while (root != null) {
             // 左子树为 null，直接考虑下一个节点
@@ -46,8 +49,9 @@ public class Number114 {
             } else {
                 // 找到左子树最右边的节点
                 TreeNode pre = root.left;
-                while (pre.right != null)
+                while (pre.right != null) {
                     pre = pre.right;
+                }
                 // 将原来的右子树接到左子树的最右边节点
                 pre.right = root.right;
                 // 将左子树插入到右子树的地方
@@ -64,8 +68,9 @@ public class Number114 {
     // 参考：https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by--26/
     public void flatten3(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return;
+        }
         // 先右  后左  最后根节点
         // 从 底 向 上
         flatten3(root.right);
@@ -111,8 +116,9 @@ public class Number114 {
     // 同解法二
     public void flatten5(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return;
+        }
 
         TreeNode cur = root;
         while (cur != null) {
@@ -121,9 +127,9 @@ public class Number114 {
                 TreeNode next = cur.left;
                 // 前继节点
                 TreeNode predecessor = next;
-                while (predecessor.right != null)
+                while (predecessor.right != null) {
                     predecessor = predecessor.right;
-
+                }
                 predecessor.right = cur.right;
                 cur.left = null;
                 cur.right = next;

@@ -10,8 +10,9 @@ public class Number2 {
     // 参考：https://leetcode-cn.com/problems/add-two-numbers/solution/hua-jie-suan-fa-2-liang-shu-xiang-jia-by-guanpengc/
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-        if (l1 == null || l2 == null)
+        if (l1 == null || l2 == null) {
             return l1 == null ? l2 : l1;
+        }
         /*
         // 累加和
         int count = (l1.val + l2.val) % 10;
@@ -43,10 +44,12 @@ public class Number2 {
             node = new ListNode(count);
             pre.next = node;
             pre = node;
-            if (l1 != null)
+            if (l1 != null) {
                 l1 = l1.next;
-            if (l2 != null)
+            }
+            if (l2 != null) {
                 l2 = l2.next;
+            }
         }
         // 注意最后一个进位
         if (ca != 0) {

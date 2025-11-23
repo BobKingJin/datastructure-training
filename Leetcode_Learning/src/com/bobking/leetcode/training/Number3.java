@@ -9,14 +9,16 @@ public class Number3 {
     // 参考：程序猿代码指南P301
     public int lengthOfLongestSubstring1(String s) {
 
-        if (s == null || s.length() == 0 || s.equals(""))
+        if (s == null || s.length() == 0 || s.equals("")) {
             return 0;
+        }
 
         int[] map = new int[256];
         // map 用于记录每一个字符上一次出现的位置(即最近出现的位置)
-        for (int i = 0; i < map.length; i++)
+        for (int i = 0; i < map.length; i++) {
             // 每个角标都初始化为 -1
             map[i] = -1;
+        }
 
         char[] ch = s.toCharArray();
         // 前一个无重复子串的开始位置前一个角标
@@ -38,16 +40,18 @@ public class Number3 {
     // 同解法1
     public int lengthOfLongestSubstring2(String s) {
 
-        if (s == null || s.length() == 0 || s.equals(""))
+        if (s == null || s.length() == 0 || s.equals("")) {
             return 0;
+        }
 
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
         int res = 0;
         int left = 0;
 
         for (int i = 0; i < s.length(); i++) {
-            if (map.containsKey(s.charAt(i)))
+            if (map.containsKey(s.charAt(i))) {
                 left = Math.max(left, map.get(s.charAt(i)) + 1);
+            }
             map.put(s.charAt(i), i);
             res = Math.max(res, i - left + 1);
         }
@@ -57,8 +61,9 @@ public class Number3 {
     // 参考：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/wu-zhong-fu-zi-fu-de-zui-chang-zi-chuan-by-leetc-2/
     public int lengthOfLongestSubstring3(String s) {
 
-        if (s == null || s.length() == 0 || s.equals(""))
+        if (s == null || s.length() == 0 || s.equals("")) {
             return 0;
+        }
 
         // 哈希集合，记录每个字符是否出现过
         Set<Character> set = new HashSet<Character>();
@@ -73,9 +78,10 @@ public class Number3 {
         int end = -1;
         int res = 0;
         for (int i = 0; i < n; i++) {
-            if (i != 0)
+            if (i != 0) {
                 // 左指针向右移动一格，移除一个字符
                 set.remove(s.charAt(i - 1));
+            }
             while (end + 1 < n && !set.contains(s.charAt(end + 1))) {
                 set.add(s.charAt(end + 1));
                 end++;

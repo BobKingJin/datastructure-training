@@ -19,8 +19,9 @@ public class Number621 {
         }
 
         for (int i = 0; i < 26; i++) {
-            if (temp[i] == maxTask)
+            if (temp[i] == maxTask) {
                 countMaxTask++;
+            }
         }
 
         return Math.max(tasks.length, (maxTask - 1) * (n + 1) + countMaxTask);
