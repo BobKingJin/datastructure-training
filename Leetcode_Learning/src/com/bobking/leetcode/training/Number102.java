@@ -14,8 +14,9 @@ public class Number102 {
         // 主要问题: 何时换行?
         List<List<Integer>> res = new ArrayList<List<Integer>>();
 
-        if (root == null)
+        if (root == null) {
             return res;
+        }
 
         List<Integer> list = new ArrayList<Integer>();
         // last为当前行的最右节点
@@ -51,8 +52,9 @@ public class Number102 {
     public List<List<Integer>> levelOrder2(TreeNode root) {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
-        if (root == null)
+        if (root == null) {
             return res;
+        }
 
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
@@ -63,10 +65,12 @@ public class Number102 {
             for (int i = 1; i <= n; i++) {
                 TreeNode node = queue.poll();
                 list.add(node.val);
-                if (node.left != null)
+                if (node.left != null) {
                     queue.offer(node.left);
-                if (node.right != null)
+                }
+                if (node.right != null) {
                     queue.offer(node.right);
+                }
             }
             res.add(list);
         }

@@ -8,8 +8,9 @@ public class Number75 {
 
     public void sortColors(int[] nums) {
 
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return;
+        }
 
         sort(nums, 1);
     }

@@ -12,8 +12,9 @@ public class Number78 {
     // 参考：https://leetcode-cn.com/problems/subsets/solution/hui-su-suan-fa-by-powcai-5/
     public List<List<Integer>> subsets1(int[] nums) {
 
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return null;
+        }
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         // dfs
@@ -39,8 +40,9 @@ public class Number78 {
     // 参考：https://leetcode-cn.com/problems/subsets/solution/hui-su-si-xiang-tuan-mie-pai-lie-zu-he-zi-ji-wen-t/
     public List<List<Integer>> subsets2(int[] nums) {
 
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return null;
+        }
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         res.add(new ArrayList<Integer>());

@@ -11,8 +11,9 @@ public class Number101 {
     // 参考：https://leetcode-cn.com/problems/symmetric-tree/solution/dong-hua-yan-shi-101-dui-cheng-er-cha-shu-by-user7/
     public boolean isSymmetric1(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return true;
+        }
         // 调用递归函数，比较左节点，右节点
         return dfs(root.left, root.right);
     }
@@ -20,13 +21,16 @@ public class Number101 {
     private boolean dfs(TreeNode left, TreeNode right) {
 
         // 递归的终止条件是两个节点都为空，或者两个节点中有一个为空，或者两个节点的值不相等
-        if (left == null && right == null)
+        if (left == null && right == null) {
             return true;
+        }
         // 有一个节点不为空
-        if (left == null || right == null)
+        if (left == null || right == null) {
             return false;
-        if (left.val != right.val)
+        }
+        if (left.val != right.val) {
             return false;
+        }
         // 再递归的比较 左节点的左孩子 和 右节点的右孩子
         // 以及比较  左节点的右孩子 和 右节点的左孩子
         return dfs(left.left, right.right) && dfs(left.right, right.left);
@@ -36,8 +40,9 @@ public class Number101 {
     // bfs
     public boolean isSymmetric2(TreeNode root) {
 
-        if (root == null || (root.left == null && root.right == null))
+        if (root == null || (root.left == null && root.right == null)) {
             return true;
+        }
 
         // 用队列保存节点
         LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
@@ -49,12 +54,15 @@ public class Number101 {
             TreeNode left = queue.removeFirst();
             TreeNode right = queue.removeFirst();
             // 如果两个节点都为空就继续循环, 两者有一个为空就返回 false
-            if (left == null && right == null)
+            if (left == null && right == null) {
                 continue;
-            if (left == null || right == null)
+            }
+            if (left == null || right == null) {
                 return false;
-            if (left.val != right.val)
+            }
+            if (left.val != right.val) {
                 return false;
+            }
             // 将左节点的左孩子, 右节点的右孩子放入队列
             queue.add(left.left);
             queue.add(right.right);

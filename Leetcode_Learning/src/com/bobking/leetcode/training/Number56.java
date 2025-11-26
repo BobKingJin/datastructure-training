@@ -11,8 +11,9 @@ public class Number56 {
     // [1,4], [0,0] 未通过
     public static int[][] merge1(int[][] intervals) {
 
-        if (intervals == null || intervals.length < 1)
+        if (intervals == null || intervals.length < 1) {
             return null;
+        }
 
         List<int[]> list = new ArrayList<>();
 
@@ -48,8 +49,9 @@ public class Number56 {
     // 对比程序猿代码指南P214 信封嵌套
     public static int[][] merge2(int[][] intervals) {
 
-        if (intervals == null || intervals.length < 1)
+        if (intervals == null || intervals.length < 1) {
             return null;
+        }
 
         Arrays.sort(intervals, new Comparator<int[]>() {
             // 从小到大排序

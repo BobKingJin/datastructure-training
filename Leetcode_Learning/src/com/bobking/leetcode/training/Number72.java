@@ -10,8 +10,9 @@ public class Number72 {
     // 空间压缩同见: 程序猿代码指南P230
     public int minDistance(String word1, String word2) {
 
-        if (word1 == null || word2 == null)
+        if (word1 == null || word2 == null) {
             return 0;
+        }
 
         char[] ch1 = word1.toCharArray();
         char[] ch2 = word2.toCharArray();
@@ -24,11 +25,13 @@ public class Number72 {
         // dp[0][0] = 0 默认
 
         // 第一列
-        for (int i = 1; i < row; i++)
+        for (int i = 1; i < row; i++) {
             dp[i][0] = i;
+        }
         // 第一行
-        for (int j = 1; j < column; j++)
+        for (int j = 1; j < column; j++) {
             dp[0][j] = j;
+        }
 
         // 左 -> 右  上 -> 下
         for (int i = 1; i < row; i++) {

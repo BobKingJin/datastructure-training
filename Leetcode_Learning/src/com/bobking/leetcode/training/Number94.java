@@ -10,8 +10,9 @@ public class Number94 {
     public List<Integer> inorderTraversal1(TreeNode root) {
 
         List<Integer> result = new ArrayList<Integer>();
-        if (root == null)
+        if (root == null) {
             return result;
+        }
 
         Stack<TreeNode> stack = new Stack<TreeNode>();
 
@@ -34,8 +35,9 @@ public class Number94 {
 
         List<Integer> list = new ArrayList<Integer>();
 
-        if (root == null)
+        if (root == null) {
             return list;
+        }
 
         inorder(root, list);
         return list;
@@ -43,8 +45,9 @@ public class Number94 {
 
     private void inorder(TreeNode node, List<Integer> list) {
 
-        if (node == null)
+        if (node == null) {
             return;
+        }
 
         inorder(node.left, list);
         list.add(node.val);

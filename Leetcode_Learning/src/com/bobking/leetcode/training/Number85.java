@@ -7,8 +7,9 @@ public class Number85 {
     // 参考：程序猿代码指南P26
     public int maximalRectangle(char[][] matrix) {
 
-        if (matrix == null || matrix.length == 0)
+        if (matrix == null || matrix.length == 0) {
             return 0;
+        }
 
         int[] height = new int[matrix[0].length];
         int res = 0;
@@ -24,8 +25,9 @@ public class Number85 {
 
     private int maxRecFromBottom(int[] height) {
 
-        if (height == null || height.length == 0)
+        if (height == null || height.length == 0) {
             return 0;
+        }
 
         int maxArea = 0;
         Stack<Integer> stack = new Stack<Integer>();

@@ -15,8 +15,9 @@ public class Number84 {
     // 单调栈
     public int largestRectangleArea1(int[] heights) {
 
-        if (heights == null || heights.length == 0)
+        if (heights == null || heights.length == 0) {
             return 0;
+        }
 
         int maxArea = 0;
         Stack<Integer> stack = new Stack<Integer>();
@@ -47,11 +48,13 @@ public class Number84 {
     // 解法中的哨兵解法，即在输入数组的两端加上两个高度为 0 （或者是 0.5，只要比 1 严格小都行）的柱形
     public int largestRectangleArea2(int[] heights) {
 
-        if (heights == null || heights.length == 0)
+        if (heights == null || heights.length == 0) {
             return 0;
+        }
 
-        if (heights.length == 1)
+        if (heights.length == 1) {
             return heights[0];
+        }
 
         int res = 0;
         int length = heights.length;

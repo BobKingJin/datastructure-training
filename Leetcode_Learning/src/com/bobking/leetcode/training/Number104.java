@@ -28,8 +28,9 @@ public class Number104 {
     // 参考：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/solution/er-cha-shu-de-zui-da-shen-du-by-leetcode-solution/
     public int maxDepth2(TreeNode root) {
 
-        if (root == null)
+        if (root == null) {
             return 0;
+        }
 
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
@@ -40,10 +41,12 @@ public class Number104 {
             // 按层遍历
             while (size > 0) {
                 TreeNode node = queue.poll();
-                if (node.left != null)
+                if (node.left != null) {
                     queue.offer(node.left);
-                if (node.right != null)
+                }
+                if (node.right != null) {
                     queue.offer(node.right);
+                }
                 size--;
             }
             res++;

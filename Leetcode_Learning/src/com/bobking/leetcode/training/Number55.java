@@ -5,8 +5,9 @@ public class Number55 {
     // 参考：程序猿代码指南P247
     public boolean canJump(int[] nums) {
 
-        if (nums == null || nums.length < 1)
+        if (nums == null || nums.length < 1) {
             return false;
+        }
 
         int mostFarDistance = 0;
 
@@ -17,8 +18,9 @@ public class Number55 {
             } else {
                 return false;
             }
-            if (mostFarDistance >= nums.length - 1)
+            if (mostFarDistance >= nums.length - 1) {
                 return true;
+            }
         }
         return false;
     }
