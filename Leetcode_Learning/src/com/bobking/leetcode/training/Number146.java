@@ -31,9 +31,8 @@ public class Number146 {
                 if (head == null) {
                     head = tail = node;
                 } else {
-                    Node n = head;
-                    n.prev = node;
-                    node.next = n;
+                    head.prev = node;
+                    node.next = head;
                     head = node;
                 }
                 size++;
