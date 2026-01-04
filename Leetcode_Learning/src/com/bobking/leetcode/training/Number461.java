@@ -25,8 +25,9 @@ public class Number461 {
         int xor = x ^ y;
         // 即找到 xor 中从最右边到最左边的 1 这些位中 1 的个数
         while (xor != 0) {
-            if (xor % 2 == 1)
+            if (xor % 2 == 1) {
                 result++;
+            }
             xor = xor >>> 1;
         }
         return result;
