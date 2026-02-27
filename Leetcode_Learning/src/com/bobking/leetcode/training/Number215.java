@@ -1,6 +1,5 @@
 package com.bobking.leetcode.training;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Number215 {
@@ -12,12 +11,8 @@ public class Number215 {
         }
 
         // 维护一个长度为 k 的小根堆，那么小根堆的堆顶元素即为第 k 大的元素
-        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>(k, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1.compareTo(o2);
-            }
-        });
+        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>(k,
+            (o1, o2) -> o1.compareTo(o2));
 
         for (int num : nums) {
             minHeap.add(num);
