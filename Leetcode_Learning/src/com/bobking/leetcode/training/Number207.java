@@ -68,7 +68,7 @@ public class Number207 {
             return false;
         }
 
-        // 入度表 indegrees：每个节点的入度
+        // 入度表 indegrees: 每个节点的入度
         int[] indegrees = new int[numCourses];
         List<List<Integer>> list = new ArrayList<List<Integer>>();
         Queue<Integer> queue = new LinkedList<Integer>();
