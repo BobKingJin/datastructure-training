@@ -19,6 +19,7 @@ public class Number437 {
         // 因为路径必须是从上往下，所以用前缀和
         Map<Long, Integer> prefixSum = new HashMap<Long, Integer>();
         // 前缀和为 0 的有一条路径
+        // 为什么需要添加这样一个数值? 即当从根节点到叶子节点的累加和等于sum时, 那么此时需要用到该数值
         prefixSum.put(0L, 1);
 
         return recursionPathSum(root, 0, sum, prefixSum);
