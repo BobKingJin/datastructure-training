@@ -12,8 +12,9 @@ public class Number103 {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
 
-        if (root == null)
+        if (root == null) {
             return res;
+        }
 
         Deque<TreeNode> queue = new LinkedList<TreeNode>();
         List<Integer> list = new ArrayList<Integer>();
