@@ -8,17 +8,19 @@ public class Number8 {
     // 参考：程序猿代码指南P256
     public int myAtoi1(String s) {
 
-        if (s == null || s.length() == 0)
+        if (s == null || s.length() == 0) {
             return 0;
+        }
 
         s = s.trim();
-
-        if (s.length() == 0)
+        if (s.length() == 0) {
             return 0;
+        }
 
         // 即不是以 +/- 或者数字开头的
-        if (s.charAt(0) != '-' && s.charAt(0) != '+' && !Character.isDigit(s.charAt(0)))
+        if (s.charAt(0) != '-' && s.charAt(0) != '+' && !Character.isDigit(s.charAt(0))) {
             return 0;
+        }
 
         // 若以数字开头则角标从 0 开始，若以符号开头则角标从 1 开始
         int index = Character.isDigit(s.charAt(0)) ? 0 : 1;
@@ -33,37 +35,40 @@ public class Number8 {
             // 即当前符号的负数表示形式
             cur = '0' - s.charAt(index);
             // 溢出
-            if ((res < minq) || (res == minq && cur < minr))
+            if ((res < minq) || (res == minq && cur < minr)) {
                 return positive ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            }
             res = res * 10 + cur;
             index++;
         }
 
-        if (positive && res == Integer.MIN_VALUE)
+        if (positive && res == Integer.MIN_VALUE) {
             return Integer.MAX_VALUE;
+        }
 
         return positive ? -res : res;
     }
 
     public int myAtoi2(String s) {
 
-        if (s == null || s.length() == 0)
+        if (s == null || s.length() == 0) {
             return 0;
+        }
 
         s = s.trim();
-
-        if (s.length() == 0)
+        if (s.length() == 0) {
             return 0;
+        }
 
-        if (s.charAt(0) != '-' && s.charAt(0) != '+' && !Character.isDigit(s.charAt(0)))
+        if (s.charAt(0) != '-' && s.charAt(0) != '+' && !Character.isDigit(s.charAt(0))) {
             return 0;
+        }
 
         int index = Character.isDigit(s.charAt(0)) ? 0 : 1;
         long res = 0L;
         boolean positive = s.charAt(0) == '-' ? false : true;
 
         while (index < s.length() && Character.isDigit(s.charAt(index))) {
-
             // res 一律以正数表示
             res = res * 10 + s.charAt(index) - '0';
             // 正数
@@ -98,18 +103,17 @@ public class Number8 {
         }};
 
         public void get(char ch) {
-
             state = map.get(state)[getState(ch)];
             if ("number".equals(state)) {
                 sum = sum * 10 + ch - '0';
-                sum = positive == 1 ? Math.min(sum, (long) Integer.MAX_VALUE) : Math.min(sum, -1 * (long) Integer.MIN_VALUE);
+                sum = positive == 1 ? Math.min(sum, (long) Integer.MAX_VALUE)
+                    : Math.min(sum, -1 * (long) Integer.MIN_VALUE);
             } else if ("signed".equals(state)) {
                 positive = ch == '-' ? 0 : 1;
             }
         }
 
         public int getState(char ch) {
-
             if (ch == ' ') {
                 return 0;
             } else if (ch == '+' || ch == '-') {
@@ -125,12 +129,14 @@ public class Number8 {
     // 参考：https://leetcode-cn.com/problems/string-to-integer-atoi/solution/zi-fu-chuan-zhuan-huan-zheng-shu-atoi-by-leetcode-/
     public int myAtoi3(String s) {
 
-        if (s == null || s.length() == 0)
+        if (s == null || s.length() == 0) {
             return 0;
+        }
 
         Automaton automaton = new Automaton();
-        for (int i = 0; i < s.length(); i++)
+        for (int i = 0; i < s.length(); i++) {
             automaton.get(s.charAt(i));
+        }
 
         return (int) (automaton.positive == 1 ? automaton.sum : -1 * automaton.sum);
     }

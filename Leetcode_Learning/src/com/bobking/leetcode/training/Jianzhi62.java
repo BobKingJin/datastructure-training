@@ -7,8 +7,9 @@ public class Jianzhi62 {
     // 参考：程序猿代码指南P50
     public int lastRemaining1(int n, int m) {
 
-        if (n < 0 || m < 1)
+        if (n < 0 || m < 1) {
             return -1;
+        }
 
         return 0;
     }
@@ -17,15 +18,18 @@ public class Jianzhi62 {
     // 参考：https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/solution/javajie-jue-yue-se-fu-huan-wen-ti-gao-su-ni-wei-sh/
     public int lastRemaining2(int n, int m) {
 
-        if (n < 0 || m < 1)
+        if (n < 0 || m < 1) {
             return -1;
+        }
 
-        if (n == 1)
+        if (n == 1) {
             return 0;
+        }
 
         ArrayList<Integer> al = new ArrayList<Integer>();
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             al.add(i);
+        }
 
         int index = 0;
         while (al.size() != 1) {
@@ -41,8 +45,9 @@ public class Jianzhi62 {
     // 参考：https://www.nowcoder.com/practice/f78a359491e64a50bce2d89cff857eb6?tpId=13&&tqId=11199&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
     public int lastRemaining3(int n, int m) {
 
-        if (n < 0 || m < 1)
+        if (n < 0 || m < 1) {
             return -1;
+        }
 
         int[] array = new int[n];
 
@@ -56,12 +61,14 @@ public class Jianzhi62 {
             // 指向上一个被删除对象的下一个元素
             index++;
             // 注意：当 i >= n时，又从头开始
-            if (index >= n)
+            if (index >= n) {
                 // 模拟环
                 index = 0;
-            if (array[index] == -1)
+            }
+            if (array[index] == -1) {
                 // 跳过已被删除的对象
                 continue;
+            }
             // 记录已走过的
             step++;
             // 找到待删除的对象

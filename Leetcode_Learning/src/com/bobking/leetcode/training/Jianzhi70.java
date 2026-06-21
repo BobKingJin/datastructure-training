@@ -11,8 +11,9 @@ public class Jianzhi70 {
     // 参考: https://uploadfiles.nowcoder.com/images/20160616/716804_1466088939214_DB8DE8E90C58DADF4C1048A7B110E8E5
     public int rectCover(int target) {
 
-        if (target <= 2)
+        if (target <= 2) {
             return target;
+        }
 
         int pre = 1;
         int cur = 2;

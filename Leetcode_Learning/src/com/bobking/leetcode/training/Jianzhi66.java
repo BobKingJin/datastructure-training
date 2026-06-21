@@ -7,19 +7,22 @@ package com.bobking.leetcode.training;
 public class Jianzhi66 {
 
     // 参考：https://leetcode.cn/problems/gou-jian-cheng-ji-shu-zu-lcof/solution/mian-shi-ti-66-gou-jian-cheng-ji-shu-zu-biao-ge-fe/
+    // 参考: Number238
     public int[] constructArr(int[] a) {
 
         int len = a.length;
-        if(len == 0)
+        if (len == 0) {
             return new int[0];
+        }
 
         int[] b = new int[len];
         b[0] = 1;
-        int tmp = 1;
-        for(int i = 1; i < len; i++)
+        for (int i = 1; i < len; i++) {
             b[i] = b[i - 1] * a[i - 1];
+        }
 
-        for(int i = len - 2; i >= 0; i--) {
+        int tmp = 1;
+        for (int i = len - 2; i >= 0; i--) {
             // 当遍历到 i = j 时，tmp = a[j] * a[j + 1] * ... * a[len - 1]
             tmp *= a[i + 1];
             b[i] *= tmp;
