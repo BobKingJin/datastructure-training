@@ -15,8 +15,9 @@ public class Number230 {
     // 中序遍历
     private ArrayList<Integer> inorder(TreeNode root, ArrayList<Integer> list) {
 
-        if (root == null)
+        if (root == null) {
             return list;
+        }
 
         inorder(root.left, list);
         list.add(root.val);
@@ -36,8 +37,9 @@ public class Number230 {
                 root = root.left;
             }
             root = stack.removeLast();
-            if (--k == 0)
+            if (--k == 0) {
                 return root.val;
+            }
             root = root.right;
         }
     }

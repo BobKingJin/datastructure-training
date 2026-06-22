@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Jianzhi62 {
 
-    // 参考：程序猿代码指南P50
+    // 参考: 程序猿代码指南P50
     public int lastRemaining1(int n, int m) {
 
         if (n < 0 || m < 1) {

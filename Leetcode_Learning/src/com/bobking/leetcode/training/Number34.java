@@ -2,6 +2,7 @@ package com.bobking.leetcode.training;
 
 public class Number34 {
 
+    // 同: LCR172
     public int[] searchRange1(int[] nums, int target) {
 
         if (nums == null || nums.length == 0) {

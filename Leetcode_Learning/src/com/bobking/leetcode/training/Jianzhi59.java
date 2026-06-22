@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Jianzhi59 {
 
-    // 参考：Number239
+    // 参考: Number239
     public ArrayList<Integer> maxInWindows(int[] num, int size) {
         return null;
     }

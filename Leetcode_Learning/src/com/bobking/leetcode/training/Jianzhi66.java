@@ -6,7 +6,7 @@ package com.bobking.leetcode.training;
  */
 public class Jianzhi66 {
 
-    // 参考：https://leetcode.cn/problems/gou-jian-cheng-ji-shu-zu-lcof/solution/mian-shi-ti-66-gou-jian-cheng-ji-shu-zu-biao-ge-fe/
+    // 参考: https://leetcode.cn/problems/gou-jian-cheng-ji-shu-zu-lcof/solution/mian-shi-ti-66-gou-jian-cheng-ji-shu-zu-biao-ge-fe/
     // 参考: Number238
     public int[] constructArr(int[] a) {
 
