@@ -18,16 +18,18 @@ public class LCR170 {
 
     private int mergeSort(int l, int r) {
 
-        if (l >= r)
+        if (l >= r) {
             return 0;
+        }
 
         int m = (l + r) / 2;
         int res = mergeSort(l, m) + mergeSort(m + 1, r);
         int i = l;
         int j = m + 1;
 
-        for (int k = l; k <= r; k++)
+        for (int k = l; k <= r; k++) {
             tmp[k] = record[k];
+        }
 
         for (int k = l; k <= r; k++) {
             if (i == m + 1) {
