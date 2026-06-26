@@ -23,8 +23,9 @@ public class Number233 {
 
         String s = String.valueOf(n);
         int m = s.length();
-        if (m == 1)
+        if (m == 1) {
             return n > 0 ? 1 : 0;
+        }
 
         // 计算第 i 位前缀代表的数值，和后缀代表的数值
         // 例如 abcde 则有 ps[2] = ab，ss[2] = de

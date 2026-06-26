@@ -1,6 +1,10 @@
 package com.bobking.leetcode.training;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.List;
 
 /**
  * @author BobKing
@@ -12,8 +16,9 @@ public class Number47 {
     public List<List<Integer>> permuteUnique(int[] nums) {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
-        if (nums == null || nums.length == 0)
+        if (nums == null || nums.length == 0) {
             return res;
+        }
 
         // 排序（升序或者降序都可以），排序是剪枝的前提
         Arrays.sort(nums);
@@ -25,7 +30,8 @@ public class Number47 {
         return res;
     }
 
-    private void dfs(int[] nums, int len, int index, boolean[] used, Deque<Integer> path, List<List<Integer>> res) {
+    private void dfs(int[] nums, int len, int index, boolean[] used, Deque<Integer> path,
+        List<List<Integer>> res) {
 
         if (index == len) {
             res.add(new ArrayList<Integer>(path));
@@ -35,14 +41,16 @@ public class Number47 {
         // 例如 1 1 2，当第一个数为 2 时，这时前面两个 1 还是可以用的
         for (int i = 0; i < len; i++) {
 
-            if (used[i])
+            if (used[i]) {
                 continue;
+            }
 
             // 剪枝条件：i > 0 是为了保证 nums[i - 1] 有意义
             // !used[i - 1]这个位置注意
             // 写 !used[i - 1] 是因为 nums[i - 1] 在深度优先遍历的过程中刚刚被撤销选择
-            if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1])
+            if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) {
                 continue;
+            }
 
             path.addLast(nums[i]);
             used[i] = true;
