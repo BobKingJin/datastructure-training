@@ -10,7 +10,6 @@ public class LCR139 {
     public int[] trainingPlan1(int[] actions) {
         int i = 0;
         int j = actions.length - 1;
-        int tmp;
         while (i < j) {
             while (i < j && (actions[i] & 1) == 1) {
                 i++;

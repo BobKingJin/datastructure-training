@@ -25,8 +25,9 @@ public class Number50 {
         }
         // 例如：3 的 10 次方  10 的二进制为：1010 即 3 的 10 次方 = 3 的 8 次方 * 3 的 2 次方
         while (exp != 0) {
-            if ((exp & 1) == 1)
+            if ((exp & 1) == 1) {
                 res *= x;
+            }
             x *= x;
             exp = exp >>> 1;
         }
@@ -40,8 +41,9 @@ public class Number50 {
 
     private double quickMul(double x, int n) {
 
-        if (n == 0)
+        if (n == 0) {
             return 1.0;
+        }
 
         double y = quickMul(x, n / 2);
         // 如果 n 为偶数，那么 x 的 n 次方 = y 的 2 次方   如果 n 为奇数，那么 x 的 n 次方 = y 的 2 次方 * x

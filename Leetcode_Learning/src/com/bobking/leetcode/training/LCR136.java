@@ -9,8 +9,9 @@ public class LCR136 {
 
     public ListNode deleteNode(ListNode head, int val) {
 
-        if (head.val == val)
+        if (head.val == val) {
             return head.next;
+        }
 
         ListNode pre = head;
         ListNode cur = head.next;
@@ -18,8 +19,9 @@ public class LCR136 {
             pre = cur;
             cur = cur.next;
         }
-        if (cur != null)
+        if (cur != null) {
             pre.next = cur.next;
+        }
         return head;
     }
 }
