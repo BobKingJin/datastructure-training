@@ -13,8 +13,9 @@ public class Number54 {
     public List<Integer> spiralOrder(int[][] matrix) {
 
         List<Integer> res = new ArrayList<Integer>();
-        if (matrix == null || matrix.length == 0)
+        if (matrix == null || matrix.length == 0) {
             return res;
+        }
 
         // 左上角角标
         int leftRow = 0;
@@ -26,23 +27,29 @@ public class Number54 {
         while (leftRow <= rightRow && leftColumn <= rightColumn) {
             // 只有一行
             if (leftRow == rightRow) {
-                for (int i = leftColumn; i <= rightColumn; i++)
+                for (int i = leftColumn; i <= rightColumn; i++) {
                     res.add(matrix[leftRow][i]);
+                }
                 // 只有一列
             } else if (leftColumn == rightColumn) {
-                for (int i = leftRow; i <= rightRow; i++)
+                for (int i = leftRow; i <= rightRow; i++) {
                     res.add(matrix[i][leftColumn]);
+                }
             } else {
                 int curRow = leftRow;
                 int curColumn = leftColumn;
-                while (curColumn < rightColumn)
+                while (curColumn < rightColumn) {
                     res.add(matrix[leftRow][curColumn++]);
-                while (curRow < rightRow)
+                }
+                while (curRow < rightRow) {
                     res.add(matrix[curRow++][rightColumn]);
-                while (curColumn > leftColumn)
+                }
+                while (curColumn > leftColumn) {
                     res.add(matrix[rightRow][curColumn--]);
-                while (curRow > leftRow)
+                }
+                while (curRow > leftRow) {
                     res.add(matrix[curRow--][leftColumn]);
+                }
             }
             leftRow++;
             leftColumn++;

@@ -14,14 +14,19 @@ public class LCR152 {
     }
 
     private boolean recur(int[] postorder, int i, int j) {
-        if (i >= j)
+
+        if (i >= j) {
             return true;
+        }
+
         int p = i;
-        while (postorder[p] < postorder[j])
+        while (postorder[p] < postorder[j]) {
             p++;
+        }
         int m = p;
-        while (postorder[p] > postorder[j])
+        while (postorder[p] > postorder[j]) {
             p++;
+        }
         return p == j && recur(postorder, i, m - 1) && recur(postorder, m, j - 1);
     }
 
@@ -32,10 +37,12 @@ public class LCR152 {
         int root = Integer.MAX_VALUE;
 
         for (int i = postorder.length - 1; i >= 0; i--) {
-            if (postorder[i] > root)
+            if (postorder[i] > root) {
                 return false;
-            while (!stack.isEmpty() && stack.peek() > postorder[i])
+            }
+            while (!stack.isEmpty() && stack.peek() > postorder[i]) {
                 root = stack.pop();
+            }
             stack.add(postorder[i]);
         }
         return true;

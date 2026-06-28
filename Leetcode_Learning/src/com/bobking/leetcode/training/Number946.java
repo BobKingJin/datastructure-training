@@ -16,8 +16,9 @@ public class Number946 {
 
         for (int i = 0, j = 0; i < pushed.length; i++) {
             d.addLast(pushed[i]);
-            while (!d.isEmpty() && d.peekLast() == popped[j] && ++j >= 0)
+            while (!d.isEmpty() && d.peekLast() == popped[j] && ++j >= 0) {
                 d.pollLast();
+            }
         }
 
         return d.isEmpty();
@@ -31,8 +32,9 @@ public class Number946 {
 
         for (int i = 0, j = 0; i < n; i++) {
             pushed[idx++] = pushed[i];
-            while (idx > 0 && pushed[idx - 1] == popped[j] && ++j >= 0)
+            while (idx > 0 && pushed[idx - 1] == popped[j] && ++j >= 0) {
                 idx--;
+            }
         }
 
         return idx == 0;

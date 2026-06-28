@@ -7,6 +7,7 @@ package com.bobking.leetcode.training;
 public class Number138 {
 
     private class Node {
+
         int val;
         Node next;
         Node random;
@@ -21,8 +22,9 @@ public class Number138 {
     // 参考：程序猿代码指南P63
     public Node copyRandomList(Node head) {
 
-        if (head == null)
+        if (head == null) {
             return null;
+        }
 
         // 复制一份节点
         Node cur = head;
