@@ -10,19 +10,21 @@ import java.util.Stack;
 public class Jianzhi13 {
 
     public int movingCount1(int threshold, int rows, int cols) {
-        int flag[][] = new int[rows][cols];
+        int[][] flag = new int[rows][cols];
         return dfs(0, 0, rows, cols, flag, threshold);
     }
 
     private int dfs(int i, int j, int rows, int cols, int[][] flag, int threshold) {
-        if (i < 0 || i >= rows || j < 0 || j >= cols || sum(i) + sum(j) > threshold || flag[i][j] == 1)
+        if (i < 0 || i >= rows || j < 0 || j >= cols || sum(i) + sum(j) > threshold
+            || flag[i][j] == 1) {
             return 0;
+        }
         flag[i][j] = 1;
         return dfs(i - 1, j, rows, cols, flag, threshold)
-                + dfs(i + 1, j, rows, cols, flag, threshold)
-                + dfs(i, j - 1, rows, cols, flag, threshold)
-                + dfs(i, j + 1, rows, cols, flag, threshold)
-                + 1;
+            + dfs(i + 1, j, rows, cols, flag, threshold)
+            + dfs(i, j - 1, rows, cols, flag, threshold)
+            + dfs(i, j + 1, rows, cols, flag, threshold)
+            + 1;
     }
 
     private int sum(int i) {
@@ -34,8 +36,9 @@ public class Jianzhi13 {
     }
 
     public int movingCount2(int threshold, int rows, int cols) {
-        if (rows <= 0 || cols <= 0 || threshold < 0)
+        if (rows <= 0 || cols <= 0 || threshold < 0) {
             return 0;
+        }
         Stack<Integer> s = new Stack<Integer>();
         boolean[] visited = new boolean[rows * cols];
         int[][] xoy = {{0, 1, 0, -1}, {1, 0, -1, 0}};
@@ -50,7 +53,7 @@ public class Jianzhi13 {
                 int y = cur / cols + xoy[1][i];
                 int sum = getDigitSum(x) + getDigitSum(y);
                 if (x >= 0 && x < cols && y >= 0 && y < rows
-                        && sum <= threshold && !visited[x + y * cols]) {
+                    && sum <= threshold && !visited[x + y * cols]) {
                     s.add(x + y * cols);
                     visited[x + y * cols] = true;
                 }

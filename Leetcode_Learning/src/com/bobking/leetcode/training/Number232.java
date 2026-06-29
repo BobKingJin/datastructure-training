@@ -20,8 +20,9 @@ public class Number232 {
 
         public void pushToPop() {
             if (popStack.isEmpty()) {
-                while (!pushStack.isEmpty())
+                while (!pushStack.isEmpty()) {
                     popStack.push(pushStack.pop());
+                }
             }
         }
 

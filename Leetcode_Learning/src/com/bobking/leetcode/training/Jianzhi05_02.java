@@ -12,12 +12,13 @@ public class Jianzhi05_02 {
         StringBuilder sb = new StringBuilder("0.");
         for (int i = 0; i < 6; ++i) { // 至多循环 6 次
             num *= 2;
-            if (num < 1)
+            if (num < 1) {
                 sb.append('0');
-            else {
+            } else {
                 sb.append('1');
-                if (--num == 0)
+                if (--num == 0) {
                     return sb.toString();
+                }
             }
         }
         return "ERROR";
