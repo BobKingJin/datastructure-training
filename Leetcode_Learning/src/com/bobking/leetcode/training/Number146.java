@@ -21,7 +21,7 @@ public class Number146 {
             }
         }
 
-        class DoubleList {
+        private class DoubleList {
 
             private Node head;
             private Node tail;

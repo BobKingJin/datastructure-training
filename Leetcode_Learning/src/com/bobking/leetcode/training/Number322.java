@@ -77,22 +77,24 @@ public class Number322 {
 
         int N = coins.length;
         // dp[i][j] 表示 coins[0 ... i] 范围内组成 j 所需的最小硬币数
-        int[][] dp = new int[N + 1][amount + 1];
+        int[][] dp = new int[N][amount + 1];
         // 除 2 防止下面 + 1 溢出
         Arrays.fill(dp[0], Integer.MAX_VALUE / 2);
-        dp[0][0] = 0;
+        for (int k = 0; k * coins[0] <= amount; k++) {
+            dp[0][k * coins[0]] = k;
+        }
 
         // 从上往下
-        for (int i = 0; i < N; i++) {
+        for (int i = 1; i < N; i++) {
             // 从左往右
             for (int rest = 0; rest <= amount; rest++) {
                 if (rest < coins[i]) {
-                    dp[i + 1][rest] = dp[i][rest];
+                    dp[i][rest] = dp[i - 1][rest];
                 } else {
-                    dp[i + 1][rest] = Math.min(dp[i][rest], dp[i + 1][rest - coins[i]] + 1);
+                    dp[i][rest] = Math.min(dp[i - 1][rest], dp[i][rest - coins[i]] + 1);
                 }
             }
         }
-        return dp[N][amount] < Integer.MAX_VALUE / 2 ? dp[N][amount] : -1;
+        return dp[N - 1][amount] < Integer.MAX_VALUE / 2 ? dp[N - 1][amount] : -1;
     }
 }
