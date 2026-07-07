@@ -14,7 +14,7 @@ public class Number543 {
     }
 
     // 参考：程序猿代码指南P168
-    public int diameterOfBinaryTree(TreeNode root) {
+    public int diameterOfBinaryTree1(TreeNode root) {
 
         if (root == null) {
             return 0;
@@ -39,4 +39,22 @@ public class Number543 {
             left.height + right.height);
         return new ReturnType(maxDistance, height);
     }
+
+    private int ans;
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        dfs(root);
+        return ans;
+    }
+
+    private int dfs(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        int lLen = dfs(node.left);
+        int rLen = dfs(node.right);
+        ans = Math.max(ans, lLen + rLen);
+        return Math.max(lLen, rLen) + 1;
+    }
+
 }
