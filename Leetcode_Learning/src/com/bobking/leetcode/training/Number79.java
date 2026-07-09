@@ -26,28 +26,36 @@ public class Number79 {
 
     private boolean backTrace1(char[][] board, String word, int row, int column, int index,
         boolean[][] marked) {
-        if (row >= 0 && row <= board.length - 1 && column >= 0 && column <= board[0].length - 1) {
-            if (index == word.length() - 1 && !marked[row][column]) {
-                return board[row][column] == word.charAt(index);
+
+        if (row < 0 || row > board.length - 1 || column < 0 || column > board[0].length - 1) {
+            return false;
+        }
+
+        if (marked[row][column]) {
+            return false;
+        }
+
+        if (index == word.length() - 1) {
+            return board[row][column] == word.charAt(index);
+        }
+
+        if (board[row][column] == word.charAt(index)) {
+            marked[row][column] = true;
+            // 上下左右
+            if (backTrace1(board, word, row - 1, column, index + 1, marked)) {
+                return true;
             }
-            if (!marked[row][column] && board[row][column] == word.charAt(index)) {
-                marked[row][column] = true;
-                // 上下左右
-                if (backTrace1(board, word, row - 1, column, index + 1, marked)) {
-                    return true;
-                }
-                if (backTrace1(board, word, row, column - 1, index + 1, marked)) {
-                    return true;
-                }
-                if (backTrace1(board, word, row + 1, column, index + 1, marked)) {
-                    return true;
-                }
-                if (backTrace1(board, word, row, column + 1, index + 1, marked)) {
-                    return true;
-                }
-                // 回溯
-                marked[row][column] = false;
+            if (backTrace1(board, word, row, column - 1, index + 1, marked)) {
+                return true;
             }
+            if (backTrace1(board, word, row + 1, column, index + 1, marked)) {
+                return true;
+            }
+            if (backTrace1(board, word, row, column + 1, index + 1, marked)) {
+                return true;
+            }
+            // 回溯
+            marked[row][column] = false;
         }
 
         return false;

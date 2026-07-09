@@ -13,21 +13,6 @@ public class Number2 {
         if (l1 == null || l2 == null) {
             return l1 == null ? l2 : l1;
         }
-        /*
-        // 累加和
-        int count = (l1.val + l2.val) % 10;
-        // 进位
-        int mod = (l1.val + l2.val) / 10;
-
-        ListNode head = new ListNode();
-
-        head.val = count;
-        l1 = l1.next;
-        l2 = l2.next;
-
-        ListNode pre = head;
-        ListNode node = null;
-        */
 
         // 可以创建一个伪头节点
         ListNode fake = new ListNode(0);
