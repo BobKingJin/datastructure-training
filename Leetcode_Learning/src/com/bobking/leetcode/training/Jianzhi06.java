@@ -16,10 +16,11 @@ public class Jianzhi06 {
     }
 
     public void recursion(ListNode head, ArrayList<Integer> res) {
-        if (head != null) {
-            recursion(head.next, res);
-            res.add(head.val);
+        if (head == null) {
+            return;
         }
+        recursion(head.next, res);
+        res.add(head.val);
     }
 
 }

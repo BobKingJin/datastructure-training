@@ -19,15 +19,14 @@ public class Jianzhi05 {
         }
 
         char[] res = new char[s.length() + 2 * num];
-        int index = res.length - 1;
-        // 注意是从后往前，如果是从前往后，那么前面的会重复搬运
-        for (int i = ch.length - 1; i >= 0; i--) {
+        int index = 0;
+        for (int i = 0; i < ch.length; i++) {
             if (ch[i] != ' ') {
-                res[index--] = ch[i];
+                res[index++] = ch[i];
             } else {
-                res[index--] = '0';
-                res[index--] = '2';
-                res[index--] = '%';
+                res[index++] = '%';
+                res[index++] = '2';
+                res[index++] = '0';
             }
         }
 

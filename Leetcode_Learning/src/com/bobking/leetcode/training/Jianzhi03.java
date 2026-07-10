@@ -15,8 +15,7 @@ public class Jianzhi03 {
         }
 
         int i = 0;
-        int n = numbers.length;
-        while (i < n) {
+        while (i < numbers.length) {
             if (numbers[i] == i) {
                 i++;
             } else {
