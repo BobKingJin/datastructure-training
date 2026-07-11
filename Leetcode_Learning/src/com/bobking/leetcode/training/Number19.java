@@ -18,7 +18,7 @@ public class Number19 {
         ListNode dummy = new ListNode(0, head);
         ListNode cur = dummy;
         // 倒数第 n 个节点即是顺数第 length - n + 1 个节点
-        for (int i = 1; i < length - n + 1; ++i) {
+        for (int i = 1; i < length - n + 1; i++) {
             cur = cur.next;
         }
 
