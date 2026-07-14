@@ -12,7 +12,8 @@ public class Jianzhi46 {
     }
 
     private int dfs(String strNum, int index) {
-
+        // 注意递归结束有个条件是 index == strNum.length()
+        // 例如: 216612 当 index = 4时, 1 和 12 都是满足的, 所以下面 dfs(strNum, index + 2) 是允许的
         if (index == strNum.length() - 1 || index == strNum.length()) {
             return 1;
         }
