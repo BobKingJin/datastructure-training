@@ -49,17 +49,21 @@ public class Number151 {
 
     public String reverseWords2(String s) {
         s = s.trim();
+        // j 为 右端点不为空字符串的角标
         int j = s.length() - 1;
+        // i 为 左端点
         int i = j;
         StringBuilder res = new StringBuilder();
         while (i >= 0) {
             while (i >= 0 && s.charAt(i) != ' ') {
                 i--;
             }
+            // i 已经指向空字符串, 因此需要 i + 1
             res.append(s.substring(i + 1, j + 1) + " ");
             while (i >= 0 && s.charAt(i) == ' ') {
                 i--;
             }
+            // 此时 i 已经指向非空字符串
             j = i;
         }
         return res.toString().trim();

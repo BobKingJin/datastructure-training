@@ -17,8 +17,8 @@ public class Jianzhi71 {
         // 因为 f(n - 1) = f(n - 2) + f(n - 3) +... + f(1)
         // 所以 f(n) = 2 * f(n - 1)
 
-        if (number <= 0) {
-            return 0;
+        if (number <= 2) {
+            return number;
         }
         return 1 << (number - 1);
     }
