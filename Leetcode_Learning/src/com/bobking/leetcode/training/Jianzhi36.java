@@ -17,7 +17,6 @@ public class Jianzhi36 {
         }
 
         Queue<Node> queue = new LinkedList<Node>();
-        // 因为要将 BST 转为有序的双向链表，所以这里进行中序遍历
         inOrderToQueue(root, queue);
 
         root = queue.poll();

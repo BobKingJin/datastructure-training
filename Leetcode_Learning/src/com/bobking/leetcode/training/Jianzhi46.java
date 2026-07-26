@@ -6,42 +6,39 @@ package com.bobking.leetcode.training;
  */
 public class Jianzhi46 {
 
-    public int translateNum1(int num) {
-        String strNum = String.valueOf(num);
-        return dfs(strNum, 0);
-    }
+    // 'a'->1, 'b->2', ... , 'z->26'
+    // 注意与 LCR165的不同点
+    public int solve(String nums) {
 
-    private int dfs(String strNum, int index) {
-        // 注意递归结束有个条件是 index == strNum.length()
-        // 例如: 216612 当 index = 4时, 1 和 12 都是满足的, 所以下面 dfs(strNum, index + 2) 是允许的
-        if (index == strNum.length() - 1 || index == strNum.length()) {
+        if (nums == null || nums.length() < 1 || "0".equals(nums)) {
+            return 0;
+        }
+
+        // 排除只有一种可能的 10 和 20
+        if ("10".equals(nums) || "20".equals(nums)) {
             return 1;
         }
 
-        int curAndNextNum = Integer.parseInt(
-            strNum.substring(index, index + 1)
-                + strNum.substring(index + 1, index + 2)
-        );
-        // 1 位必定合法，所以这个位置 dfs(strNum, index + 1) 直接加上即可，不用判断
-        if (curAndNextNum >= 10 && curAndNextNum <= 25) {
-            return dfs(strNum, index + 1) + dfs(strNum, index + 2);
-        } else {
-            return dfs(strNum, index + 1);
+        // 当0的前面不是1或2时,无法译码
+        for (int i = 1; i < nums.length(); i++) {
+            if (nums.charAt(i) == '0') {
+                if (nums.charAt(i - 1) != '1' && nums.charAt(i - 1) != '2') {
+                    return 0;
+                }
+            }
         }
-    }
 
-    public int translateNum2(int num) {
-        // f(n) = f(n - 1) + f(n - 2)
-        String s = String.valueOf(num);
-        int a = 1;
-        int b = 1;
+        int prePre = 1;
+        int pre = 1;
+        int res = 1;
 
-        for (int i = 2; i <= s.length(); i++) {
-            String tmp = s.substring(i - 2, i);
-            int c = tmp.compareTo("10") >= 0 && tmp.compareTo("25") <= 0 ? a + b : a;
-            b = a;
-            a = c;
+        for (int i = 2; i <= nums.length(); i++) {
+            String tmp = nums.substring(i - 2, i);
+            res = (tmp.compareTo("11") >= 0 && tmp.compareTo("19") <= 0) ||
+                (tmp.compareTo("21") >= 0 && tmp.compareTo("26") <= 0) ? prePre + pre : pre;
+            prePre = pre;
+            pre = res;
         }
-        return a;
+        return res;
     }
 }

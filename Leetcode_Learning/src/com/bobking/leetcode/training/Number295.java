@@ -9,29 +9,29 @@ import java.util.PriorityQueue;
  */
 public class Number295 {
 
-    private class MaxHeapComparator implements Comparator<Integer> {
+    // private class MaxHeapComparator implements Comparator<Integer> {
+    //
+    //     @Override
+    //     public int compare(Integer o1, Integer o2) {
+    //         if (o2 > o1) {
+    //             return 1;
+    //         } else {
+    //             return -1;
+    //         }
+    //     }
+    // }
 
-        @Override
-        public int compare(Integer o1, Integer o2) {
-            if (o2 > o1) {
-                return 1;
-            } else {
-                return -1;
-            }
-        }
-    }
-
-    private class MinHeapComparator implements Comparator<Integer> {
-
-        @Override
-        public int compare(Integer o1, Integer o2) {
-            if (o2 < o1) {
-                return 1;
-            } else {
-                return -1;
-            }
-        }
-    }
+    // private class MinHeapComparator implements Comparator<Integer> {
+    //
+    //     @Override
+    //     public int compare(Integer o1, Integer o2) {
+    //         if (o2 < o1) {
+    //             return 1;
+    //         } else {
+    //             return -1;
+    //         }
+    //     }
+    // }
 
     // 参考：程序猿代码指南P518
     private class MedianFinder {
@@ -40,8 +40,9 @@ public class Number295 {
         private PriorityQueue<Integer> minHeap;
 
         public MedianFinder() {
-            maxHeap = new PriorityQueue<Integer>(new MaxHeapComparator());
-            minHeap = new PriorityQueue<Integer>(new MinHeapComparator());
+            // 默认为小根堆
+            minHeap = new PriorityQueue<Integer>();
+            maxHeap = new PriorityQueue<Integer>(Comparator.reverseOrder());
         }
 
         public void addNum(int num) {

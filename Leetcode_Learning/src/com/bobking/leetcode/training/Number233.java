@@ -29,6 +29,7 @@ public class Number233 {
 
         // 计算第 i 位前缀代表的数值，和后缀代表的数值
         // 例如 abcde 则有 ps[2] = ab，ss[2] = de
+        // ps[0] = 0(默认)
         int[] ps = new int[m];
         int[] ss = new int[m];
         ss[0] = Integer.parseInt(s.substring(1));

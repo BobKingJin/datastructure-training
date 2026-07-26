@@ -32,7 +32,7 @@ public class Number297 {
     }
 
     private TreeNode reconByPreOrder1(Queue<String> queue) {
-
+        // 不用担心queue为空, 因为当下面遇到 # 时, 会直接返回
         String value = queue.poll();
         if ("#".equals(value)) {
             return null;

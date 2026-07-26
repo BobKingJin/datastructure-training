@@ -1,5 +1,6 @@
 package com.bobking.leetcode.training;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,10 +16,7 @@ public class Number3 {
 
         int[] map = new int[256];
         // map 用于记录每一个字符上一次出现的位置(即最近出现的位置)
-        for (int i = 0; i < map.length; i++) {
-            // 每个角标都初始化为 -1
-            map[i] = -1;
-        }
+        Arrays.fill(map, -1);
 
         char[] ch = s.toCharArray();
         // 前一个无重复子串的开始位置前一个角标

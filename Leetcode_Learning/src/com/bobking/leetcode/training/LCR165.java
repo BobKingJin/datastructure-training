@@ -7,8 +7,31 @@ package com.bobking.leetcode.training;
  */
 public class LCR165 {
 
-    // 参考: https://leetcode.cn/problems/ba-shu-zi-fan-yi-cheng-zi-fu-chuan-lcof/solutions/199945/mian-shi-ti-46-ba-shu-zi-fan-yi-cheng-zi-fu-chua-6/
-    public int crackNumber(int ciphertext) {
+    public int crackNumber1(int num) {
+        String strNum = String.valueOf(num);
+        return dfs(strNum, 0);
+    }
+
+    private int dfs(String strNum, int index) {
+        // 注意递归结束有个条件是 index == strNum.length()
+        // 例如: 216612 当 index = 4时, 1 和 12 都是满足的, 所以下面 dfs(strNum, index + 2) 是允许的
+        if (index == strNum.length() - 1 || index == strNum.length()) {
+            return 1;
+        }
+
+        int curAndNextNum = Integer.parseInt(
+            strNum.substring(index, index + 1)
+                + strNum.substring(index + 1, index + 2)
+        );
+        // 1 位必定合法，所以这个位置 dfs(strNum, index + 1) 直接加上即可，不用判断
+        if (curAndNextNum >= 10 && curAndNextNum <= 25) {
+            return dfs(strNum, index + 1) + dfs(strNum, index + 2);
+        } else {
+            return dfs(strNum, index + 1);
+        }
+    }
+
+    public int crackNumber2(int ciphertext) {
 
         String s = String.valueOf(ciphertext);
         int a = 1;

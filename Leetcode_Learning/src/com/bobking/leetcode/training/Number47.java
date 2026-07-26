@@ -46,6 +46,7 @@ public class Number47 {
             // 剪枝条件：i > 0 是为了保证 nums[i - 1] 有意义
             // !used[i - 1]这个位置注意
             // used[i - 1] = false 表示该角标已经被遍历过, 例如: 1 1 2, 遍历到角标 1 的位置, used[0] = false
+            // 例如: aa, 如果没有 !used[i - 1] 判断, 则最后返回一个空集合
             if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) {
                 continue;
             }

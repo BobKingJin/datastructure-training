@@ -31,7 +31,7 @@ public class Number113 {
         subList.add(root.val);
         // 叶子节点
         if (root.left == null && root.right == null) {
-            if (targetSum == root.val) {
+            if (root.val == targetSum) {
                 result.add(subList);
             }
             return;
@@ -57,7 +57,7 @@ public class Number113 {
         list.add(root.val);
         toal += root.val;
         if (root.left == null && root.right == null) {
-            if (targetSum == toal) {
+            if (toal == targetSum) {
                 result.add(new ArrayList(list));
             }
             list.remove(list.size() - 1);
@@ -95,6 +95,7 @@ public class Number113 {
                 queueList.add(new ArrayList<Integer>(tempList));
                 node.left.val += node.val;
                 queueNode.add(node.left);
+                // 注意这个位置类似于dfs的回溯
                 tempList.remove(tempList.size() - 1);
             }
             if (node.right != null) {
