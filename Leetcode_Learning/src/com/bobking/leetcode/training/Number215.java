@@ -11,8 +11,7 @@ public class Number215 {
         }
 
         // 维护一个长度为 k 的小根堆，那么小根堆的堆顶元素即为第 k 大的元素
-        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>(k,
-            (o1, o2) -> o1.compareTo(o2));
+        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
 
         for (int num : nums) {
             minHeap.add(num);

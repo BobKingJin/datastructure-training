@@ -18,7 +18,7 @@ public class Number238 {
         }
 
         r[nums.length - 1] = 1;
-        for (int i = nums.length - 2; i > -1; i--) {
+        for (int i = nums.length - 2; i >= 0; i--) {
             r[i] = r[i + 1] * nums[i + 1];
         }
 

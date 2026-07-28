@@ -37,15 +37,11 @@ public class Number235 {
 
         TreeNode left = lowestCommonAncestor3(cur.left, p, q);
         TreeNode right = lowestCommonAncestor3(cur.right, p, q);
-        // 如果 left 为空，说明这两个节点在 cur 节点的右子树上，只需要返回右子树查找的结果即可
-        if (left == null) {
-            return right;
+
+        if (left != null && right != null) {
+            return cur;
         }
-        if (right == null) {
-            return left;
-        }
-        // 如果 left 和 right 都不为空，说明这两个节点一个在 cur 的左子树上一个在 cur 的右子树上，只需要返回 cur 节点即可
-        return cur;
+        return left == null ? right : left;
     }
 
 }

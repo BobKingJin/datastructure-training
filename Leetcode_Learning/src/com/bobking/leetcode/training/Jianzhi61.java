@@ -21,7 +21,7 @@ public class Jianzhi61 {
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
         for (int a : numbers) {
-            if (!set.add(a) && a != 0) {
+            if (a != 0 && !set.add(a)) {
                 return false;
             }
             if (a != 0) {

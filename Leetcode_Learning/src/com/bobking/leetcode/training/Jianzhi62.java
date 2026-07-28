@@ -51,7 +51,7 @@ public class Jianzhi62 {
 
         int[] array = new int[n];
 
-        // 当 m = 1 时，即第一个删除的数是 0，所以这里 i = -1
+        // 当 m = 1 时，即第一个删除的数是 0，所以这里 index = -1
         // 要删除位置的角标
         int index = -1;
         int step = 0;
