@@ -16,23 +16,23 @@ public class Jianzhi85 {
         int left = 0;
         int right = 0;
         // 记录最长的区间
-        int resl = 0;
-        int resr = 0;
+        int resL = 0;
+        int resR = 0;
         for (int i = 1; i < array.length; i++) {
             right++;
             dp[i] = Math.max(dp[i - 1] + array[i], array[i]);
             if (dp[i - 1] + array[i] < array[i]) {
                 left = right;
             }
-            if (dp[i] > maxsum || dp[i] == maxsum && (right - left + 1) > (resr - resl + 1)) {
+            if (dp[i] > maxsum || dp[i] == maxsum && (right - left + 1) > (resR - resL + 1)) {
                 maxsum = dp[i];
-                resl = left;
-                resr = right;
+                resL = left;
+                resR = right;
             }
         }
-        int[] res = new int[resr - resl + 1];
-        for (int i = resl; i <= resr; i++) {
-            res[i - resl] = array[i];
+        int[] res = new int[resR - resL + 1];
+        for (int i = resL; i <= resR; i++) {
+            res[i - resL] = array[i];
         }
         return res;
     }

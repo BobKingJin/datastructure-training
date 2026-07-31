@@ -40,7 +40,7 @@ public class Number82 {
         ListNode cur = head;
 
         while (cur != null) {
-            // 相等的节点则跳过，走到相同值元素的最后一步
+            // 如果有重复节点, 则cur指向重复节点中的最后一个节点
             while (cur.next != null && cur.next.val == cur.val) {
                 cur = cur.next;
             }
@@ -48,6 +48,7 @@ public class Number82 {
             if (pre.next == cur) {
                 pre = pre.next;
             } else {
+                // 注意此时不要动 pre, 因为下这个节点可能继续出现重复节点, 例如 3 -> 3 -> 6 -> 6 ...
                 pre.next = cur.next;
             }
             cur = cur.next;

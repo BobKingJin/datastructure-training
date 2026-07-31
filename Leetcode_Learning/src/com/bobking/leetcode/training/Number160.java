@@ -32,8 +32,8 @@ public class Number160 {
         cur2 = cur1 == headA ? headB : headA;
         n = Math.abs(n);
         while (n != 0) {
-            n--;
             cur1 = cur1.next;
+            n--;
         }
         while (cur1 != cur2) {
             cur1 = cur1.next;

@@ -36,8 +36,7 @@ public class Number343 {
         int res = 1;
         while (y != 0) {
             if ((y & 1L) != 0) {
-                // 使用fast()计算是因为在该方法中进行了越界处理, 若用 res *= x 则还需要单独进行处理越界
-                // 在cutRope()也使用了fast()计算, 因此越界处理统一放在fast()中
+                // 使用multiply()计算是因为在该方法中进行了越界处理, 若用 res *= x 则还需要单独进行处理越界
                 res = multiply(res, x);
             }
             x = multiply(x, x);

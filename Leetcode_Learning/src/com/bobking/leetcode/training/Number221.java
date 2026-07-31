@@ -13,9 +13,7 @@ public class Number221 {
         int width = matrix[0].length;
         int maxSide = 0;
 
-        // 相当于已经预处理新增第一行、第一列均为 0
-        // dp[i + 1][j + 1] 表示以第 i 行、第 j 列为右下角的正方形的最大边长
-        // 这样定义 dp 的含义就不用担心是不是正方形的问题了
+        // 相当于已经预处理新增第一行、第一列均为 0, 不需要单独处理 第一行 和 第一列
         int[][] dp = new int[height + 1][width + 1];
         for (int row = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {
