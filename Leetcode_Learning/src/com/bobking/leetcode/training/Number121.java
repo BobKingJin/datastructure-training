@@ -16,7 +16,7 @@ public class Number121 {
         }
 
         int[][] dp = new int[prices.length][2];
-        dp[0][0] = 0;
+        // dp[0][0] = 0;
         dp[0][1] = -prices[0];
 
         for (int i = 1; i < prices.length; i++) {

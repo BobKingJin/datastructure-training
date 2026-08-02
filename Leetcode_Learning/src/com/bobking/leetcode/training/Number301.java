@@ -77,7 +77,6 @@ public class Number301 {
         len = s.length();
         charArray = s.toCharArray();
 
-        // 第 1 步：遍历一次，计算多余的左右括号
         int leftRemove = 0;
         int rightRemove = 0;
         for (int i = 0; i < len; i++) {
@@ -94,7 +93,6 @@ public class Number301 {
             }
         }
 
-        // 第 2 步：回溯算法，尝试每一种可能的删除操作
         StringBuilder path = new StringBuilder();
         dfs(0, 0, 0, leftRemove, rightRemove, path);
         return new ArrayList<String>(validExpressions);
@@ -110,6 +108,10 @@ public class Number301 {
             if (leftRemove == 0 && rightRemove == 0) {
                 validExpressions.add(path.toString());
             }
+            return;
+        }
+
+        if (leftRemove > leftRemove) {
             return;
         }
 

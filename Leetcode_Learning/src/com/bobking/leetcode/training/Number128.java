@@ -14,18 +14,19 @@ public class Number128 {
         }
 
         int max = 1;
-        // key：数组中的已经遍历过的数  value：该数所在的最长连续序列的长度
+        // key: 数组中的已经遍历过的数  value: 该数所在的最长连续序列的长度
         // map 中只更新连续序列中的最大值和最小值
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; i++) {
-            if (!map.containsKey(nums[i])) {
-                map.put(nums[i], 1);
-                if (map.containsKey(nums[i] - 1)) {
-                    max = Math.max(max, merge(map, nums[i] - 1, nums[i]));
-                }
-                if (map.containsKey(nums[i] + 1)) {
-                    max = Math.max(max, merge(map, nums[i], nums[i] + 1));
-                }
+            if (map.containsKey(nums[i])) {
+                continue;
+            }
+            map.put(nums[i], 1);
+            if (map.containsKey(nums[i] - 1)) {
+                max = Math.max(max, merge(map, nums[i] - 1, nums[i]));
+            }
+            if (map.containsKey(nums[i] + 1)) {
+                max = Math.max(max, merge(map, nums[i], nums[i] + 1));
             }
         }
         return max;

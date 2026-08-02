@@ -28,7 +28,6 @@ public class Number15 {
     }
 
     private void getUnique(int[] nums, int f, int l, int r, int target) {
-
         while (l < r) {
             if (nums[l] + nums[r] < target) {
                 l++;

@@ -68,8 +68,7 @@ public class Number17 {
         // 先是取 digits 中的每个字符集, 再是 res 中的结果集, 最后才是 字符集 中的每个字母
         for (int i = 0; i < digits.length(); i++) {
             String letters = map[digits.charAt(i) - '0'];
-            int size = result.size();
-            for (int j = 0; j < size; j++) {
+            for (int j = 0; j < result.size(); j++) {
                 // 注意：这里提前进行了remove操作, 相当于队列的出队操作
                 String tmp = result.remove(0);
                 for (int k = 0; k < letters.length(); k++) {

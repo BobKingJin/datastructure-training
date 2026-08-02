@@ -20,7 +20,7 @@ public class Number279 {
             // 最坏的情况就是 dp[i] = i
             dp[i] = i;
             // 注意这里 j 不需要一个个尝试，直接以 i - j * j 为步长进行遍历
-            for (int j = 1; i - j * j >= 0; j++) {
+            for (int j = 1; j * j <= i; j++) {
                 // 后面依赖前面
                 dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
             }

@@ -25,15 +25,13 @@ public class Number139 {
         boolean[] dp = new boolean[s.length() + 1];
         // 空串
         dp[0] = true;
-        // 需要枚举 s[0...i - 1] 中的分割点 j，看 s[0...j - 1] 组成的字符串 s1 （默认 j = 0 时 s1 为空串）和
-        // s[j..i - 1] 组成的字符串 s2 是否都合法
         // 从前往后，后面依赖前面
-        for (int i = 1; i <= s.length(); i++) {
-            // 尝试 0 - (i - 1) 中的每个位置
-            for (int j = 0; j < i; j++) {
+        for (int j = 1; j <= s.length(); j++) {
+            // 尝试 0 - (j - 1) 中的每个位置
+            for (int i = 0; i < j; i++) {
                 // 只要有一个符合，即可跳出循环
-                if (dp[j] && set.contains(s.substring(j, i))) {
-                    dp[i] = true;
+                if (dp[i] && set.contains(s.substring(i, j))) {
+                    dp[j] = true;
                     break;
                 }
             }
@@ -86,19 +84,18 @@ public class Number139 {
         }
 
         // 用一个数组，存储计算的结果，数组索引为指针位置，值为计算的结果
-        // 下次遇到相同的子问题，直接返回数组中的缓存值，就不用进入重复的递归
+        // 加速, 防止重复计算
         int[] visited = new int[s.length()];
         return dfs(s, 0, wordDict, visited);
     }
 
     private boolean dfs(String s, int start, List<String> wordDict, int[] visited) {
 
-        // start 来到字符串末尾的「下一位」 说明匹配成功
         if (start == s.length()) {
             return true;
         }
 
-        // 剪枝 防止重复计算
+        // 剪枝
         if (visited[start] == 1) {
             return true;
         }
@@ -107,9 +104,7 @@ public class Number139 {
             return false;
         }
 
-        // 从 end 开始一步步尝试
         for (int end = start + 1; end <= s.length(); end++) {
-            // 包含 start，不包含 end，所以 end 可以取到 s.length()
             String pre = s.substring(start, end);
             if (wordDict.contains(pre) &&
                 // 判断后面部分能不能匹配

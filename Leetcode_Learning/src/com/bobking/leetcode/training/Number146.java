@@ -39,13 +39,13 @@ public class Number146 {
             }
 
             public void remove(Node node) {
-                if (head == node && tail == node) {
+                if (node == head && node == tail) {
                     head = null;
                     tail = null;
-                } else if (tail == node) {
+                } else if (node == tail) {
                     node.prev.next = null;
                     tail = node.prev;
-                } else if (head == node) {
+                } else if (node == head) {
                     node.next.prev = null;
                     head = node.next;
                 } else {

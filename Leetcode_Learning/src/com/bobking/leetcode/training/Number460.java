@@ -43,8 +43,9 @@ public class Number460 {
         public int get(int key) {
 
             Node node = cache.get(key);
-            if (node == null)
+            if (node == null) {
                 return -1;
+            }
 
             freqInc(node);
             return node.value;
@@ -52,8 +53,9 @@ public class Number460 {
 
         public void put(int key, int value) {
 
-            if (capacity == 0)
+            if (capacity == 0) {
                 return;
+            }
 
             Node node = cache.get(key);
             if (node != null) {
@@ -78,8 +80,9 @@ public class Number460 {
             int freq = node.freq;
             LinkedHashSet<Node> set = freqMap.get(freq);
             set.remove(node);
-            if (freq == min && set.size() == 0)
+            if (freq == min && set.size() == 0) {
                 min = freq + 1;
+            }
 
             // 加入新 freq 对应的链表
             node.freq++;
@@ -103,14 +106,12 @@ public class Number460 {
         }
 
         public Node removeNode() {
-
             LinkedHashSet<Node> set = freqMap.get(min);
             Node deadNode = set.iterator().next();
             set.remove(deadNode);
             return deadNode;
         }
     }
-
 
 
 }

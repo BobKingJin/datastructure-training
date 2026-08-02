@@ -21,11 +21,7 @@ public class Number347 {
         // 用 map 记录数组中的数出现的次数
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
-            if (!map.containsKey(num)) {
-                map.put(num, 1);
-            } else {
-                map.put(num, map.get(num) + 1);
-            }
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
 
         // 记住桶的长度为 nums.length + 1，因为 0 这个角标不会利用到
@@ -63,11 +59,7 @@ public class Number347 {
 
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int num : nums) {
-            if (map.containsKey(num)) {
-                map.put(num, map.get(num) + 1);
-            } else {
-                map.put(num, 1);
-            }
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
         // 遍历 map，用小根堆保存频率最大的 k 个元素
         PriorityQueue<Integer> queue = new PriorityQueue<Integer>(new Comparator<Integer>() {

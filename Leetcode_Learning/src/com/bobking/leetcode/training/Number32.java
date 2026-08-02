@@ -19,7 +19,7 @@ public class Number32 {
         // dp[0] 必为 0
         for (int i = 1; i < ch.length; i++) {
             if (ch[i] == ')') {
-                pre = i - dp[i - 1] - 1;
+                pre = (i - 1) - dp[i - 1];
                 if (pre >= 0 && ch[pre] == '(') {
                     dp[i] = dp[i - 1] + 2 + (pre > 0 ? dp[pre - 1] : 0);
                     res = Math.max(res, dp[i]);

@@ -21,7 +21,7 @@ public class Number322 {
         }
 
         int res = -1;
-        // 注意：每种面值的货币可以用任意张
+        // 注意: 每种面值的货币可以用任意张
         for (int k = 0; k * coins[i] <= rest; k++) {
             int next = recursion(coins, i + 1, rest - k * coins[i]);
             if (next != -1) {

@@ -16,8 +16,7 @@ public class Number253 {
             return 0;
         }
 
-        PriorityQueue<Integer> allocator = new PriorityQueue<Integer>(intervals.length,
-            (a, b) -> a - b);
+        PriorityQueue<Integer> allocator = new PriorityQueue<Integer>(intervals.length);
         Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
         allocator.add(intervals[0][1]);
 
