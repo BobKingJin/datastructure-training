@@ -26,7 +26,6 @@ public class Number347 {
 
         // 记住桶的长度为 nums.length + 1，因为 0 这个角标不会利用到
         // 记住这个桶的实现是不能用数组来实现的，因为可能会有出现次数相同的数
-        // 例如：若 5 和 8 同时出现 4 次，因此这里用 list 数组来作为桶的实现
         ArrayList<Integer>[] buckets = new ArrayList[nums.length + 1];
         for (Integer key : map.keySet()) {
             int frequnce = map.get(key);

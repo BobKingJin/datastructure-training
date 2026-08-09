@@ -62,11 +62,9 @@ public class Number139 {
             for (int i = start + 1; i <= s.length(); i++) {
                 String curStr = s.substring(start, i);
                 if (wordDict.contains(curStr)) {
-                    // i 还没越界，还能继续划分，让它入列，作为下一层待考察的节点
                     if (i < s.length()) {
                         queue.add(i);
                     } else {
-                        // i == len，指针越界，说明 s 串一路被切出单词，现在没有剩余子串，返回 true
                         return true;
                     }
                 }
@@ -83,7 +81,6 @@ public class Number139 {
             return false;
         }
 
-        // 用一个数组，存储计算的结果，数组索引为指针位置，值为计算的结果
         // 加速, 防止重复计算
         int[] visited = new int[s.length()];
         return dfs(s, 0, wordDict, visited);

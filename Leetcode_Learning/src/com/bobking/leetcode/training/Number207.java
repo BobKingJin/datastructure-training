@@ -70,15 +70,15 @@ public class Number207 {
 
         // 入度表 indegrees: 每个节点的入度
         int[] indegrees = new int[numCourses];
-        List<List<Integer>> list = new ArrayList<List<Integer>>();
+        List<Integer>[] graph = new List[numCourses];
         Queue<Integer> queue = new LinkedList<Integer>();
 
-        for (int i = 0; i < numCourses; i++) {
-            list.add(new ArrayList<Integer>());
+        for (int i = 0; i < graph.length; i++) {
+            graph[i] = new ArrayList<Integer>();
         }
 
         for (int[] i : prerequisites) {
-            list.get(i[1]).add(i[0]);
+            graph[i[1]].add(i[0]);
             indegrees[i[0]]++;
         }
 
@@ -90,7 +90,7 @@ public class Number207 {
 
         while (!queue.isEmpty()) {
             int pre = queue.poll();
-            for (int i : list.get(pre)) {
+            for (int i : graph[pre]) {
                 indegrees[i]--;
                 if (indegrees[i] == 0) {
                     queue.add(i);

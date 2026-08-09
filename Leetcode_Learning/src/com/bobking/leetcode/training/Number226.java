@@ -16,7 +16,7 @@ public class Number226 {
 
         // 递归函数的终止条件，节点为空时返回
         if (root == null) {
-            return null;
+            return root;
         }
 
         // 将当前节点的左右子树交换
@@ -35,7 +35,7 @@ public class Number226 {
     public TreeNode invertTree2(TreeNode root) {
 
         if (root == null) {
-            return null;
+            return root;
         }
 
         TreeNode left = invertTree2(root.left);
@@ -51,7 +51,7 @@ public class Number226 {
         if (root == null) {
             return null;
         }
-        
+
         LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
         while (!queue.isEmpty()) {

@@ -44,6 +44,7 @@ public class Number437 {
         res += recursionPathSum(node.right, currSum, sum, prefixSum);
         // 回溯
         prefixSum.put(currSum, prefixSum.get(currSum) - 1);
+        // currSum -= node.val;
         return res;
     }
 }

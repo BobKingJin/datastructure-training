@@ -34,7 +34,7 @@ public class Number394 {
                 for (int i = 0; i < loop; i++) {
                     temp.append(res);
                 }
-                // 注意：这个位置是需要 strStack.pop()
+                // 注意: 这个位置是需要 strStack.pop()
                 res = new StringBuilder(strStack.pop() + temp.toString());
             } else if (c >= '0' && c <= '9') {
                 multi = multi * 10 + Integer.parseInt(c + "");

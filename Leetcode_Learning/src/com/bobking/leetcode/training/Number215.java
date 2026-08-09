@@ -28,7 +28,7 @@ public class Number215 {
         int left = 0;
         int right = nums.length - 1;
 
-        // 转换一下, 第 k 大元素的索引是 len - k
+        // 升序排序, 转换一下, 第 k 大元素的索引是 len - k
         int target = nums.length - k;
 
         while (true) {

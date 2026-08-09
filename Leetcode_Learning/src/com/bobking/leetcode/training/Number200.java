@@ -26,7 +26,7 @@ public class Number200 {
     }
 
     private void inject(char[][] grid, int i, int j) {
-
+        // 注意别遗漏判断条件: grid[i][j] != '1'
         if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] != '1') {
             return;
         }
