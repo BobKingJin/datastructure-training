@@ -61,6 +61,8 @@ public class Number102 {
 
         while (!queue.isEmpty()) {
             List<Integer> list = new ArrayList<Integer>();
+            // 注意这个位置一定要先用一个变量得到 queue.size()
+            // 不能 for (int i = 1; i <= queue.size(); i++), 因为下面还在不断queue.offer(), 会导致 queue.size() 在变动
             int n = queue.size();
             for (int i = 1; i <= n; i++) {
                 TreeNode node = queue.poll();

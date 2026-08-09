@@ -42,7 +42,6 @@ public class Number4 {
                 }
                 break;
             }
-
             if (nums1[i] < nums2[j]) {
                 nums[index++] = nums1[i++];
             } else {
