@@ -7,14 +7,16 @@ import java.util.Map;
  * @author BobKing
  * @create 2022-10-27 15:14
  */
-public class LRUCache {
+public class LRUCache1 {
 
     // 双向链表节点
     private class DoubleQueueNode {
+
         int key;
         int val;
         DoubleQueueNode pre;
         DoubleQueueNode next;
+
         public DoubleQueueNode(int key, int val) {
             this.key = key;
             this.val = val;
@@ -32,7 +34,7 @@ public class LRUCache {
     // 尾结点 避免null检查
     private DoubleQueueNode tail;
 
-    public LRUCache(int capacity) {
+    public LRUCache1(int capacity) {
         this.capacity = capacity;
         this.map = new HashMap<>(capacity);
         this.head = new DoubleQueueNode(0, 0);
@@ -44,8 +46,9 @@ public class LRUCache {
 
         DoubleQueueNode node = map.get(key);
 
-        if (node == null)
+        if (node == null) {
             return null;
+        }
 
         // 数据在链表中，则移至链表头部
         moveToHead(node);
@@ -82,8 +85,9 @@ public class LRUCache {
 
         DoubleQueueNode deletedNode = map.get(key);
 
-        if (deletedNode == null)
+        if (deletedNode == null) {
             return null;
+        }
 
         deletedNode.pre.next = deletedNode.next;
         deletedNode.next.pre = deletedNode.pre;
@@ -104,8 +108,9 @@ public class LRUCache {
 
     private void eliminate() {
 
-        if (size < capacity)
+        if (size < capacity) {
             return;
+        }
 
         // 将链表中最后一个节点去除
         DoubleQueueNode last = tail.pre;

@@ -16,13 +16,12 @@ public class Number104 {
 
         if (root == null) {
             return 0;
-        } else {
-            // 后序
-            // 向父节点返回子节点的最长深度
-            int leftHeight = maxDepth1(root.left);
-            int rightHeight = maxDepth1(root.right);
-            return Math.max(leftHeight, rightHeight) + 1;
         }
+        // 后序
+        // 向父节点返回子节点的最长深度
+        int leftHeight = maxDepth1(root.left);
+        int rightHeight = maxDepth1(root.right);
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 
     // 参考：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/solution/er-cha-shu-de-zui-da-shen-du-by-leetcode-solution/

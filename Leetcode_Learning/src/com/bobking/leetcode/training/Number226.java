@@ -1,6 +1,7 @@
 package com.bobking.leetcode.training;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * @author BobKing
@@ -52,7 +53,7 @@ public class Number226 {
             return null;
         }
 
-        LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
         while (!queue.isEmpty()) {
             TreeNode tmp = queue.poll();

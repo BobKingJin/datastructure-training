@@ -6,17 +6,17 @@ package com.bobking.leetcode.training;
  */
 
 // 直接继承前面写好的LRUCache
-public class LRUKCache extends LRUCache {
+public class LRUKCache extends LRUCache1 {
 
     // 进入缓存队列的评判标准
     private int k;
     // 访问数据历史记录
-    private LRUCache historyList;
+    private LRUCache1 historyList;
 
     public LRUKCache(int cacheSize, int historyCapacity, int k) {
         super(cacheSize);
         this.k = k;
-        this.historyList = new LRUCache(historyCapacity);
+        this.historyList = new LRUCache1(historyCapacity);
     }
 
     @Override
@@ -33,12 +33,14 @@ public class LRUKCache extends LRUCache {
     @Override
     public Integer put(Integer key, Integer value) {
 
-        if (value == null)
+        if (value == null) {
             return null;
+        }
 
         // 如果已经在缓存里则直接返回缓存中的数据
-        if (super.get(key) != null)
+        if (super.get(key) != null) {
             return super.put(key, value);
+        }
 
         // 如果数据历史访问次数达到上限，则加入缓存
         Integer historyCount = historyList.get(key);

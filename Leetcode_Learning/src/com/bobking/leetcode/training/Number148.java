@@ -14,8 +14,8 @@ public class Number148 {
         }
 
         ListNode slow = head;
-        ListNode fast = head.next;
-        while (fast != null && fast.next != null) {
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -25,22 +25,22 @@ public class Number148 {
         ListNode left = sortList1(head);
         ListNode right = sortList1(tmp);
         // 创建一个假头节点
-        ListNode node = new ListNode(0);
-        ListNode res = node;
+        ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
 
         while (left != null && right != null) {
             if (left.val > right.val) {
-                node.next = right;
+                cur.next = right;
                 right = right.next;
             } else {
-                node.next = left;
+                cur.next = left;
                 left = left.next;
             }
-            node = node.next;
+            cur = cur.next;
         }
 
-        node.next = left == null ? right : left;
-        return res.next;
+        cur.next = left == null ? right : left;
+        return dummy.next;
     }
 
     // 参考：程序猿代码指南P84

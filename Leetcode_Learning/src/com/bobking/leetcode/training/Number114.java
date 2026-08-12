@@ -76,8 +76,8 @@ public class Number114 {
         flatten3(root.right);
         flatten3(root.left);
 
-        root.right = pre;
         root.left = null;
+        root.right = pre;
         pre = root;
     }
 
