@@ -15,8 +15,9 @@ public class Number287 {
         // 例如：1  2  3  3  4  5  6 这里 7 个数，这里的判断是以 (1 + 6) / 2 = 3 为分界线
         int left = 1;
         int right = nums.length - 1;
+        int res = 0;
 
-        while (left < right) {
+        while (left <= right) {
             int mid = left + (right - left) / 2;
             int count = 0;
             for (int num : nums) {
@@ -24,16 +25,17 @@ public class Number287 {
                     count += 1;
                 }
             }
-            // 根据抽屉原理
-            if (count > mid) {
-                // 重复元素位于区间 [left..mid]
-                right = mid;
-            } else {
+            if (count <= mid) {
+                // 说明 [1, mid] 这个区间内无重复数字
                 // 重复元素位于区间 [(mid + 1)..right]
                 left = mid + 1;
+            } else {
+                // 重复元素位于区间 [left..mid]
+                right = mid - 1;
+                res = mid;
             }
         }
-        return left;
+        return res;
     }
 
     // 参考：https://leetcode-cn.com/problems/find-the-duplicate-number/solution/xun-zhao-zhong-fu-shu-by-leetcode-solution/
@@ -85,7 +87,7 @@ public class Number287 {
             slow = nums[slow];
             fast = nums[nums[fast]];
         }
-        
+
         int pre1 = 0;
         int pre2 = slow;
         while (pre1 != pre2) {

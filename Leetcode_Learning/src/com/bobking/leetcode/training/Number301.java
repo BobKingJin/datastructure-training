@@ -55,7 +55,7 @@ public class Number301 {
             } else if (c == ')') {
                 cnt--;
             }
-            // 右边括号比左括号多，不合法
+            // 右边括号比左括号多, 不合法
             if (cnt < 0) {
                 return false;
             }
@@ -99,8 +99,8 @@ public class Number301 {
     }
 
     /**
-     * leftCount：已经遍历到的左括号的个数 rightCount：已经遍历到的右括号的个数 leftRemove：最少应该删除的左括号的个数
-     * rightRemove：最少应该删除的右括号的个数
+     * leftCount: 已经遍历到的左括号的个数 rightCount: 已经遍历到的右括号的个数 leftRemove: 最少应该删除的左括号的个数 rightRemove:
+     * 最少应该删除的右括号的个数
      */
     private void dfs(int index, int leftCount, int rightCount, int leftRemove, int rightRemove,
         StringBuilder path) {
@@ -111,14 +111,10 @@ public class Number301 {
             return;
         }
 
-        if (leftRemove > leftRemove) {
-            return;
-        }
-
-        // 两种可能操作：删除当前字符和保留当前字符
+        // 两种可能操作: 删除当前字符和保留当前字符
 
         char character = charArray[index];
-        // 可能的操作 1：删除当前遍历到的字符
+        // 可能的操作 1: 删除当前遍历到的字符
         if (character == '(' && leftRemove > 0) {
             // 由于 leftRemove > 0，并且当前遇到的是左括号，因此可以尝试删除当前遇到的左括号
             dfs(index + 1, leftCount, rightCount, leftRemove - 1, rightRemove, path);
@@ -127,7 +123,7 @@ public class Number301 {
             // 由于 rightRemove > 0，并且当前遇到的是右括号，因此可以尝试删除当前遇到的右括号
             dfs(index + 1, leftCount, rightCount, leftRemove, rightRemove - 1, path);
         }
-        // 可能的操作 2：保留当前遍历到的字符
+        // 可能的操作 2: 保留当前遍历到的字符
         path.append(character);
         if (character != '(' && character != ')') {
             // 如果不是括号，继续深度优先遍历

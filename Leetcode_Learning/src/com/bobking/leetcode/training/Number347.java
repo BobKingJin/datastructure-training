@@ -1,7 +1,6 @@
 package com.bobking.leetcode.training;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,7 +36,6 @@ public class Number347 {
         // 例如：list[6] = {8, 2}，那么说明 8 和 2 出现了 6 次
         // 从后往前
         for (int index = buckets.length - 1; res.size() < k; index--) {
-            // 说明index这个数没有出现过
             if (buckets[index] == null) {
                 continue;
             }
@@ -61,12 +59,8 @@ public class Number347 {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
         // 遍历 map，用小根堆保存频率最大的 k 个元素
-        PriorityQueue<Integer> queue = new PriorityQueue<Integer>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer a, Integer b) {
-                return map.get(a) - map.get(b);
-            }
-        });
+        PriorityQueue<Integer> queue = new PriorityQueue<Integer>(
+            (a, b) -> map.get(a) - map.get(b));
 
         for (Integer key : map.keySet()) {
             if (queue.size() < k) {

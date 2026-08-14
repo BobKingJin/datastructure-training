@@ -49,10 +49,6 @@ public class Number312 {
             return 0;
         }
 
-        if (nums.length == 0) {
-            return nums[0];
-        }
-
         int N = nums.length;
         int[] help = new int[N + 2];
         help[0] = 1;

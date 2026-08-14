@@ -5,12 +5,7 @@ public class Number141 {
     // 参考：程序猿代码指南P69
     public boolean hasCycle(ListNode head) {
 
-        if (head == null) {
-            return false;
-        }
-
-        // 此时只有头节点一个节点
-        if (head.next == null) {
+        if (head == null || head.next == null) {
             return false;
         }
 

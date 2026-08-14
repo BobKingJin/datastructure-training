@@ -10,9 +10,7 @@ public class Number300 {
         if (nums == null || nums.length < 1) {
             return 0;
         }
-        if (nums.length == 1) {
-            return 1;
-        }
+
         // dp[i] 表示 从 0 - i 最长递增子序列
         int[] dp = new int[nums.length];
 

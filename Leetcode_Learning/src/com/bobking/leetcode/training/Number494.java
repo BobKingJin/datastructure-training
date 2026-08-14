@@ -24,7 +24,6 @@ public class Number494 {
 
         // 每一个 nums[index] 可正可负
         // 注意每个位置都必须要选
-        // 因为不涉及到记录路径，所以这里不需要回溯
         recursion(nums, index + 1, sum + nums[index], target);
         recursion(nums, index + 1, sum - nums[index], target);
     }

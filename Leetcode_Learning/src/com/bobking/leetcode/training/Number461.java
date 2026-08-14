@@ -13,7 +13,7 @@ public class Number461 {
         for (int i = 0; i < 32; i++) {
             int m = x >>> i;
             int n = y >>> i;
-            result += (((m ^ n) % 2) == 0 ? 0 : 1);
+            result += (((m ^ n) & 1) == 0 ? 0 : 1);
         }
         return result;
     }
