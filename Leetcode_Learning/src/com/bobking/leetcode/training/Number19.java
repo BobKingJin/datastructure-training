@@ -15,6 +15,10 @@ public class Number19 {
             node = node.next;
         }
 
+        if (n > length) {
+            return null;
+        }
+
         ListNode dummy = new ListNode(0, head);
         ListNode cur = dummy;
         // 倒数第 n 个节点即是顺数第 length - n + 1 个节点
@@ -59,7 +63,7 @@ public class Number19 {
         ListNode dummy = new ListNode(0, head);
         ListNode left = dummy;
         ListNode right = dummy;
-
+        // 右指针 比 左指针快 n 步, 那么当右指针到达尾节点时, 左指针则是在倒数第 n 个节点
         while (n-- > 0) {
             // 右指针先向右走 n 步
             right = right.next;
@@ -72,5 +76,24 @@ public class Number19 {
         // 左指针的下一个节点就是倒数第 n 个节点
         left.next = left.next.next;
         return dummy.next;
+    }
+
+    public ListNode removeNthFromEnd4(ListNode head, int n) {
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        remove(dummy, n);
+        return dummy.next;
+    }
+
+    private int remove(ListNode head, int n) {
+        if (head.next == null) {
+            return 1;
+        }
+
+        int num = remove(head.next, n);
+        if (num == n) {
+            head.next = head.next.next;
+        }
+        return num + 1;
     }
 }

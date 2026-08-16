@@ -22,10 +22,12 @@ public class Number2 {
         int count = 0;
         // 进位
         int ca = 0;
+        int sum = 0;
 
         while (l1 != null || l2 != null) {
-            count = ((l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + ca) % 10;
-            ca = ((l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + ca) / 10;
+            sum = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + ca;
+            count = sum % 10;
+            ca = sum / 10;
             node = new ListNode(count);
             pre.next = node;
             pre = node;

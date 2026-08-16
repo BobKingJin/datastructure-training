@@ -42,7 +42,7 @@ public class Number543 {
 
     private int ans;
 
-    public int diameterOfBinaryTree(TreeNode root) {
+    public int diameterOfBinaryTree2(TreeNode root) {
         dfs(root);
         return ans;
     }

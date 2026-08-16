@@ -13,13 +13,17 @@ public class Number516 {
         int n = s.length();
         int[][] dp = new int[n][n];
 
-        for (int i = n - 1; i >= 0; i--) {
-            dp[i][i] = 1;
-            for (int j = i + 1; j < n; j++) {
-                if (s.charAt(i) == s.charAt(j)) {
-                    dp[i][j] = dp[i + 1][j - 1] + 2;
+        for (int j = 0; j < n; j++) {
+            for (int i = j; i >= 0; i--) {
+                if (i == j) {
+                    dp[i][j] = 1;
+                } else if (j - i == 1) {
+                    dp[i][j] = s.charAt(i) == s.charAt(j) ? 2 : 1;
                 } else {
                     dp[i][j] = Math.max(dp[i + 1][j], dp[i][j - 1]);
+                    if (s.charAt(i) == s.charAt(j)) {
+                        dp[i][j] = Math.max(dp[i][j], dp[i + 1][j - 1] + 2);
+                    }
                 }
             }
         }

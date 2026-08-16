@@ -16,10 +16,10 @@ public class Number96 {
         int[] num = new int[n + 1];
         num[0] = 1;
         // num[n] 依赖于 nums[0] ... num[n - 1]，所以要先算出 nums[0] ... num[n - 1]
-        for (int i = 1; i <= n; i++) {
-            // 有 i 个节点，然后分别以 1 ~ i 为头节点计算出 num[i]
-            for (int j = 1; j <= i; j++) {
-                num[i] += num[j - 1] * num[i - j];
+        for (int j = 1; j <= n; j++) {
+            // 有 j 个节点，然后分别以 1 ~ i 为头节点计算出 num[j]
+            for (int i = 1; i <= j; i++) {
+                num[j] += num[i - 1] * num[j - i];
             }
         }
 

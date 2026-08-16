@@ -18,22 +18,22 @@ public class Number20 {
             if (ch == '(' || ch == '{' || ch == '[') {
                 stack.push(ch);
             } else {
-                if (!stack.isEmpty()) {
-                    if (ch == ')') {
-                        if (stack.pop() != '(') {
-                            return false;
-                        }
-                    } else if (ch == '}') {
-                        if (stack.pop() != '{') {
-                            return false;
-                        }
-                    } else {
-                        if (stack.pop() != '[') {
-                            return false;
-                        }
+                if (stack.isEmpty()) {
+                    return false;
+                }
+
+                if (ch == ')') {
+                    if (stack.pop() != '(') {
+                        return false;
+                    }
+                } else if (ch == '}') {
+                    if (stack.pop() != '{') {
+                        return false;
                     }
                 } else {
-                    return false;
+                    if (stack.pop() != '[') {
+                        return false;
+                    }
                 }
             }
         }
