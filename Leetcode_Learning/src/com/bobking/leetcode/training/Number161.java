@@ -31,16 +31,17 @@ public class Number161 {
             }
             return true;
         } else {
-            int cnt = 0;
+            boolean falg = true;
             for (int i = 0; i < m; i++) {
                 if (s.charAt(i) != t.charAt(i)) {
-                    cnt++;
-                    if (cnt > 1) {
+                    if (falg) {
+                        falg = false;
+                    } else {
                         return false;
                     }
                 }
             }
-            return cnt == 1;
+            return true;
         }
     }
 

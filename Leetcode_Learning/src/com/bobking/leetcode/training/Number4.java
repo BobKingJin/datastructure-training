@@ -48,11 +48,8 @@ public class Number4 {
                 nums[index++] = nums2[j++];
             }
         }
-        if (index % 2 == 0) {
-            return (nums[index / 2 - 1] + nums[index / 2]) / 2.0;
-        } else {
-            return nums[index / 2];
-        }
+
+        return index % 2 == 0 ? (nums[index / 2 - 1] + nums[index / 2]) / 2.0 : nums[index / 2];
     }
 
     // 参考：https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-2/
@@ -82,11 +79,7 @@ public class Number4 {
             }
         }
 
-        if ((len & 1) == 0) {
-            return (left + right) / 2.0;
-        } else {
-            return right;
-        }
+        return (len & 1) == 0 ? (left + right) / 2.0 : right;
     }
 
     // 参考：https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-2/

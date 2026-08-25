@@ -15,7 +15,7 @@ public class Jianzhi13 {
     }
 
     private int dfs(int i, int j, int rows, int cols, int[][] flag, int threshold) {
-        if (i < 0 || i >= rows || j < 0 || j >= cols || sum(i) + sum(j) > threshold
+        if (i < 0 || i >= rows || j < 0 || j >= cols || getDigitSum(i) + getDigitSum(j) > threshold
             || flag[i][j] == 1) {
             return 0;
         }
@@ -25,14 +25,6 @@ public class Jianzhi13 {
             + dfs(i, j - 1, rows, cols, flag, threshold)
             + dfs(i, j + 1, rows, cols, flag, threshold)
             + 1;
-    }
-
-    private int sum(int i) {
-        int sum = 0;
-        do {
-            sum += i % 10;
-        } while ((i = i / 10) > 0);
-        return sum;
     }
 
     public int movingCount2(int threshold, int rows, int cols) {

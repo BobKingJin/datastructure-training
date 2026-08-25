@@ -31,7 +31,7 @@ public class Number232 {
          */
         public void push(int x) {
             pushStack.push(x);
-            pushToPop();
+            // pushToPop();
         }
 
         /**

@@ -11,7 +11,7 @@ public class Jianzhi15 {
         int res = 0;
 
         while (n != 0) {
-            n &= n - 1;
+            n &= (n - 1);
             res++;
         }
         return res;
