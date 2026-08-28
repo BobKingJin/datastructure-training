@@ -19,10 +19,7 @@ public class LCR165 {
             return 1;
         }
 
-        int curAndNextNum = Integer.parseInt(
-            strNum.substring(index, index + 1)
-                + strNum.substring(index + 1, index + 2)
-        );
+        int curAndNextNum = Integer.parseInt(strNum.substring(index, index + 2));
         // 1 位必定合法，所以这个位置 dfs(strNum, index + 1) 直接加上即可，不用判断
         if (curAndNextNum >= 10 && curAndNextNum <= 25) {
             return dfs(strNum, index + 1) + dfs(strNum, index + 2);

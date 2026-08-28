@@ -14,7 +14,7 @@ public class Jianzhi26 {
         if (A == null || B == null) {
             return result;
         }
-        // 在doesTree1HasTree2()方法中会判断 root1.val == root2.val ?
+        
         result = doesTree1HasTree2(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B);
         return result;
     }

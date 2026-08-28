@@ -16,7 +16,7 @@ public class Number226 {
     public TreeNode invertTree1(TreeNode root) {
 
         // 递归函数的终止条件，节点为空时返回
-        if (root == null) {
+        if (root == null || (root.left == null && root.right == null)) {
             return root;
         }
 
@@ -35,7 +35,7 @@ public class Number226 {
     // 从下到上递归
     public TreeNode invertTree2(TreeNode root) {
 
-        if (root == null) {
+        if (root == null || (root.left == null && root.right == null)) {
             return root;
         }
 
@@ -49,7 +49,7 @@ public class Number226 {
     // 参考：https://leetcode-cn.com/problems/invert-binary-tree/solution/dong-hua-yan-shi-liang-chong-shi-xian-226-fan-zhua/
     public TreeNode invertTree3(TreeNode root) {
 
-        if (root == null) {
+        if (root == null || (root.left == null && root.right == null)) {
             return null;
         }
 
