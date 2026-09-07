@@ -11,11 +11,20 @@ public class Jianzhi65 {
     public int Add(int num1, int num2) {
         // 位运算中两数进行 异或 运算可以提供两数加和后二进制非进位信息
         // 位运算中的两数进行 与 运算的结果可以提供两数加和后的二进制进位信息
-        while (num2 != 0) {
-            int temp = num1 ^ num2;
-            num2 = (num1 & num2) << 1;
-            num1 = temp;
+
+        // add表示进位值
+        int add = num2;
+        // sum表示总和
+        int sum = num1;
+        // 当不再有进位的时候终止循环
+        while (add != 0) {
+            // 将每轮的无进位和与进位值做异或求和
+            int temp = sum ^ add;
+            // 进位值是用与运算产生的
+            add = (sum & add) << 1;
+            // 更新sum为新的和
+            sum = temp;
         }
-        return num1;
+        return sum;
     }
 }

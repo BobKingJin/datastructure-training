@@ -36,7 +36,6 @@ public class Number416 {
         for (int i = 1; i < nums.length; i++) {
             for (int j = 0; j <= target; j++) {
                 dp[i][j] = dp[i - 1][j];
-
                 if (nums[i] == j) {
                     dp[i][j] = true;
                     continue;

@@ -9,24 +9,19 @@ public class Jianzhi67 {
 
     // 参考: Number8
     public int StrToInt(String s) {
-        if (s.isEmpty()) {
+        if (s == null || s.length() == 0) {
             return 0;
         }
+
+        s = s.trim();
+        if (s.length() == 0) {
+            return 0;
+        }
+
         int res = 0;
         int index = 0;
         int n = s.length();
-        // 去掉前导空格，如果有
-        while (index < n) {
-            if (s.charAt(index) == ' ') {
-                index++;
-            } else {
-                break;
-            }
-        }
-        // 去掉空格就什么都没有了
-        if (index == n) {
-            return 0;
-        }
+
         int sign = 1;
         // 处理第一个符号是正负号的情况
         if (s.charAt(index) == '+') {

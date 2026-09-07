@@ -32,6 +32,7 @@ public class Number151 {
                 r = -1;
             }
         }
+        // 最后一次多添加了一个 空格, 需要在此处删除
         res.deleteCharAt(res.length() - 1);
         return res.toString();
     }
